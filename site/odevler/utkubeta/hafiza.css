@@ -1,0 +1,131 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(-45deg, #f3e7e9, #e3eeff, #d4fc79, #96e6a1);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.nav-link {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: #2980b9;
+}
+
+.content-section {
+    display: none;
+}
+
+.active-section {
+    display: block;
+}
+
+.card-game {
+    display: grid;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.card {
+    width: 60px;
+    height: 60px;
+    background-color: #f19066;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    background-color: #f5cd79;
+}
+
+.mode-button {
+    padding: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 10px;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.mode-button.easy {
+    background-color: #2ecc71;
+    box-shadow: 0 0 10px #2ecc71;
+}
+
+.mode-button.hard {
+    background-color: #e74c3c;
+    box-shadow: 0 0 20px 10px orange;
+    animation: fireGlow 0.8s infinite alternate;
+}
+
+@keyframes fireGlow {
+    0% { box-shadow: 0 0 5px red; }
+    100% { box-shadow: 0 0 20px orange; }
+}
+
+.confirm-box {
+    background-color: #ffeaa7;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    box-shadow: 0 0 15px red;
+    text-align: center;
+}
+
+.d-none {
+    display: none;
+}
+
+.fire-border {
+    border: 2px solid red;
+    box-shadow: 0 0 15px orange;
+    animation: fireGlow 0.8s infinite alternate;
+}
+
+.countdown {
+    font-size: 4rem;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin: 1rem 0;
+    animation: popIn 0.5s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
