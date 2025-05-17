@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautyBox - Kozmetik Dünyası</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    
+    <div class="header-container">
+        <div class="top-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <span class="phone-icon"><i class="fas fa-phone"></i></span>
+                        <span class="phone-number">+90 555 123 4567</span>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span class="free-shipping">3000 TL Üzeri Ücretsiz Kargo</span>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <span class="social-icon"><i class="fab fa-facebook"></i></span>
+                        <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                        <span class="social-icon"><i class="fab fa-twitter"></i></span>
+                        <span class="social-icon"><i class="fab fa-youtube"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="row align-items-center py-3">
+                    <div class="col-md-3">
+                        <div class="logo-container">
+                            <h1><span class="beauty">Beauty</span><span class="box">Box</span></h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search-container">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Ürün, marka veya kategori ara...">
+                            <button class="btn btn-dark" id="searchButton"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-end">
+                        <div class="header-buttons">
+                            <span class="header-btn" id="favoriteButton"><i class="far fa-heart"></i> Favoriler</span>
+                            <span class="header-btn" id="cartButton"><i class="fas fa-shopping-cart"></i> Sepetim</span>
+                            <span class="header-btn" id="userButton"><i class="far fa-user"></i> Hesabım</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <span class="nav-item active" data-category="makyaj">Makyaj</span>
+                            <span class="nav-item" data-category="cilt">Cilt Bakımı</span>
+                            <span class="nav-item" data-category="sac">Saç Bakımı</span>
+                            <span class="nav-item" data-category="parfum">Parfüm</span>
+                            <span class="nav-item" data-category="organik">Organik Ürünler</span>
+                            <span class="nav-item" data-category="setler">Hediye Setleri</span>
+                            <span class="nav-item special" data-category="firsat">Fırsat Ürünleri</span>
+                            <span class="nav-item special" data-category="yeni">Yeni Gelenler</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    <div class="main-content">
+        <div class="container">
+           
+            <div class="slider-container">
+                <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           
+                            <div class="carousel-caption">
+                                <h2><span class="highlight">Yaz</span> İndirimleri</h2>
+                                <p><span class="discount">%50'ye varan</span> indirimlerle yaza hazırlanın!</p>
+                                <button class="btn btn-light btn-shop-now">Alışverişe Başla</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            
+                            <div class="carousel-caption">
+                                <h2><span class="highlight">Organik</span> Seriler</h2>
+                                <p>Doğanın <span class="nature">gücünü</span> keşfedin!</p>
+                                <button class="btn btn-light btn-shop-now">Keşfet</button>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                           
+                            <div class="carousel-caption">
+                                <h2><span class="highlight">Yeni</span> Koleksiyon</h2>
+                                <p>2025 <span class="new-season">İlkbahar/Yaz</span> koleksiyonu sizlerle</p>
+                                <button class="btn btn-light btn-shop-now">İncele</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+            
+           
+            <div class="categories-container">
+                <div class="section-title">
+                    <h3><span class="title-text">Kategoriler</span></h3>
+                </div>
+                <div class="categories-wrapper">
+                    <div class="category-box" id="cat1">
+                        <div class="category-img">
+                            <img src="img/i.jpg" alt="Makyaj">
+                        </div>
+                        <span class="category-name">Makyaj</span>
+                    </div>
+                    <div class="category-box" id="cat2">
+                        <div class="category-img">
+                            <img src="img/a.jpg" alt="Cilt Bakımı">
+                        </div>
+                        <span class="category-name">Cilt Bakımı</span>
+                    </div>
+                    <div class="category-box" id="cat3">
+                        <div class="category-img">
+                            <img src="img/b.jpg" alt="Saç Bakımı">
+                        </div>
+                        <span class="category-name">Saç Bakımı</span>
+                    </div>
+                    <div class="category-box" id="cat4">
+                        <div class="category-img">
+                            <img src="img/c.jpg" alt="Parfüm">
+                        </div>
+                        <span class="category-name">Parfüm</span>
+                    </div>
+                    <div class="category-box" id="cat5">
+                        <div class="category-img">
+                            <img src="img/d.jpg" alt="Organik Ürünler">
+                        </div>
+                        <span class="category-name">Organik</span>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <div class="products-container">
+                <div class="section-title">
+                    <h3><span class="title-text">Popüler Ürünler</span></h3>
+                </div>
+                <div class="products-wrapper">
+                    <div class="product-card" id="product1">
+                        <div class="product-badge"><span class="badge-text">YENİ</span></div>
+                        <div class="wishlist-icon" id="wish1"><i class="far fa-heart"></i></div>
+                        <div class="product-image">
+                            <img src="img/e.jpg" alt="Ürün 1">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-brand">L'Oréal Paris</span>
+                            <span class="product-name">Mat Ruj - Kırmızı Tutku</span>
+                            <div class="product-rating">
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star-half-alt"></i></span>
+                                <span class="rating-count">(120)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">199,90 TL</span>
+                                <span class="old-price">249,90 TL</span>
+                                <span class="discount-rate">%20</span>
+                            </div>
+                        </div>
+                        <div class="add-to-cart">
+                            <button class="btn btn-dark btn-cart">Sepete Ekle</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" id="product2">
+                        <div class="product-badge"><span class="badge-text">İNDİRİM</span></div>
+                        <div class="wishlist-icon" id="wish2"><i class="far fa-heart"></i></div>
+                        <div class="product-image">
+                            <img src="img/f.jpg" alt="Ürün 2">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-brand">Nivea</span>
+                            <span class="product-name">Q10 Kırışık Karşıtı Gece Kremi</span>
+                            <div class="product-rating">
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="far fa-star"></i></span>
+                                <span class="rating-count">(85)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">329,90 TL</span>
+                                <span class="old-price">449,90 TL</span>
+                                <span class="discount-rate">%27</span>
+                            </div>
+                        </div>
+                        <div class="add-to-cart">
+                            <button class="btn btn-dark btn-cart">Sepete Ekle</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" id="product3">
+                        <div class="wishlist-icon" id="wish3"><i class="far fa-heart"></i></div>
+                        <div class="product-image">
+                            <img src="img/g.jpg" alt="Ürün 3">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-brand">Maybelline</span>
+                            <span class="product-name">Lash Sensational Maskara</span>
+                            <div class="product-rating">
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="rating-count">(214)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">179,90 TL</span>
+                            </div>
+                        </div>
+                        <div class="add-to-cart">
+                            <button class="btn btn-dark btn-cart">Sepete Ekle</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" id="product4">
+                        <div class="product-badge"><span class="badge-text">TÜKENMEK ÜZERE</span></div>
+                        <div class="wishlist-icon" id="wish4"><i class="far fa-heart"></i></div>
+                        <div class="product-image">
+                            <img src="img/h.jpg" alt="Ürün 4">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-brand">Clinique</span>
+                            <span class="product-name">Dramatically Different Nemlendirici</span>
+                            <div class="product-rating">
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star"></i></span>
+                                <span class="star"><i class="fas fa-star-half-alt"></i></span>
+                                <span class="star"><i class="far fa-star"></i></span>
+                                <span class="rating-count">(98)</span>
+                            </div>
+                            <div class="product-price">
+                                <span class="current-price">589,90 TL</span>
+                                <span class="old-price">649,90 TL</span>
+                                <span class="discount-rate">%9</span>
+                            </div>
+                        </div>
+                        <div class="add-to-cart">
+                            <button class="btn btn-dark btn-cart">Sepete Ekle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="campaign-banner">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="banner-item">
+                            <img src="img/k.jpg" alt="Kampanya 1">
+                            <div class="banner-content">
+                                <span class="banner-title">Yaz Fırsatları</span>
+                                <span class="banner-text">Cildinize özel bakım ürünleri</span>
+                                <span class="banner-btn">İncele</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="banner-item">
+                            <img src="img/l.jpg" alt="Kampanya 2">
+                            <div class="banner-content">
+                                <span class="banner-title">Özel Koleksiyon</span>
+                                <span class="banner-text">Limitli sayıda ürünler</span>
+                                <span class="banner-btn">Keşfet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="bestseller-container">
+                <div class="section-title">
+                    <h3><span class="title-text">Çok Satanlar</span></h3>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover bestseller-table">
+                        <thead>
+                            <tr>
+                                <th scope="col"><span class="th-text">#</span></th>
+                                <th scope="col"><span class="th-text">Ürün</span></th>
+                                <th scope="col"><span class="th-text">Marka</span></th>
+                                <th scope="col"><span class="th-text">Kategori</span></th>
+                                <th scope="col"><span class="th-text">Fiyat</span></th>
+                                <th scope="col"><span class="th-text">Stok</span></th>
+                                <th scope="col"><span class="th-text">İşlem</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><span class="row-index">1</span></th>
+                                <td><span class="product-cell">True Match Fondöten</span></td>
+                                <td><span class="brand-cell">L'Oréal Paris</span></td>
+                                <td><span class="category-cell">Makyaj</span></td>
+                                <td><span class="price-cell">299,90 TL</span></td>
+                                <td><span class="stock-cell">Var</span></td>
+                                <td><button class="btn btn-sm btn-outline-dark">Sepete Ekle</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="row-index">2</span></th>
+                                <td><span class="product-cell">Hyaluronik Asit Serum</span></td>
+                                <td><span class="brand-cell">The Ordinary</span></td>
+                                <td><span class="category-cell">Cilt Bakımı</span></td>
+                                <td><span class="price-cell">270,00 TL</span></td>
+                                <td><span class="stock-cell">Var</span></td>
+                                <td><button class="btn btn-sm btn-outline-dark">Sepete Ekle</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="row-index">3</span></th>
+                                <td><span class="product-cell">Argan Yağlı Saç Bakım Seti</span></td>
+                                <td><span class="brand-cell">Elidor</span></td>
+                                <td><span class="category-cell">Saç Bakımı</span></td>
+                                <td><span class="price-cell">159,90 TL</span></td>
+                                <td><span class="stock-cell">Sınırlı</span></td>
+                                <td><button class="btn btn-sm btn-outline-dark">Sepete Ekle</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="row-index">4</span></th>
+                                <td><span class="product-cell">La Vie Est Belle EDP 50ml</span></td>
+                                <td><span class="brand-cell">Lancôme</span></td>
+                                <td><span class="category-cell">Parfüm</span></td>
+                                <td><span class="price-cell">1.599,00 TL</span></td>
+                                <td><span class="stock-cell">Var</span></td>
+                                <td><button class="btn btn-sm btn-outline-dark">Sepete Ekle</button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><span class="row-index">5</span></th>
+                                <td><span class="product-cell">Sun Protection Güneş Kremi SPF50+</span></td>
+                                <td><span class="brand-cell">Bioderma</span></td>
+                                <td><span class="category-cell">Cilt Bakımı</span></td>
+                                <td><span class="price-cell">349,90 TL</span></td>
+                                <td><span class="stock-cell">Tükenmek Üzere</span></td>
+                                <td><button class="btn btn-sm btn-outline-dark">Sepete Ekle</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Beauty Blog -->
+            <div class="blog-container">
+                <div class="section-title">
+                    <h3><span class="title-text">Güzellik Blogu</span></h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blog-entry">
+                            <div class="blog-image">
+                                <img src="img/l.jpg" alt="Blog 1">
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-date">12 Mayıs 2025</span>
+                                <h4 class="blog-title">Yaz İçin Cilt Bakım Rutini</h4>
+                                <span class="blog-excerpt">Yaz aylarında cildinizi nasıl koruyabilir ve nemlendirebilirsiniz? İşte uzmanlardan tavsiyeler...</span>
+                                <span class="blog-read-more">Devamını Oku</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blog-entry">
+                            <div class="blog-image">
+                                <img src="img/m.jpg" alt="Blog 2">
+                            </div>
+                            <div class="blog-content">
+                                <span class="blog-date">5 Mayıs 2025</span>
+                                <h4 class="blog-title">2025 Makyaj Trendleri</h4>
+                                <span class="blog-excerpt">Bu sezonun en popüler makyaj trendlerini keşfedin ve stilinizi yenileyin...</span>
+                                <span class="blog-read-more">Devamını Oku</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="newsletter-container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="newsletter-content">
+                            <h3><span class="newsletter-title">BeautyBox'a Abone Olun</span></h3>
+                            <p><span class="newsletter-text">Özel indirimler, yeni ürün haberleri ve güzellik ipuçları için e-bültenimize abone olun.</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="newsletter-form">
+                            <input type="email" class="form-control" id="newsletterEmail" placeholder="E-posta adresiniz">
+                            <button class="btn btn-dark" id="newsletterButton">Abone Ol</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-about">
+                        <h5><span class="footer-title">BeautyBox Hakkında</span></h5>
+                        <p><span class="footer-text">BeautyBox, 2020 yılında kurulmuş, kaliteli kozmetik ürünlerini uygun fiyatlarla müşterilerine sunan bir e-ticaret sitesidir.</span></p>
+                        <div class="footer-social">
+                            <span class="footer-social-icon"><i class="fab fa-facebook"></i></span>
+                            <span class="footer-social-icon"><i class="fab fa-instagram"></i></span>
+                            <span class="footer-social-icon"><i class="fab fa-twitter"></i></span>
+                            <span class="footer-social-icon"><i class="fab fa-youtube"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-links">
+                        <h5><span class="footer-title">Hızlı Erişim</span></h5>
+                        <ul class="footer-menu">
+                            <li><span class="footer-link">Anasayfa</span></li>
+                            <li><span class="footer-link">Ürünler</span></li>
+                            <li><span class="footer-link">Kampanyalar</span></li>
+                            <li><span class="footer-link">Blog</span></li>
+                            <li><span class="footer-link">Hakkımızda</span></li>
+                            <li><a href="iletisim.html" class="footer-link">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-links">
+                        <h5><span class="footer-title">Kategoriler</span></h5>
+                        <ul class="footer-menu">
+                            <li><span class="footer-link">Makyaj</span></li>
+                            <li><span class="footer-link">Cilt Bakımı</span></li>
+                            <li><span class="footer-link">Saç Bakımı</span></li>
+                            <li><span class="footer-link">Parfüm</span></li>
+                            <li><span class="footer-link">Organik Ürünler</span></li>
+                            <li><span class="footer-link">Hediye Setleri</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-contact">
+                        <h5><span class="footer-title">İletişim</span></h5>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span class="contact-text">Atatürk Cad. No:123, 34000 İstanbul</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                            <span class="contact-text">+90 555 123 4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="contact-text">info@beautybox.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright">
+                        <p><span class="copyright-text">© 2025 BeautyBox. Tüm hakları saklıdır.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Giriş Yap</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">E-posta</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Şifre</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Beni Hatırla</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Giriş Yap</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span class="forgot-password">Şifremi Unuttum</span>
+                    <span class="register-link">Hesabınız yok mu? Kayıt Ol</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <span class="cart-title">Sepetim</span>
+            <span class="close-cart" id="closeCart"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="cart-items">
+            <div class="empty-cart-message">
+                <span class="empty-text">Sepetinizde ürün bulunmamaktadır.</span>
+                <button class="btn btn-dark">Alışverişe Başla</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>

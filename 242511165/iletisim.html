@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - BeautyBox</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+   
+    <div class="header-container">
+        <div class="top-header">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <span class="phone-icon"><i class="fas fa-phone"></i></span>
+                        <span class="phone-number">+90 555 123 4567</span>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <span class="free-shipping">3000 TL Üzeri Ücretsiz Kargo</span>
+                    </div>
+                    <div class="col-md-4 text-end">
+                        <span class="social-icon"><i class="fab fa-facebook"></i></span>
+                        <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                        <span class="social-icon"><i class="fab fa-twitter"></i></span>
+                        <span class="social-icon"><i class="fab fa-youtube"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="row align-items-center py-3">
+                    <div class="col-md-3">
+                        <div class="logo-container">
+                            <a href="index.html">
+                                <h1><span class="beauty">Beauty</span><span class="box">Box</span></h1>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="search-container">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Ürün, marka veya kategori ara...">
+                            <button class="btn btn-dark" id="searchButton"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-end">
+                        <div class="header-buttons">
+                            <span class="header-btn" id="favoriteButton"><i class="far fa-heart"></i> Favoriler</span>
+                            <span class="header-btn" id="cartButton"><i class="fas fa-shopping-cart"></i> Sepetim</span>
+                            <span class="header-btn" id="userButton"><i class="far fa-user"></i> Hesabım</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="main-nav">
+                            <span class="nav-item" onclick="window.location.href='index.html'">Anasayfa</span>
+                            <span class="nav-item" data-category="makyaj">Makyaj</span>
+                            <span class="nav-item" data-category="cilt">Cilt Bakımı</span>
+                            <span class="nav-item" data-category="sac">Saç Bakımı</span>
+                            <span class="nav-item" data-category="parfum">Parfüm</span>
+                            <span class="nav-item" data-category="organik">Organik Ürünler</span>
+                            <span class="nav-item" data-category="setler">Hediye Setleri</span>
+                            <span class="nav-item active" onclick="window.location.href='iletisim.html'">İletişim</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2><span class="page-title">İletişim</span></h2>
+                    <div class="breadcrumb-nav">
+                        <span class="breadcrumb-item"><a href="index.html">Anasayfa</a></span>
+                        <span class="breadcrumb-separator">/</span>
+                        <span class="breadcrumb-item active">İletişim</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    <div class="contact-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-info-section">
+                        <div class="section-title">
+                            <h3><span class="title-text">İletişim Bilgilerimiz</span></h3>
+                        </div>
+                        
+                        <div class="contact-info-items">
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <span class="icon-circle"><i class="fas fa-map-marker-alt"></i></span>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-title">Adres</span>
+                                    <span class="contact-text">Atatürk Cad. No:123, 34000 İstanbul, Türkiye</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <span class="icon-circle"><i class="fas fa-phone"></i></span>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-title">Telefon</span>
+                                    <span class="contact-text">+90 555 123 4567</span>
+                                    <span class="contact-text">+90 212 123 4567</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <span class="icon-circle"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-title">E-posta</span>
+                                    <span class="contact-text">info@beautybox.com</span>
+                                    <span class="contact-text">destek@beautybox.com</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-icon">
+                                    <span class="icon-circle"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-title">Çalışma Saatleri</span>
+                                    <span class="contact-text">Pazartesi - Cuma: 09:00 - 18:00</span>
+                                    <span class="contact-text">Cumartesi: 10:00 - 15:00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-media-section">
+                            <div class="section-subtitle">
+                                <h4><span class="subtitle-text">Sosyal Medyada Biz</span></h4>
+                            </div>
+                            <div class="social-icons">
+                                <span class="social-icon-large"><i class="fab fa-facebook"></i></span>
+                                <span class="social-icon-large"><i class="fab fa-instagram"></i></span>
+                                <span class="social-icon-large"><i class="fab fa-twitter"></i></span>
+                                <span class="social-icon-large"><i class="fab fa-youtube"></i></span>
+                                <span class="social-icon-large"><i class="fab fa-linkedin"></i></span>
+                                <span class="social-icon-large"><i class="fab fa-tiktok"></i></span>
+                            </div>
+                        </div>
+                        
+                        <div class="map-section">
+                            <div class="section-subtitle">
+                                <h4><span class="subtitle-text">Haritada Biz</span></h4>
+                            </div>
+                            <div class="map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.1395421840955!2d28.97606231118711!3d41.03571837134826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab7650656bd63%3A0x8ca058b28c20b6c3!2sTaksim%20Square!5e0!3m2!1sen!2sus!4v1696789565155!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="contact-form-section">
+                        <div class="section-title">
+                            <h3><span class="title-text">İletişim Formu</span></h3>
+                        </div>
+                        
+                        <div class="contact-form-description">
+                            <p><span class="form-description-text">Aşağıdaki formu doldurarak bize ulaşabilirsiniz. En kısa sürede sizinle iletişime geçeceğiz.</span></p>
+                        </div>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="firstName" class="form-label">Ad <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="firstName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Soyad <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-posta <span class="required">*</span></label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Telefon</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Konu <span class="required">*</span></label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mesajınız <span class="required">*</span></label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="orderNumber" class="form-label">Sipariş Numarası</label>
+                                <input type="text" class="form-control" id="orderNumber">
+                                <small class="form-text text-muted">Eğer bir siparişiniz hakkında iletişime geçiyorsanız, sipariş numaranızı giriniz.</small>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="department" class="form-label">Departman</label>
+                                <select class="form-select" id="department">
+                                    <option value="">Seçiniz</option>
+                                    <option value="sales">Satış</option>
+                                    <option value="support">Müşteri Hizmetleri</option>
+                                    <option value="technical">Teknik Destek</option>
+                                    <option value="billing">Fatura/Ödeme</option>
+                                    <option value="other">Diğer</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="uploadFile" class="form-label">Dosya Ekle</label>
+                                <input type="file" class="form-control" id="uploadFile">
+                                <small class="form-text text-muted">Maksimum dosya boyutu: 5MB</small>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter">
+                                <label class="form-check-label" for="newsletter">BeautyBox bültenine abone olmak istiyorum</label>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="terms" required>
+                                <label class="form-check-label" for="terms">KVKK şartlarını okudum ve kabul ediyorum <span class="required">*</span></label>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label d-block">İletişim Tercihi</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="contactPreference" id="contactEmail" value="email" checked>
+                                    <label class="form-check-label" for="contactEmail">E-posta</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="contactPreference" id="contactPhone" value="phone">
+                                    <label class="form-check-label" for="contactPhone">Telefon</label>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-dark btn-lg">Gönder</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="faq-section">
+                        <div class="section-title">
+                            <h3><span class="title-text">Sıkça Sorulan Sorular</span></h3>
+                        </div>
+                        
+                        <div class="accordion" id="faqAccordion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <span class="faq-question">Siparişim ne zaman kargolanır?</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <span class="faq-answer">Siparişleriniz genellikle ödeme onayından sonra 24 saat içerisinde kargoya verilir. Hafta sonu ve resmi tatillerde sipariş hazırlama süremiz uzayabilir.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <span class="faq-question">Kargo ücreti ne kadar?</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <span class="faq-answer">3000 TL ve üzeri alışverişlerinizde kargo ücretsizdir. 3000 TL altındaki siparişlerinizde 29.90 TL kargo ücreti uygulanmaktadır.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <span class="faq-question">İade sürecini nasıl başlatabilirim?</span>
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <span class="faq-answer">İade işlemleriniz için hesabınızdaki "Siparişlerim" bölümünden ilgili siparişi seçip "İade Talebi Oluştur" butonuna tıklayabilirsiniz. İade koşulları ve süreci hakkında detaylı bilgi burada verilecektir.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="footer-about">
+                        <h5><span class="footer-title">BeautyBox Hakkında</span></h5>
+                        <p><span class="footer-text">BeautyBox, 2020 yılında kurulmuş, kaliteli kozmetik ürünlerini uygun fiyatlarla müşterilerine sunan bir e-ticaret sitesidir.</span></p>
+                        <div class="footer-social">
+                            <span class="footer-social-icon"><i class="fab fa-facebook"></i></span>
+                            <span class="footer-social-icon"><i class="fab fa-instagram"></i></span>
+                            <span class="footer-social-icon"><i class="fab fa-twitter"></i></span>
+                            <span class="footer-social-icon"><i class="fab fa-youtube"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-links">
+                        <h5><span class="footer-title">Hızlı Erişim</span></h5>
+                        <ul class="footer-menu">
+                            <li><a href="index.html" class="footer-link">Anasayfa</a></li>
+                            <li><span class="footer-link">Ürünler</span></li>
+                            <li><span class="footer-link">Kampanyalar</span></li>
+                            <li><span class="footer-link">Blog</span></li>
+                            <li><span class="footer-link">Hakkımızda</span></li>
+                            <li><a href="iletisim.html" class="footer-link">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-links">
+                        <h5><span class="footer-title">Kategoriler</span></h5>
+                        <ul class="footer-menu">
+                            <li><span class="footer-link">Makyaj</span></li>
+                            <li><span class="footer-link">Cilt Bakımı</span></li>
+                            <li><span class="footer-link">Saç Bakımı</span></li>
+                            <li><span class="footer-link">Parfüm</span></li>
+                            <li><span class="footer-link">Organik Ürünler</span></li>
+                            <li><span class="footer-link">Hediye Setleri</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="footer-contact">
+                        <h5><span class="footer-title">İletişim</span></h5>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span class="contact-text">Atatürk Cad. No:123, 34000 İstanbul</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                            <span class="contact-text">+90 555 123 4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="contact-text">info@beautybox.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright">
+                        <p><span class="copyright-text">© 2025 BeautyBox. Tüm hakları saklıdır.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Giriş Yap</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">E-posta</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Şifre</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Beni Hatırla</label>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Giriş Yap</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span class="forgot-password">Şifremi Unuttum</span>
+                    <span class="register-link">Hesabınız yok mu? Kayıt Ol</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <span class="cart-title">Sepetim</span>
+            <span class="close-cart" id="closeCart"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="cart-items">
+            <div class="empty-cart-message">
+                <span class="empty-text">Sepetinizde ürün bulunmamaktadır.</span>
+                <button class="btn btn-dark">Alışverişe Başla</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="overlay" id="overlay"></div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+    <script src="JS/contact.js"></script>
+</body>
+</html>
