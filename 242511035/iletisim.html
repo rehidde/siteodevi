@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Kitap Öneri Platformu</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg custom-navbar shadow">
+        <div class="container">
+          <a class="navbar-brand" href="#">📚 KitapDünyası</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Ana Sayfa</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">İletişim</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Bize Ulaşın</h2>
+            <span class="form-description">Sorularınız ve önerileriniz için formu doldurabilirsiniz.</span>
+            
+            <form id="contactForm" class="mt-4">
+                <!--İsim ve Soyisim -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Adınız</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="surname" class="form-label">Soyadınız</label>
+                        <input type="text" class="form-control" id="surname" required>
+                    </div>
+                </div>
+
+                <!-- Email ve Telefon Yan Yana -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email Adresiniz</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Telefon Numaranız</label>
+                        <input type="tel" class="form-control" id="phone">
+                    </div>
+                </div>
+
+                <!-- Doğum Tarihi ve Şehir  -->
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="birthdate" class="form-label">Doğum Tarihiniz</label>
+                        <input type="date" class="form-control" id="birthdate">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="city" class="form-label">Şehir</label>
+                        <select class="form-select" id="city">
+                            <option value="">Seçiniz</option>
+                            <option value="istanbul">İstanbul</option>
+                            <option value="ankara">Ankara</option>
+                            <option value="İzmir">İzmir</option>
+                            <option value="Antalya">Antalya</option>
+                            <option value="Kırşehir">Kırşehir</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Diğer Form Elemanları -->
+                <div class="mb-3">
+                    <label for="favoriteGenre" class="form-label">Favori Kitap Türünüz</label>
+                    <input type="text" class="form-control" id="favoriteGenre" list="genres">
+                    <datalist id="genres">
+                        <option value="Roman">
+                        <option value="Kişisel Gelişim">
+                        <option value="Klasikler">
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mesajınız</label>
+                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="newsletter">
+                    <label class="form-check-label" for="newsletter">Bültenimize abone olmak istiyorum</label>
+                </div>
+                <div class="mb-3">
+                    <label for="avatar" class="form-label">Profil Resmi (Opsiyonel)</label>
+                    <input type="file" class="form-control" id="avatar">
+                </div>
+                <button type="submit" class="btn btn-primary">Gönder</button>
+            </form>
+        </div>
+        <!-- Sağ taraf aynı kalacak -->
+        <div class="col-md-6">
+            <!-- ... mevcut içerik ... -->
+        </div>
+    </div>
+</div>
+
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h3>İletişim Bilgileri</h3>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <span class="info-text">1234 Kitap Sokak, İstanbul</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <span class="info-text">+90 555 123 45 67</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✉️</span>
+                        <span class="info-text">info@kitapdunyasi.com</span>
+                    </div>
+                </div>
+                
+                <div class="mt-5">
+                    <h4>Üye Girişi</h4>
+                    <form id="loginForm">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Kullanıcı Adı</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Şifre</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Giriş Yap</button>
+                        <button type="button" class="btn btn-link" onclick="showRegisterForm()">Üye Ol</button>
+                    </form>
+                    
+                    <div id="registerForm" style="display:none;">
+                        <h4 class="mt-4">Yeni Üyelik</h4>
+                        <form>
+                            <div class="mb-3">
+                                <label for="newUsername" class="form-label">Kullanıcı Adı</label>
+                                <input type="text" class="form-control" id="newUsername" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="newPassword" class="form-label">Şifre</label>
+                                <input type="password" class="form-control" id="newPassword" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Şifre Tekrar</label>
+                                <input type="password" class="form-control" id="confirmPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sohbet Odası -->
+    <div class="container mt-5 mb-5">
+        <h3>Kitap Severlerle Sohbet</h3>
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message">
+                    <span class="message-user">Admin:</span>
+                    <span class="message-text">Hoş geldiniz! Kitap önerilerinizi paylaşabilirsiniz.</span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" class="form-control" placeholder="Mesajınızı yazın...">
+                <button class="btn btn-primary" onclick="sendMessage()">Gönder</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>

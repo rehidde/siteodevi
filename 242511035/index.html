@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitap Öneri Platformu</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg custom-navbar shadow">
+    <div class="container">
+      <a class="navbar-brand" href="#">📚 KitapDünyası</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Ana Sayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="iletisim.html">İletişim</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+    <!-- Başlık Alanı -->
+    <div class="hero-section text-center py-5">
+        <h1>Kitap Öneri Platformuna Hoş Geldiniz</h1>
+        <span class="hero-subtitle">En iyi kitap önerileri burada!</span>
+    </div>
+
+    <!-- Kategoriler -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Kategoriler</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="showBooks('roman')">
+                    <img src="IMG/ROMAN/lotr.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/HOBBIT.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/kizil.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/KULE.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/SAPIK.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/Brave.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/Psikiyatrist.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/kinyas.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/sayijpg.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/siyah.jpg" class="card-img-top" alt="Roman">
+                    <img src="IMG/ROMAN/dune.jpg" class="card-img-top" alt="Roman">
+                    <div class="card-body">
+                        <h5 class="card-title">Roman</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="showBooks('kisisel')">
+                    <img src="IMG/KISISEL/zafer.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    <img src="IMG/KISISEL/beden.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    <img src="IMG/KISISEL/okumak.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    <img src="IMG/KISISEL/oyun.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    <img src="IMG/KISISEL/Psikoloji.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    <img src="IMG/KISISEL/tong.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    <img src="IMG/KISISEL/yalan.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    <img src="IMG/KISISEL/iyi.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    <img src="IMG/KISISEL/incog.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    <img src="IMG/KISISEL/insanoyun.jpg" class="card-img-top" alt="Kişisel Gelişim">
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">Kişisel Gelişim</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="showBooks('klasik')">
+                    <img src="IMG/KLASIK/sefiller.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/KLASIK/16161766.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/KLASIK/0002041557001-1.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/KLASIK/don_kisot-1398.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/KLASIK/mockingbird.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/KLASIK/Pride.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/KLASIK/suç.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/KLASIK/karamazov.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/KLASIK/anna-karenina.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/KLASIK/yeraltı.jpg" class="card-img-top" alt="Klasikler">
+                    <div class="card-body">
+                        <h5 class="card-title">Dünya Klasikleri</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card category-card" onclick="showBooks('Felsefe')">
+                    <img src="IMG/FELSEFE/AYNRAND.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/agustus.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/ahlak.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/albert.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/aristo.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/arthur.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/david.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/decart.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/niche.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/aynran.jpg" class="card-img-top" alt="Felsefe">
+                    <img src="IMG/FELSEFE/thomas.jpg" class="card-img-top" alt="Felsefe">
+                    <div class="card-body">
+                    <h5 class="card-title">Felsefe</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+               <div class="card category-card" onclick="showBooks('Tarih')">
+                    <img src="IMG/TARİH/Amerika.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/TARİH/birinci.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/TARİH/bizans.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/TARİH/dummies.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/TARİH/gerilla.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/TARİH/hitler.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/TARİH/işgal.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/TARİH/osmanlı.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/TARİH/reform.jpg" class="card-img-top" alt="Klasikler">
+                    <img src="IMG/TARİH/yahudi.jpg" class="card-img-top" alt="Klasikler">
+                    <div class="card-body">
+                    <h5 class="card-title">Tarih</h5>
+                    </div>
+                </div>
+            </div>
+            
+                </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Popüler Kitaplar Tablosu -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Her Kategorinin En İyisi</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Kategori</th><th>Kitap Adı</th><th>Yazar</th><th>Kategori</th><th>Puan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Roman</td><td>Yüzüklerin Efendisi</td><td>J.R.R. Tolkien</td><td>4.9</td></tr>
+                <tr><td>Kisisel Gelisim</td><td>Tonge Fu</td><td>Sam Horn</td><td>4.5</td></tr>
+                <tr><td>Dünya Klasikleri</td><td>Suç ve Ceza</td><td>Fyodor Dostoyevski</td><td>4.8</td></tr>
+                <tr><td>Felsefe</td><td>Yaşam Kaynağı</td><td>Ayn Rand</td><td>4.7</td></tr>
+                <tr><td>Tarih</td><td>Görülmeyen Ordular</td><td>Max Boot</td><td>4.8</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Video Alanı -->
+    <div class="container my-5">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/3n1sXfqJzhk" frameborder="0" allowfullscreen></iframe>
+
+
+    </div>
+
+    <script src="JS/jquery.min.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>
