@@ -1,0 +1,206 @@
+/* Genel Stil Ayarları */
+body {
+    font-family: 'Arial', sans-serif; /* Yazı tipi */
+    background-color: #fffad7; /* Sayfa arka plan rengi */
+    color: #495057;  /* Metin rengi */
+}
+  
+
+
+/* Header ve Navbar (Başlık ve Menü) */
+header {
+    background-color: #6b2d2d; /* Başlık alanının arka plan rengi */
+    padding: 20px; /* Başlık alanının iç boşluğu */
+    text-align: center; /* Başlık metninin ortalanması */
+}
+
+nav {
+    background-color: #ffb3b3; /* Menü arka plan rengi */
+    padding: 10px; /* Menü iç boşluğu */
+    text-align: center; /* Menü elemanlarının ortalanması */
+}
+
+
+
+/* Menü Bağlantıları */
+nav a {
+    color: #fff; /* Menü bağlantılarının rengi */
+    text-decoration: none; /* Bağlantı alt çizgisini kaldırır */
+    padding: 10px 20px; /* Bağlantı iç boşluğu */
+    margin: 5px; /* Bağlantılar arasındaki boşluk */
+    font-weight: bold; /* Bağlantı metninin kalın olması */
+}
+
+nav a:hover {
+    background-color: #ff6666; /* Bağlantı üzerine gelindiğinde arka plan rengi */
+}
+
+
+
+/* Ürün Listesi */
+#urunListesi {
+    display: flex; /* Flexbox düzeni ile öğeleri sıralar */
+    flex-wrap: wrap; /* Öğelerin taşmasını engeller */
+    justify-content: space-around; /* Öğeleri yatayda eşit şekilde yerleştirir */
+    margin: 20px;
+}
+
+.urun {
+    background-color: #ffffff; /* Ürün kartlarının arka plan rengi */
+    border: 2px solid #ff6666; /* Ürün kartlarının kenar rengi */
+    margin: 10px; /* Ürün kartları arasındaki boşluk */
+    width: 200px; /* Ürün kartı genişliği */
+    text-align: center; /* Ürün içeriğinin ortalanması */
+    padding: 10px; /* Ürün kartı iç boşluğu */
+    border-radius: 10px; /* Ürün kartlarının köşe yuvarlaklığı */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ürün kartına gölge ekler */
+}
+
+.urun img {
+    width: 100%; /* Ürün resminin genişliği */
+    border-radius: 10px; /* Resim köşe yuvarlaklığı */
+}
+
+.urun h4 {
+    margin: 10px 0; /* Başlık etrafında boşluk */
+}
+
+.urun .fiyat {
+    color: #ff6666; /* Fiyatın rengi */
+    font-weight: bold; /* Fiyatın kalın yazılması */
+}
+
+
+
+/* İletişim Formu */
+#iletisimFormu {
+    background-color: #ffffff; /* Form arka plan rengi */
+    padding: 20px; /* Form iç boşluğu */
+    border-radius: 10px; /* Formun köşe yuvarlaklığı */
+    border: 1px solid #ffb3b3; /* Form kenar rengi */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Formun gölgesi */
+    margin: 20px auto; /* Formun sayfa ortasına yerleşmesi */
+    width: 80%; /* Form genişliği */
+}
+
+#iletisimFormu input, #iletisimFormu textarea {
+    width: 100%; /* Form elemanlarının genişliği */
+    padding: 10px; /* Eleman iç boşluğu */
+    margin: 10px 0; /* Elemanlar arasındaki boşluk */
+    border-radius: 5px; /* Eleman köşe yuvarlaklığı */
+    border: 1px solid #ffcccc; /* Eleman kenar rengi */
+}
+
+#iletisimFormu input[type="submit"] {
+    background-color: #ff6666; /* Gönder butonunun arka plan rengi */
+    color: white; /* Gönder butonu metin rengi */
+    cursor: pointer; /* Butona tıklanabilir işareti */
+}
+
+#iletisimFormu input[type="submit"]:hover {
+    background-color: #ff3333; /* Buton üzerine gelindiğinde arka plan rengi */
+}
+
+
+
+/* Tablo */
+#urunTablosu {
+    width: 100%; /* Tablo genişliği */
+    margin-top: 20px; /* Tablo ile üst arasındaki boşluk */
+    border-collapse: collapse; /* Hücre sınırlarının birleşmesi */
+}
+
+#urunTablosu th, #urunTablosu td {
+    padding: 10px; /* Hücre iç boşluğu */
+    border: 1px solid #ddd; /* Hücre kenar rengi */
+    text-align: center; /* Metinlerin ortalanması */
+}
+
+#urunTablosu th {
+    background-color: #ffccd5; /* Başlık hücresinin arka plan rengi */
+}
+
+#urunTablosu tr:nth-child(even) {
+    background-color: #f2f2f2; /* Çift sıraların arka plan rengi */
+}
+
+
+
+/* Footer (Alt Bilgi) */
+footer {
+    background-color: #ffccd5; /* Alt bilginin arka plan rengi */
+    text-align: center; /* Metnin ortalanması */
+    padding: 10px; /* İç boşluk */
+    height: 45px; /* Yükseklik */
+    position: fixed; /* Sabit alt bilgi */
+    width: 100%; /* Genişlik */
+    bottom: 0; /* Sayfanın en altına yerleşmesi */
+}
+
+
+
+/* İframe (Harici İçerik Gösterme) */
+iframe {
+    width: 100%; /* Genişlik */
+    height: 400px; /* Yükseklik */
+    border: none; /* Çerçeve yok */
+    border-radius: 10px; /* Köşe yuvarlaklığı */
+}
+
+
+
+/* ======= Header ve Menü Renk Değişiklikleri ======= */
+.pastane-header {
+    background-color: #ff6f61; /* Başlık alanı için yeni renk */
+    color: white; /* Yazı rengi */
+}
+
+.pastane-nav {
+    background-color: #ffb3c1; /* Menü arka plan rengi */
+    padding: 10px;
+    width: 100%; /* Menü genişliği */
+    text-align: center; /* Menü elemanlarının ortalanması */
+}
+
+.pastane-nav a {
+    color: #fff; /* Menü bağlantılarının rengi */
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    padding: 10px 20px; /* İç boşluk */
+    margin: 5px; /* Bağlantılar arasındaki boşluk */
+    font-weight: bold; /* Kalın yazı tipi */
+}
+
+.pastane-nav a:hover {
+    background-color: #ff4d6d; /* Üzerine gelindiğinde arka plan rengi */
+}
+
+/* Diğer Stil Ayarları Burada */
+
+/* Tatlı Pastanem Yazısı Fontu */
+#tatliPastanem {
+    font-family: 'Pacifico', cursive; /* Sevimli ve vurgulu font */
+    font-size: 50px; /* Yazı boyutu */
+    color: #9b4646; /* Renk seçimi (pastane renklerine uygun) */
+    text-align: center;
+    margin-top: 20px; /* Üst kısma boşluk ekler */
+    margin-bottom: 26px; /* Alt boşluk eklendi */
+}
+
+/* Lezzetli Mini Pastalarımız Yazısı Fontu */
+#lezzetliMiniPastalar {
+    font-family: 'Quicksand', sans-serif; /* Tatlı ve şık font */
+    font-size: 28px; /* Yazı boyutu */
+    color: #ff6f61; /* Yumuşak tatlı bir renk tonu */
+    text-align: center;
+    margin-top: 10px;
+}
+
+#iletisimBaslik {
+    font-size: 36px; /* İstediğin büyüklüğü yazabilirsin, örnek: 36px */
+    font-family: 'Quicksand', sans-serif; /* Ya da başka bir font */
+    color: #9b4646; /* Renk örneği */
+    margin-top: 15px; /* Üst boşluk istersen */
+}
+
+
+

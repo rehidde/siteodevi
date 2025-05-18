@@ -1,0 +1,229 @@
+<!-- HTML belgesi olduğunu belirtir ve dilin Türkçe olduğunu tanımlar -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+     <!-- Türkçe karakter desteği sağlar -->
+    <meta charset="UTF-8">
+    <!-- Mobil uyumlu görüntüleme sağlar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sayfa başlığı -->
+    <title>Tatlı Pastanem</title>
+     <!-- Bootstrap CSS bağlantısı (hızlı ve şık tasarım için) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+      <!-- Yerel CSS dosyanız -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts Linkleri -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Sayfanın üst kısmı: başlık ve gezinme menüsü -->
+    <header class="pastane-header text-center p-4">
+    <h1 id="tatliPastanem" class="display-4">Tatlı Pastanem</h1>
+    <nav class="pastane-nav">
+        <a href="index.html" class="mx-3">Ana Sayfa</a>
+        <a href="iletisim.html" class="mx-3">İletişim</a>
+    </nav>
+    </header>
+
+    <!-- İçerik alanı -->
+    <div class="container mt-4">
+        <h2 id="lezzetliMiniPastalar" class="text-center mb-4">Lezzetli Mini Pastalarımız</h2>
+        <div class="row">
+            <!-- ÜRÜNLER -->
+            <!-- Ürün kartlarının her biri .col-md-4 ile 3 sütunlu yapıda yerleştirilmiş -->
+            <!-- Birinci Ürün -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/ahududuluPasta.jpg" class="card-img-top" alt="Kapkek Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">Ahududulu Pasta <span class="badge bg-success">260 TL</span></h5>
+                        <p class="card-text">Canlı rengi ve hafif ekşiliğiyle ferahlatıcı bir tat.</p>
+                        <button onclick="favorilereEkle(this)" class="btn btn-outline-danger">Favorilere Ekle</button>
+                        <span class="favoriDurumu ms-2"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- İkinci Ürün -->
+        <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/aronyaliPasta.jpg" class="card-img-top" alt="Kapkek Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">Aronyalı Pasta <span class="badge bg-success">270 TL</span></h5>
+                        <p class="card-text">Nadir bulunan aronya meyvesiyle hazırlanan özel lezzet.</p>
+                        <button onclick="favorilereEkle(this)" class="btn btn-outline-danger">Favorilere Ekle</button>
+                        <span class="favoriDurumu ms-2"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Üçüncü Ürün -->
+             <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/bogurtlenliPasta.jpg" class="card-img-top" alt="Kapkek Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">Böğürtlenli Pasta <span class="badge bg-success">260 TL</span></h5>
+                        <p class="card-text">Taze böğürtlenlerle bezenmiş nefis meyve aroması.</p>
+                        <button onclick="favorilereEkle(this)" class="btn btn-outline-danger">Favorilere Ekle</button>
+                        <span class="favoriDurumu ms-2"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Dördüncü Ürün -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/cikolataliPasta.jpg" class="card-img-top" alt="Kapkek Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">Çikolatalı Pasta <span class="badge bg-success">260 TL</span></h5>
+                        <p class="card-text">Yoğun çikolata severlere özel yumuşacık katmanlar.</p>
+                        <button onclick="favorilereEkle(this)" class="btn btn-outline-danger">Favorilere Ekle</button>
+                        <span class="favoriDurumu ms-2"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Beşinci Ürün -->
+            <div class="col-md-4 mb-4">
+                <div class="card"> <!-- Bootstrap kart bileşeni -->
+                    <img src="img/cilekliPasta.jpg" class="card-img-top" alt="Kapkek Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">Çilekli Pasta <span class="badge bg-success">260 TL</span></h5> <!-- Ürün adı ve fiyat etiketi -->
+                        <p class="card-text">Taptaze çileklerle süslenmiş hafif ve lezzetli bir klasik.</p>
+                        <button onclick="favorilereEkle(this)" class="btn btn-outline-danger">Favorilere Ekle</button> <!-- Favori butonu -->
+                        <span class="favoriDurumu ms-2"></span> <!-- Butonun sonucunu gösterecek alan -->
+                    </div>
+                </div>
+            </div>
+            <!-- Altıncı Ürün -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/kremaliPasta.jpg" class="card-img-top" alt="Kapkek Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">Kremalı Pasta <span class="badge bg-success">250 TL</span></h5>
+                        <p class="card-text">İpeksi krema dolgusu ile klasik bir tatlı keyfi.</p>
+                        <button onclick="favorilereEkle(this)" class="btn btn-outline-danger">Favorilere Ekle</button>
+                        <span class="favoriDurumu ms-2"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Yedinci Ürün -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/oreoluPasta.jpg" class="card-img-top" alt="Kapkek Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">Oreolu Pasta <span class="badge bg-success">260 TL</span></h5>
+                        <p class="card-text">Kremasıyla birleşen bol oreolu katlar sizi bekliyor.</p>
+                        <button onclick="favorilereEkle(this)" class="btn btn-outline-danger">Favorilere Ekle</button>
+                        <span class="favoriDurumu ms-2"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Sekizinci Ürün -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/vanilyaliPasta.jpg" class="card-img-top" alt="Kapkek Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">Vanilyalı Pasta <span class="badge bg-success">250 TL</span></h5>
+                        <p class="card-text">Sade ve hafif lezzet arayanlar için vanilyalı nefis katlar.</p>
+                        <button onclick="favorilereEkle(this)" class="btn btn-outline-danger">Favorilere Ekle</button>
+                        <span class="favoriDurumu ms-2"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Dokuzuncu Ürün -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/yabanmersinliPasta.jpg" class="card-img-top" alt="Kapkek Foto">
+                    <div class="card-body">
+                        <h5 class="card-title">Yaban Mersinli Pasta <span class="badge bg-success">270 TL</span></h5>
+                        <p class="card-text">Tatlı-ekşi dengesiyle damakta iz bırakan yaban mersinli pasta.</p>
+                        <button onclick="favorilereEkle(this)" class="btn btn-outline-danger">Favorilere Ekle</button>
+                        <span class="favoriDurumu ms-2"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tablo başlığı -->
+        <h3 class="mt-5">Kek Bilgileri Tablosu</h3>
+        <!-- Ürünlerin özetlendiği tablo -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ürün</th>
+                    <th>Fiyat</th>
+                    <th>Kategori</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span>Ahududulu Pasta</span></td>
+                    <td><span>260 TL</span></td>
+                    <td><span>Pasta</span></td>
+                </tr>
+                <tr>
+                    <td><span>Aronyalı Pasta</span></td>
+                    <td><span>270 TL</span></td>
+                    <td><span>Pasta</span></td>
+                </tr>
+                <tr>
+                    <td><span>Böğürtlenli Pasta</span></td>
+                    <td><span>260 TL</span></td>
+                    <td><span>Pasta</span></td>
+                </tr>
+                <tr>
+                    <td><span>Çikolatalı Pasta</span></td>
+                    <td><span>260 TL</span></td>
+                    <td><span>Pasta</span></td>
+                </tr>
+                <tr>
+                    <td><span>Çilekli Pasta</span></td>
+                    <td><span>260 TL</span></td>
+                    <td><span>Pasta</span></td>
+                </tr>
+                <tr>
+                    <td><span>Kremalı Pasta</span></td>
+                    <td><span>250 TL</span></td>
+                    <td><span>Pasta</span></td>
+                </tr>
+                <tr>
+                    <td><span>Oreolu Pasta</span></td>
+                    <td><span>260 TL</span></td>
+                    <td><span>Pasta</span></td>
+                </tr>
+                <tr>
+                    <td><span>Vanilyalı Pasta</span></td>
+                    <td><span>250 TL</span></td>
+                    <td><span>Pasta</span></td>
+                </tr>
+                <tr>
+                    <td><span>Yaban Mersinli Pasta</span></td>
+                    <td><span>270 TL</span></td>
+                    <td><span>Pasta</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- YouTube iframe: tanıtım videosu -->
+        <h3 class="mt-5">Pastane Tanıtımı</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xVWwDc5aNDM?si=MylEEuFjYL5Tw47j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+     <!-- Sayfa alt bilgisi (footer) -->
+    <footer class="bg-dark text-white text-center p-3 mt-5">
+        <p>&copy; 2025 Tatlı Pastanem</p>
+    </footer>
+    
+    <!-- jQuery kütüphanesi -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <!-- JavaScript dosyası -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
