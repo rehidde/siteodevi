@@ -1,0 +1,290 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f1e9;
+    color: #4a3728;
+    margin: 0;
+    padding: 0;
+}
+
+.bg-coffee {
+    background-color: #6f4e37;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: #fff !important;
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffeb3b !important;
+}
+
+.section-title {
+    font-weight: 600;
+    color: #6f4e37;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.about-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5a4636;
+}
+
+.coffee-card {
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.coffee-card:hover {
+    transform: translateY(-5px);
+}
+
+.coffee-card img {
+    border-radius: 10px;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.reservation-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.reservation-btn {
+    background-color: #ffca28 !important;
+    color: #4a3728 !important;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.reservation-btn:hover {
+    background-color: #ffb300 !important;
+}
+
+.price-section {
+    margin-top: 2rem;
+}
+
+.modern-table {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border-collapse: collapse;
+}
+
+.modern-table th,
+.modern-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.modern-table th {
+    background-color: #6f4e37;
+    color: #fff;
+}
+
+.modern-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.modern-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.modern-btn {
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+}
+
+.modern-btn:hover {
+    transform: scale(1.05);
+}
+
+.modern-alert {
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.contact-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-modern {
+    background-color: #6f4e37;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-link {
+    color: #ffca28;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem; 
+    }
+
+    .nav-link {
+        font-size: 0.9rem; 
+        padding: 8px 12px; 
+    }
+
+    .reservation-btn {
+        font-size: 0.85rem;
+        padding: 6px 12px; 
+    }
+
+   
+    .section-title {
+        font-size: 1.5rem; 
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    h3 {
+        font-size: 1.2rem; 
+    }
+
+    .about-section p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+   
+    .coffee-card {
+        padding: 10px; 
+    }
+
+    .coffee-card img {
+        max-height: 120px;
+    }
+
+    .coffee-card span {
+        font-size: 0.9rem;
+    }
+
+    .coffee-card button {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+
+  
+    .modern-table {
+        font-size: 0.85rem; 
+        overflow-x: auto; 
+        display: block; 
+    }
+
+    .modern-table th,
+    .modern-table td {
+        padding: 8px;
+        min-width: 100px; 
+    }
+
+  
+    .reservation-section {
+        padding: 15px; 
+    }
+
+    .reservation-section .form-label {
+        font-size: 0.9rem;
+    }
+
+    .reservation-section .form-control {
+        font-size: 0.9rem; 
+        padding: 6px; 
+    }
+
+    .reservation-section button {
+        font-size: 0.9rem;
+        padding: 8px 16px; 
+    }
+
+    
+    iframe {
+        height: 200px; 
+        width: 100%; 
+    }
+
+   
+    .modern-btn {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    
+    .contact-section {
+        padding: 15px; 
+    }
+
+    .contact-section p {
+        font-size: 0.9rem;
+    }
+
+   
+    .footer-modern p {
+        font-size: 0.9rem; 
+    }
+
+    .footer-link {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    
+    .section-title {
+        font-size: 1.3rem; 
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .coffee-card img {
+        max-height: 100px; 
+    }
+
+    .modern-table th,
+    .modern-table td {
+        padding: 6px; 
+        min-width: 80px;
+    }
+
+    .reservation-section .form-label,
+    .reservation-section .form-control,
+    .reservation-section button {
+        font-size: 0.85rem;
+    }
+}

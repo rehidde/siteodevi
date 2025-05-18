@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevgilim ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #fad0c4 51%, #ff9a9e 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .surprise-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            animation: slideIn 1s ease-out, glow 2s infinite alternate;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 8px 32px rgba(255, 105, 180, 0.2);
+            }
+            100% {
+                box-shadow: 0 8px 32px rgba(255, 105, 180, 0.6);
+            }
+        }
+
+        .surprise-box h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff4d4d;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(255, 77, 77, 0.5);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .surprise-box p {
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .heart {
+            color: #ff4d4d;
+            font-size: 3rem;
+            animation: pulse 1.5s infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #ff4d4d, #ff9a9e);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+            animation: fadeIn 2s ease-in;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.6);
+            background: linear-gradient(45deg, #ff9a9e, #ff4d4d);
+        }
+
+        .hearts-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart-particle {
+            position: absolute;
+            color: #ff4d4d;
+            font-size: 1.5rem;
+            opacity: 0.3;
+            animation: float 5s infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-20vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .surprise-box {
+                padding: 20px;
+                width: 95%;
+            }
+
+            .surprise-box h1 {
+                font-size: 2rem;
+            }
+
+            .surprise-box p {
+                font-size: 1rem;
+            }
+
+            .heart {
+                font-size: 2rem;
+            }
+
+            .back-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-background">
+        <script>
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement('div');
+                heart.className = 'heart-particle';
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                document.querySelector('.hearts-background').appendChild(heart);
+            }
+        </script>
+    </div>
+    <div class="surprise-box">
+        <h1>Sürpriz! ❤️</h1>
+        <p>Seni çok seviyorum Sevgilim ! ❤️</p>
+        <p>İyi ki Varsın ! ❤️</p>
+        <p class="heart">💕</p>
+        <a href="index.html" class="back-btn">Ana Sayfaya Dön</a>
+    </div>
+</body>
+</html>

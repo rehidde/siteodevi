@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="K&K Cafe ile kahve ve tatlı keyfi, rezervasyon ve geniş menü.">
+    <meta name="keywords" content="kahve, cafe, tatlı, rezervasyon, espresso, latte">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&K Cafe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-coffee fixed-top" style="background-color: #6F4E37 !important; opacity: 1 !important;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="K&K Cafe Logosu" width="40" height="40" class="d-inline-block align-text-top">
+                K&K Cafe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning btn-sm reservation-btn" href="iletisim.html">Rezervasyon Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center my-4">K&K Cafe'ye Hoş Geldiniz</h1>
+       
+
+     
+        <h2 class="text-center mt-5">Sıcaklar</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/çay.jpg" alt="Çay" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Çay</span>
+                    <button onclick="jsFunc1()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/bitki çayı .jpg" alt="Bitki Çayları" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Bitki Çayları</span>
+                    <button onclick="jsFunc2()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/oralet.jpg" alt="Oralet" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Oralet</span>
+                    <button onclick="jsFunc3()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/türk kahvesi.jpg" alt="Türk Kahvesi" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Türk Kahvesi</span>
+                    <button onclick="jsFunc4()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/dibek kahvesi.jpg" alt="Dibek Kahvesi" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Dibek Kahvesi</span>
+                    <button onclick="jsFunc5()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/espresso.jpg" alt="Espresso" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Espresso</span>
+                    <button onclick="jsFunc6()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/americano.jpg" alt="Americano" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Americano</span>
+                    <button onclick="jsFunc7()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/latte.jpg" alt="Latte" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Latte</span>
+                    <button onclick="jsFunc8()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/cappuccino.jpg" alt="Cappuccino" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Cappuccino</span>
+                    <button onclick="jsFunc9()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/macchiato.jpg" alt="Macchiato" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Macchiato</span>
+                    <button onclick="jsFunc10()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/mocha.jpg" alt="Mocha" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Mocha</span>
+                    <button onclick="jsFunc11()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/sıcak cikolata.jpg" alt="Sıcak Çikolota" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Sıcak Çikolota</span>
+                    <button onclick="jsFunc11()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+        </div>
+
+     
+        <h2 class="text-center mt-5">Soğuk İçecekler</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/iced americano.jpg" alt="Iced Americano" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Iced Americano</span>
+                    <button onclick="jsFunc12()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/iced latte.jpg" alt="Iced Latte" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Iced Latte</span>
+                    <button onclick="jsFunc13()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/iced mocha.jpg" alt="Iced Mocha" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Iced Mocha</span>
+                    <button onclick="jsFunc14()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/ıced macchiato.jpg" alt="Iced Macchiato" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Iced Macchiato</span>
+                    <button onclick="jsFunc15()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/limonata.jpg" alt="Limonata" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Limonata</span>
+                    <button onclick="jsFunc16()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/portakal suyu.jpg" alt="Portakal Suyu" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Portakal Suyu</span>
+                    <button onclick="jsFunc17()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/frozen.jpg" alt="Frozen" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Frozen</span>
+                    <button onclick="jsFunc18()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/bubble tea.jpg" alt="Bubble Tea" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Bubble Tea</span>
+                    <button onclick="jsFunc19()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/iced espresso.jpg" alt="iced Espresso" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span> Iced Espresso</span>
+                    <button onclick="jsFunc19()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+        </div>
+
+        
+        <h2 class="text-center mt-5">Tatlılar</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/magnolya.jpg" alt="Magnolya" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Magnolya</span>
+                    <button onclick="jsFunc20()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/supangle.jpg" alt="Supangle" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Supangle</span>
+                    <button onclick="jsFunc21()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/trileçe.jpg" alt="Trileçe" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Trileçe</span>
+                    <button onclick="jsFunc22()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/sütlaç.jpg" alt="Fırın Sütlaç" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Fırın Sütlaç</span>
+                    <button onclick="jsFunc23()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/sufle.jpg" alt="Sufle" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Sufle</span>
+                    <button onclick="jsFunc24()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/meyveli pasta.jpg" alt="Meyveli Pasta" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Meyveli Pasta</span>
+                    <button onclick="jsFunc25()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/çikolatalı pasta.jpg" alt="Çikolatalı Pasta" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Çikolatalı Pasta</span>
+                    <button onclick="jsFunc26()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/bisküvili pasta.jpg" alt="Bisküvili Pasta" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Bisküvili Pasta</span>
+                    <button onclick="jsFunc27()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/brownie.jpg" alt="Brownie" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Brownie</span>
+                    <button onclick="jsFunc28()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/profiterol.jpg" alt="Profiterol" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Profiterol</span>
+                    <button onclick="jsFunc29()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/tramisu.jpg" alt="Tiramisu" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Tiramisu</span>
+                    <button onclick="jsFunc30()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+             <div class="col">
+                <div class="p-3 border rounded bg-light mb-2 coffee-card h-100 d-flex flex-column">
+                    <img src="img/havuçlu kek.jpg" alt="Havuçlu Kek" class="img-fluid" onerror="this.src='img/fallback-image.jpg'">
+                    <br> <span>Havuçlu Kek</span>
+                    <button onclick="jsFunc30()" class="btn btn-outline-dark btn-sm mt-2 detail-btn"><span>Detay</span></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h2 class="text-center">Fiyat Listesi</h2>
+            <table id="priceTable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Ürün</th>
+                        <th>Fiyat (TL)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Çay</td><td>20</td></tr>
+                    <tr><td>Bitki Çayları</td><td>25</td></tr>
+                    <tr><td>Oralet</td><td>15</td></tr>
+                    <tr><td>Türk Kahvesi</td><td>30</td></tr>
+                    <tr><td>Dibek Kahvesi</td><td>35</td></tr>
+                    <tr><td>Espresso</td><td>40</td></tr>
+                    <tr><td>Americano</td><td>45</td></tr>
+                    <tr><td>Latte</td><td>50</td></tr>
+                    <tr><td>Cappuccino</td><td>50</td></tr>
+                    <tr><td>Macchiato</td><td>45</td></tr>
+                    <tr><td>Mocha</td><td>55</td></tr>
+                    <tr><td>Sıcak Çikolota</td><td>45</td></tr>
+                    <tr><td>Iced Americano</td><td>45</td></tr>
+                    <tr><td>Iced Latte</td><td>50</td></tr>
+                    <tr><td>Iced Mocha</td><td>55</td></tr>
+                    <tr><td>Iced Macchiato</td><td>45</td></tr>
+                    <tr><td>Limonata</td><td>30</td></tr>
+                    <tr><td>Portakal Suyu</td><td>35</td></tr>
+                    <tr><td>Frozen</td><td>40</td></tr>
+                    <tr><td>Bubble Tea</td><td>45</td></tr>
+                    <tr><td>Iced Espresso</td><td>55</td></tr>
+                    <tr><td>Magnolya</td><td>40</td></tr>
+                    <tr><td>Supangle</td><td>35</td></tr>
+                    <tr><td>Trileçe</td><td>40</td></tr>
+                    <tr><td>Fırın Sütlaç</td><td>30</td></tr>
+                    <tr><td>Sufle</td><td>45</td></tr>
+                    <tr><td>Meyveli Pasta</td><td>50</td></tr>
+                    <tr><td>Çikolatalı Pasta</td><td>50</td></tr>
+                    <tr><td>Bisküvili Pasta</td><td>40</td></tr>
+                    <tr><td>Brownie</td><td>35</td></tr>
+                    <tr><td>Profiterol</td><td>45</td></tr>
+                    <tr><td>Tiramisu</td><td>50</td></tr>
+                     <tr><td>Havuçlu Kek</td><td>50</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>Açılış-Kapanış Saatleri</h2>
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="text-align: center;"><b>GÜNLER</b></th>
+                        <th style="text-align: center;">Pazartesi</th>
+                        <th style="text-align: center;">Salı</th>
+                        <th style="text-align: center;">Çarşamba</th>
+                        <th style="text-align: center;">Perşembe</th>
+                        <th style="text-align: center;">Cuma</th>
+                        <th style="text-align: center;">Cumartesi</th>
+                        <th style="text-align: center;">Pazar</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;"><b>SAATLER</b></td>
+                        <td style="text-align: center;">09.00-22.00</td>
+                        <td style="text-align: center;">09.00-22.00</td>
+                        <td style="text-align: center;">09.00-22.00</td>
+                        <td style="text-align: center;">09.00-22.00</td>
+                        <td style="text-align: center;">09.00-22.00</td>
+                        <td style="text-align: center;">09.00-23.00</td>
+                        <td style="text-align: center;">09.00-23.00</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-4">
+                <h3>İletişim Bilgileri</h3>
+                <p>Telefon: +90 555 123 45 67<br>E-posta: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a3cacdc5cce3c8c8c0c2c5c68dc0ccce">[email&#160;protected]</a><br>Adres: İstiklal Cad. No:123, Beyoğlu, İstanbul</p>
+            </div>
+        </div>
+        <h2>Konumumuz</h2>
+        <iframe src="https://maps.google.com/maps?q=Istiklal+Caddesi,+Beyoglu,+Istanbul&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div id="jquery-box" class="alert alert-info mt-4">İş arkadaşı olmak için iletişime geçin!</div>
+        <button id="jqBtn" class="btn btn-primary">İŞ BAŞVURUSU </button>
+        <div class="mb-4 text-center about-section">
+            <h2>Hakkımızda</h2>
+            <p>K&K Cafe, 2020 yılında iki kahve tutkununun hayaliyle doğdu. İstanbul’un en hareketli noktalarından biri olan Beyoğlu’nda, İstiklal Caddesi’nin kalbindeki küçük bir dükkânda başlayan hikayemiz, bugün binlerce misafirimizin anılarında yer edinen sıcacık bir mekâna dönüştü. Biz, sadece bir kafe değil, aynı zamanda bir buluşma noktası, bir huzur köşesi, bir tatlı kaçamak alanı olmayı hedefledik.</p>
+            <p>Adımızdaki “K&K”, yalnızca kurucularımızın isimlerinin baş harflerini değil, aynı zamanda “Kahve ve Keyif” anlayışını temsil ediyor. Her bir fincan kahvede, her bir tatlı diliminde bu keyfi misafirlerimize sunmak için çalışıyoruz. Türk kahvesinden espressoya, bitki çaylarından frozen’a kadar geniş bir içecek yelpazesi sunarken, tatlılarımızda da aynı özeni gösteriyoruz. Magnolya, sufle, tiramisu gibi lezzetlerimizle tatlı severlerin gönlünü fethetmeyi amaçlıyoruz.</p>
+            <p>K&K Cafe olarak, sürdürülebilirlik ve kaliteye büyük önem veriyoruz. Kullandığımız kahve çekirdeklerini özenle seçiyor, yerel üreticilerden temin ettiğimiz malzemelerle tatlılarımızı hazırlıyoruz. Misafirlerimizin kendilerini evlerinde hissedebilecekleri bir ortam yaratmak için her detayı düşünüyoruz; sıcak bir dekor, güleryüzlü bir ekip ve huzurlu bir atmosfer… Burada geçirdiğiniz her anın, sizin için unutulmaz bir hatıraya dönüşmesini istiyoruz.</p>
+            <p>Bizim için en büyük mutluluk, kapımızdan giren her misafirimizin yüzündeki tebessüm. Bu yüzden, her gün aynı tutku ve özveriyle çalışıyoruz. İster bir fincan kahve içmeye gelin, ister sevdiklerinizle uzun bir sohbetin tadını çıkarın, ister tatlı bir mola verin; K&K Cafe, her zaman sizin için burada. Bize katılın, bu sıcacık hikayenin bir parçası olun!</p>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>© 2025 K&K Cafe | <a href="https://instagram.com/ahmeterenkatirci" target="_blank">Instagram</a> | <a href="https://twitter.com/kkcafe" target="_blank">Twitter</a></p>
+    </footer>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/jquery-scripts.js" defer></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93f2eff3b8c92504',t:'MTc0NzE0NzUwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

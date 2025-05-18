@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="K&K Cafe ile rezervasyon yapın.">
+    <meta name="keywords" content="kahve, cafe, rezervasyon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K&K Cafe - Rezervasyon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-coffee fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" alt="K&K Cafe Logosu" width="40" height="40" class="d-inline-block align-text-top">
+                K&K Cafe
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5 pt-5">
+        <h1 class="text-center my-4 section-title">Rezervasyon Yap</h1>
+        <div class="reservation-section">
+            <form id="reservationForm" class="p-4 bg-white rounded shadow-sm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Ad Soyad</label>
+                    <input type="text" class="form-control" id="name" placeholder="Adınızı ve soyadınızı girin" required oninput="checkForSurprise()">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Telefon</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Telefon numaranızı girin" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-posta</label>
+                    <input type="email" class="form-control" id="email" placeholder="E-posta adresinizi girin" required>
+                </div>
+                <div class="mb-3">
+                    <label for="date" class="form-label">Tarih</label>
+                    <input type="date" class="form-control" id="date" required>
+                </div>
+                <div class="mb-3">
+                    <label for="time" class="form-label">Saat</label>
+                    <input type="time" class="form-control" id="time" required>
+                </div>
+                <div class="mb-3">
+                    <label for="personCount" class="form-label">Kişi Sayısı</label>
+                    <input type="number" class="form-control" id="personCount" min="1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Adres</label>
+                    <input type="text" class="form-control" id="address" placeholder="Adresinizi girin" required>
+                </div>
+                <div class="mb-3">
+                    <label for="notes" class="form-label">Notlar</label>
+                    <textarea class="form-control" id="notes" rows="2" placeholder="Eklemek istediğiniz notlar"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="paymentMethod" class="form-label">Ödeme Yöntemi</label>
+                    <select class="form-control" id="paymentMethod" required>
+                        <option value="">Seçiniz</option>
+                        <option value="nakit">Nakit</option>
+                        <option value="kredi-karti">Kredi Kartı</option>
+                        <option value="kapida-odeme">Kapıda Ödeme</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="tablePreference" class="form-label">Masa Tercihi (1-10)</label>
+                    <input type="range" class="form-control" id="tablePreference" min="1" max="10" value="1">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Şifre (Gizli Kod)</label>
+                    <input type="password" class="form-control" id="password" placeholder="Rezervasyon için gizli kod" required>
+                </div>
+                <div class="mb-3">
+                    <label for="datetimeLocal" class="form-label">Tam Tarih ve Saat</label>
+                    <input type="datetime-local" class="form-control" id="datetimeLocal" required>
+                </div>
+                <div class="mb-3">
+                    <label for="month" class="form-label">Ay Tercihi</label>
+                    <input type="month" class="form-control" id="month">
+                </div>
+                <div class="mb-3">
+                    <label for="week" class="form-label">Hafta Tercihi</label>
+                    <input type="week" class="form-control" id="week">
+                </div>
+                <div class="mb-3">
+                    <label for="url" class="form-label">Web Sitesi (İsteğe Bağlı)</label>
+                    <input type="url" class="form-control" id="url" placeholder="Web sitenizi girin">
+                </div>
+                <div class="mb-3">
+                    <label for="search" class="form-label">Arama Terimi (Not Arama)</label>
+                    <input type="search" class="form-control" id="search" placeholder="Arama terimi">
+                </div>
+                <div class="mb-3">
+                    <label for="color" class="form-label">Masa Rengi Tercihi</label>
+                    <input type="color" class="form-control" id="color" value="#000000">
+                </div>
+                <div class="mb-3">
+                    <label for="file" class="form-label">Kimlik Yükleme</label>
+                    <input type="file" class="form-control" id="file">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Özel İstek Onayı</label>
+                    <input type="checkbox" id="specialRequestCheck" name="specialRequestCheck">
+                    <label for="specialRequestCheck" class="ms-2">Özel isteğim var</label>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Cinsiyet</label>
+                    <div>
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male" class="ms-2">Erkek</label>
+                        <input type="radio" id="female" name="gender" value="female" class="ms-3">
+                        <label for="female" class="ms-2">Kadın</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-warning modern-btn">Rezervasyon Yap</button>
+            </form>
+            <div id="formMessage" class="alert alert-success mt-4 modern-alert" style="display: none;">Rezervasyonunuz alındı!</div>
+        </div>
+    </div>
+    <footer class="footer-modern text-white text-center py-3 mt-5">
+        <p>© 2025 K&K Cafe | <a href="https://instagram.com/kkcafe" target="_blank" class="footer-link">Instagram</a> | <a href="https://twitter.com/kkcafe" target="_blank" class="footer-link">Twitter</a></p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/jquery-scripts.js" defer></script>
+    <script>
+        document.getElementById('reservationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (checkNameValidation(document.getElementById('name').value)) {
+                saveFormData();
+                clearForm();
+                displayMessage('Rezervasyonunuz kaydedildi! ' + getCurrentDate());
+                $('#formMessage').fadeIn();
+            } else {
+                displayMessage('Lütfen geçerli bir ad girin!');
+            }
+        });
+    </script>
+</body>
+</html>
