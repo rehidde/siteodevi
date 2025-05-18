@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapori d'Italia</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="brand-green">Sapori</span>
+                <span class="brand-white">d'</span>
+                <span class="brand-red">Italia</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <button class="btn btn-outline-light ms-3" id="darkModeToggle">🌙</button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menü</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#drinks">İçecekler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#desserts">Tatlılar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#randevu">Randevu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#location">Konum</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+    <section class="hero-section">
+        <h1 class="hero-title">
+                 <span style="color: green;">Sapori</span>
+                 <span style="color: white; text-shadow: 0 0 3px black;"> d'</span>
+                 <span style="color: red;">Italia</span>'ya Hoş Geldiniz
+         </h1>
+    </section>
+
+    <div class="container text-center mt-5">
+        <h4 class="day-menu-title">
+            <span style="font-family: 'Georgia', serif; color: green;">İtalyan</span> 
+            <span style="font-family: 'Georgia', serif; color: red;"> Mutfağı</span>
+        </h4>
+    <div class="btn-group mt-3 day-buttons">
+        <button type="button" class="btn btn-outline-primary" data-day="Pazartesi"><span class="gun-yazi">Pazartesi</span></button>
+        <button type="button" class="btn btn-outline-primary" data-day="Salı"><span class="gun-yazi">Salı</span></button>
+        <button type="button" class="btn btn-outline-primary" data-day="Çarşamba"><span class="gun-yazi">Çarşamba</span></button>
+        <button type="button" class="btn btn-outline-primary" data-day="Perşembe"><span class="gun-yazi">Perşembe</span></button>
+        <button type="button" class="btn btn-outline-primary" data-day="Cuma"><span class="gun-yazi">Cuma</span></button>
+        <button type="button" class="btn btn-outline-primary" data-day="Cumartesi"><span class="gun-yazi">Cumartesi</span></button>
+        <button type="button" class="btn btn-outline-primary" data-day="Pazar"><span class="gun-yazi">Pazar</span></button>
+    </div>
+    </div>
+
+    <div class="container text-center mt-3">
+    <p class="text-muted">Şu anki saat: <span id="currentTime"></span></p>
+    </div>  
+
+    <section id="menu" class="container mt-5 py-4">
+        <div class="row" id="menuItems"></div>
+    </section>
+
+    <div id="menuItems" class="row mt-3"></div>
+
+    <section id="drinks" class="container mt-5 py-4">
+        <h2 class="section-title">İçecekler</h2>
+        <div class="row" id="drinkItems"></div>
+    </section>
+
+    <section id="desserts" class="container mt-5 py-4">
+        <h2 class="section-title">Tatlılar</h2>
+        <table class="table dessert-table">
+            <thead>
+                <tr>
+                    <th scope="col">Tatlı</th>
+                    <th scope="col">Açıklama</th>
+                    <th scope="col">Fiyat</th>
+                </tr>
+            </thead>
+            <tbody id="dessertTableBody"></tbody>
+        </table>
+    </section>
+
+    <div class="center-container">
+  <button onclick="randomDessert()">Tatlı Önerisi Al</button>
+    </div>
+
+    <div class="container text-center mt-5">
+    <button class="btn btn-success" onclick="toggleItalianMusic()">🎵 İtalyan Müziklerini Göster</button>
+
+    <div id="italianMusicList" class="mt-4" style="display: none;">
+        <h4>Restoranda Çalan İtalyan Müzikleri</h4>
+        <ul class="list-group">
+            <li class="list-group-item"><span class="sanatci"><strong>Andrea Bocelli</strong></span> – <span class="sarki">Con Te Partirò</span></li>
+            <li class="list-group-item"><span class="sanatci"><strong>Luciano Pavarotti</strong></span> – <span class="sarki">Nessun Dorma</span></li>
+            <li class="list-group-item"><span class="sanatci"><strong>Domenico Modugno</strong></span> – <span class="sarki">Volare</span></li>
+            <li class="list-group-item"><span class="sanatci"><strong>Il Volo</strong></span> – <span class="sarki">Grande Amore</span></li>
+            <li class="list-group-item"><span class="sanatci"><strong>Eros Ramazzotti</strong></span> – <span class="sarki">Cose della Vita</span></li>
+            <li class="list-group-item"><span class="sanatci"><strong>Laura Pausini</strong></span> – <span class="sarki">La Solitudine</span></li>
+            <li class="list-group-item"><span class="sanatci"><strong>Dean Martin</strong></span> – <span class="sarki">That’s Amore</span></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <section id="randevu" class="container my-5">
+        <h2 class="section-title">Randevu Al</h2>
+         <div id="reservationReminder" class="text-center text-muted mt-3"></div>
+    </section>
+
+    <div class="text-center mt-4">
+         <a href="iletisim.html" class="btn btn-success btn-lg">Randevu Al</a>
+    </div>
+
+   
+    <section id="location" class="container my-5">
+        <h2 class="section-title">Konumumuz</h2>
+        <p class="location-text">Restoranımız İstanbul Kadıköy'dedir. Aşağıdaki haritadan yerimizi görebilirsiniz.</p>
+        <iframe class="location-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12099.123081612445!2d29.022421!3d40.989795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac76cfab96f7b%3A0x44f17f26f1bc3c4!2sKad%C4%B1k%C3%B6y%2C%20%C4%B0stanbul!5e0!3m2!1str!2str!4v1684956953877!5m2!1str!2str"></iframe>
+    </section>
+
+    <button onclick="scrollToTop()">Yukarı Çık</button>
+    
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 Sapori d'Italia. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>    
+</body>
+</html>

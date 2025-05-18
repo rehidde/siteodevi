@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Rezervasyon Formu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Rezervasyon Formu</h2>
+    <form id="reservationForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Ad Soyad</label>
+        <input type="text" class="form-control" id="name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="phone" class="form-label">Telefon Numarası</label>
+        <input type="tel" class="form-control" id="phone" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">E-posta</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="date" class="form-label">Tarih</label>
+        <input type="date" class="form-control" id="date" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="time" class="form-label">Saat</label>
+        <input type="time" class="form-control" id="time" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="people" class="form-label">Kişi Sayısı(çocuklar hariç)</label>
+        <input type="number" class="form-control" id="people" min="1" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Otopark Kullanımı</label>
+        <select class="form-select" id="parking">
+          <option value="Evet">Evet</option>
+          <option value="Hayır">Hayır</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Alan Tercihi</label>
+        <select class="form-select" id="area">
+          <option value="Müzikli">Müzikli</option>
+          <option value="Müziksiz">Müziksiz</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Menüden Şarap Ayırtılsın mı?</label>
+        <select class="form-select" id="wine">
+          <option value="Evet">Evet</option>
+          <option value="Hayır">Hayır</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Yanınızda Çocuğunuz Olacak mı?</label>
+        <select class="form-select" id="childrenComing" onchange="toggleChildrenCount(this.value)">
+          <option value="Hayır">Hayır</option>
+          <option value="Evet">Evet</option>
+        </select>
+      </div>
+
+      <div class="mb-3" id="childrenCountGroup" style="display: none;">
+        <label for="childrenCount" class="form-label">Kaç Çocuk?</label>
+        <input type="number" class="form-control" id="childrenCount" min="1">
+      </div>
+
+      <div class="mb-3">
+        <label for="notes" class="form-label">Ekstra Notlar</label>
+        <textarea class="form-control" id="notes" rows="3"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-success">Gönder</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleChildrenCount(value) {
+      const group = document.getElementById('childrenCountGroup');
+      group.style.display = value === 'Evet' ? 'block' : 'none';
+    }
+
+    document.getElementById('reservationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const people = document.getElementById('people').value;
+      const parking = document.getElementById('parking').value;
+      const area = document.getElementById('area').value;
+      const wine = document.getElementById('wine').value;
+      const childrenComing = document.getElementById('childrenComing').value;
+      const childrenCount = document.getElementById('childrenCount').value || '0';
+      const notes = document.getElementById('notes').value;
+
+      let message = `${name}, ${date} tarihinde saat ${time}'de ${people} kişilik rezervasyon talebiniz alınmıştır.\n\n`;
+      message += `Telefon: ${phone}\nE-posta: ${email}\nOtopark: ${parking}\nAlan Tercihi: ${area}\n`;
+      message += `Şarap Ayırtılsın mı?: ${wine}\nÇocuk Gelecek mi?: ${childrenComing}`;
+      if (childrenComing === 'Evet') {
+        message += ` (${childrenCount} çocuk)`;
+      }
+      if (notes) {
+        message += `\nNot: ${notes}`;
+      }
+
+      alert(message);
+      this.reset();
+      toggleChildrenCount('Hayır');
+    });
+  </script>
+</body>
+</html>
