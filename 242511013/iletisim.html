@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>İletişim | TeknoHaber</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f4f4f4; }
+    .form-wrapper {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      margin-top: 60px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .info-box {
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .contact-icon {
+      font-size: 2rem;
+      color: #3498db;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid bg-dark text-white">
+    <div class="row">
+      <div class="col-12">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+            <a class="navbar-brand" href="index.html">TeknoHaber</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+              </ul>
+              <span class="navbar-text">
+                <i class="fas fa-phone-alt"></i> <span>+90 555 123 45 67</span>
+              </span>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-wrapper">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">Bize Ulaşın</h2>
+            <span class="badge bg-primary">Yeni Mesaj</span>
+          </div>
+          <form id="contactForm">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label class="form-label">Adınız</label>
+                  <input type="text" class="form-control" required>
+                  <span class="form-text">Lütfen adınızı giriniz</span>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label class="form-label">Soyadınız</label>
+                  <input type="text" class="form-control" required>
+                  <span class="form-text">Lütfen soyadınızı giriniz</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">E-posta</label>
+              <input type="email" id="email" class="form-control" required>
+              <span class="form-text">Geçerli bir e-posta adresi giriniz</span>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Telefon</label>
+              <input type="tel" class="form-control" placeholder="+90 (___) ___ __ __">
+              <span class="form-text">İsteğe bağlı</span>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Konu</label>
+              <select class="form-select">
+                <option selected>Konu seçiniz</option>
+                <option>Teknik Destek</option>
+                <option>Reklam</option>
+                <option>İşbirliği</option>
+                <option>Diğer</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Doğum Tarihi</label>
+              <input type="date" class="form-control">
+              <span class="form-text">İsteğe bağlı</span>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Favori Teknoloji Markanız</label>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="apple">
+                <label class="form-check-label" for="apple">Apple</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="samsung">
+                <label class="form-check-label" for="samsung">Samsung</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="xiaomi">
+                <label class="form-check-label" for="xiaomi">Xiaomi</label>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Favori Renk</label>
+              <input type="color" class="form-control form-control-color" value="#3498db">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Dosya Yükle</label>
+              <input type="file" class="form-control">
+              <span class="form-text">Maksimum 5MB</span>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Parola</label>
+              <input type="password" class="form-control" placeholder="Şifrenizi giriniz">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Puan (1-10)</label>
+              <input type="range" class="form-range" min="1" max="10" step="1">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Mesajınız</label>
+              <textarea class="form-control" rows="4" placeholder="Mesajınızı buraya yazınız..."></textarea>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="agreeTerms">
+              <label class="form-check-label" for="agreeTerms">Şartları kabul ediyorum</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary me-2">
+              <i class="fas fa-paper-plane"></i> Gönder
+            </button>
+            <button type="reset" class="btn btn-outline-secondary">
+              <i class="fas fa-eraser"></i> Temizle
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-box">
+          <div class="text-center">
+            <i class="fas fa-map-marker-alt contact-icon"></i>
+            <h4>Adresimiz</h4>
+            <p>Teknopark İstanbul, <span>Kule: 3, Kat: 5</span></p>
+            <p>İstanbul / Türkiye</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="text-center">
+            <i class="fas fa-phone-alt contact-icon"></i>
+            <h4>Telefon</h4>
+            <p><span>+90 555 123 45 67</span></p>
+            <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="text-center">
+            <i class="fas fa-envelope contact-icon"></i>
+            <h4>E-posta</h4>
+            <p><span>info@teknohaber.com</span></p>
+            <p>24 saat içinde yanıt veriyoruz</p>
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-header">
+            <h5 class="mb-0">Sosyal Medya</h5>
+          </div>
+          <div class="card-body text-center">
+            <a href="#" class="btn btn-outline-primary btn-sm me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-outline-info btn-sm me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="btn btn-outline-danger btn-sm me-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="btn btn-outline-dark btn-sm"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="card mt-4">
+          <div class="card-header">
+            <h5 class="mb-0">Harita</h5>
+          </div>
+          <div class="card-body p-0">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.279673418732!2d29.02185131541474!3d41.02546297929939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caba5c5a6e5e1d%3A0x5e9a6a2b4a3f3e2d!2sTeknopark%20%C4%B0stanbul!5e0!3m2!1str!2str!4v1620000000000!5m2!1str!2str" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>TeknoHaber</h5>
+          <p>Teknoloji dünyasının nabzını tutuyoruz.</p>
+          <div id="clock" class="mb-3"></div>
+        </div>
+        <div class="col-md-4">
+          <h5>Hızlı Linkler</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Ana Sayfa</a></li>
+            <li><a href="#" class="text-white">Hakkımızda</a></li>
+            <li><a href="#" class="text-white">İletişim</a></li>
+            <li><a href="#" class="text-white">Gizlilik Politikası</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Bülten Aboneliği</h5>
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" placeholder="E-posta adresiniz">
+            <button class="btn btn-primary" type="button">Abone Ol</button>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p>&copy; 2025 TeknoHaber. Tüm hakları saklıdır.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="scrollTopBtn" class="scroll-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bilgilendirme</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Formunuz başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast align-items-center text-white bg-primary" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        Hoş geldiniz! İletişim sayfasına ulaştınız.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

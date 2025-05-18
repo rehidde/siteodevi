@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeknoHaber - Güncel Teknoloji Haberleri</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: var(--secondary-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .active {
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 60px 0;
+            color: white;
+        }
+        
+        .featured-badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .news-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 25px;
+            background-color: white;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .news-meta {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .hidden-content {
+            display: none;
+        }
+        
+        .tech-icon {
+            margin-right: 5px;
+            color: var(--primary-color);
+        }
+        
+        .category-badge {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+        }
+        
+        .sidebar-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .sidebar-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+        }
+        
+        .popular-news-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .popular-news-item:last-child {
+            border-bottom: none;
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-title {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+            color: var(--primary-color);
+        }
+        
+        #clock {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .table-latest-tech {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .table-latest-tech th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .trending-tag {
+            display: inline-block;
+            background-color: #f8f9fa;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .trending-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .newsletter-form {
+            position: relative;
+        }
+        
+        .newsletter-form input {
+            padding-right: 50px;
+            border-radius: 20px;
+        }
+        
+        .newsletter-form button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 40px 0;
+            }
+            
+            .sidebar {
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-microchip"></i> TeknoHaber
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> <span class="nav-text">Ana Sayfa</span></a>
+                    </li>
+                  
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletisim.html"><i class="fas fa-envelope"></i> <span class="nav-text">İletişim</span></a>
+                    </li>
+                </ul>
+                <div class="ms-3 d-none d-lg-block">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold">Teknoloji Dünyasının Nabzı</h1>
+                    <p class="lead">En son teknoloji gelişmeleri, incelemeleri ve analizleri için doğru adrestesiniz.</p>
+                    <div class="d-flex align-items-center mt-4">
+                        <button class="btn btn-light btn-lg me-3"><i class="fas fa-newspaper"></i> <span class="btn-text">Son Haberler</span></button>
+                        <span id="visitorCounter" class="text-white">Bugün: <span class="fw-bold">1,029</span> ziyaretçi</span>
+                    </div>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <img src="img/1.jpg" alt="Teknoloji Görseli" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </div>  
+    <div class="container my-5">
+        <div class="row">
+            
+            <div class="col-lg-8">
+                
+                <div class="news-card mb-5">
+                    <div class="position-relative">
+                        <span class="position-absolute top-0 start-0 m-3 featured-badge">
+                            <i class="fas fa-star"></i> <span class="badge-text">Öne Çıkan</span>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <div class="news-meta">
+                            <span><i class="far fa-calendar tech-icon"></i> <span class="date-text">15 Mayıs 2025</span></span>
+                            <span class="ms-3"><i class="far fa-user tech-icon"></i> <span class="author-text">Ahmet Yılmaz</span></span>
+                            <span class="ms-3"><i class="far fa-comment tech-icon"></i> <span class="comment-text">8 Yorum</span></span>
+                        </div>
+                        <h2 class="card-title">Yapay Zeka Teknolojisinde Çığır Açan Gelişme</h2>
+                        <span class="category-badge">Yapay Zeka</span>
+                        <span class="category-badge">İnovasyon</span>
+                        <p class="card-text mt-3">
+                            Son dönemde yapay zeka alanında gerçekleşen devrim niteliğindeki gelişmeler, birçok sektörde köklü değişimlere yol açıyor. Google'ın geliştirdiği yeni algoritma, insan beyninin çalışma prensiplerini taklit ederek, daha önce imkansız görülen problemleri çözebiliyor.
+                        </p>
+                        <div class="hidden-content">
+                            <p>
+                                Bu yeni teknoloji, özellikle sağlık sektöründe erken teşhis ve tedavi planlamasında devrim yaratmaya hazırlanıyor. Araştırmacılar, yapay zeka destekli sistemlerin kanser hücrelerini normal hücrelerden %99.8 doğrulukla ayırt edebildiğini belirtiyor.
+                            </p>
+                            <p>
+                                Teknoloji devleri bu yeni algoritmayı kullanarak ses tanıma, görüntü işleme ve metin anlama konularında büyük atılımlar yapıyor. Özellikle dil çevirisi konusunda insan çevirmenlerle rekabet edebilecek seviyeye gelindi.
+                            </p>
+                            <p>
+                                Ancak uzmanlar, bu hızlı gelişmelerin beraberinde etik sorunları da getirdiğini vurguluyor. Yapay zekanın karar verme mekanizmalarının şeffaflığı ve veri gizliliği konuları tartışmaların odağında yer alıyor.
+                            </p>
+                        </div>
+                        <a class="read-more mt-3 d-block" data-target="this">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>               
+                <div class="row">                 
+                    <div class="col-md-6">
+                        <div class="news-card">
+                            <img src="img/5.png" alt="Apple Haberi" class="img-fluid">
+                            <div class="card-body">
+                                <div class="news-meta">
+                                    <span><i class="far fa-calendar tech-icon"></i> <span class="date-text">14 Mayıs 2025</span></span>
+                                    <span class="ms-3"><i class="far fa-comment tech-icon"></i> <span class="comment-text">5</span></span>
+                                </div>
+                                <h3 class="card-title h5">Apple'ın Yeni İşletim Sistemi Bugün Tanıtıldı</h3>
+                                <span class="category-badge">Apple</span>
+                                <p class="card-text mt-3">
+                                    Apple, merakla beklenen yeni işletim sistemi iOS 19'u bugün düzenlenen özel bir etkinlikle tanıttı. Yeni sürüm, gelişmiş yapay zeka özellikleri ve...
+                                </p>
+                                <div class="hidden-content">
+                                    <p>
+                                        ...tamamen yenilenen arayüzü ile dikkat çekiyor. Kullanıcıların uygulama arayüzlerini kişiselleştirebilmesine olanak tanıyan yeni sistem, aynı zamanda pil ömrünü %25'e kadar artıran yeni güç yönetim algoritmasına sahip.
+                                    </p>
+                                    <p>
+                                        Ayrıca yeni işletim sistemi, artırılmış gerçeklik uygulamaları için optimize edilmiş durumda ve Apple'ın yakında tanıtması beklenen AR gözlüğü için altyapı hazırlığı olarak görülüyor.
+                                    </p>
+                                </div>
+                                <a class="read-more mt-3 d-block" data-target="this">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>                  
+                    <div class="col-md-6">
+                        <div class="news-card">
+                            <img src="img/4.jpg" alt="Elektrikli Araçlar" class="img-fluid">
+                            <div class="card-body">
+                                <div class="news-meta">
+                                    <span><i class="far fa-calendar tech-icon"></i> <span class="date-text">13 Mayıs 2025</span></span>
+                                    <span class="ms-3"><i class="far fa-comment tech-icon"></i> <span class="comment-text">12</span></span>
+                                </div>
+                                <h3 class="card-title h5">Elektrikli Araçlar İçin Devrim Niteliğinde Batarya Teknolojisi</h3>
+                                <span class="category-badge">Otomotiv</span>
+                                <p class="card-text mt-3">
+                                    Bilim insanları, elektrikli araçlar için şarj süresini 5 dakikaya indiren ve menzili iki katına çıkaran yeni bir batarya teknolojisi...
+                                </p>
+                                <div class="hidden-content">
+                                    <p>
+                                        ...geliştirdi. Silikon-grafen kompozit malzemeden üretilen bu yeni bataryalar, geleneksel lityum-iyon bataryalara göre çok daha dayanıklı ve verimli.
+                                    </p>
+                                    <p>
+                                        Otomotiv devleri Tesla ve Volkswagen'in bu teknolojiye büyük yatırımlar yaptığı ve önümüzdeki iki yıl içinde seri üretime geçebileceği belirtiliyor.
+                                    </p>
+                                </div>
+                                <a class="read-more mt-3 d-block" data-target="this">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>                   
+                    <div class="col-md-6">
+                        <div class="news-card">
+                            <img src="img/3.jpg" alt="VR Haberi" class="img-fluid">
+                            <div class="card-body">
+                                <div class="news-meta">
+                                    <span><i class="far fa-calendar tech-icon"></i> <span class="date-text">12 Mayıs 2025</span></span>
+                                    <span class="ms-3"><i class="far fa-comment tech-icon"></i> <span class="comment-text">7</span></span>
+                                </div>
+                                <h3 class="card-title h5">Sanal Gerçeklik Terapisi Depresyonda Umut Veriyor</h3>
+                                <span class="category-badge">VR</span>
+                                <span class="category-badge">Sağlık</span>
+                                <p class="card-text mt-3">
+                                    Yeni araştırmalar, sanal gerçeklik teknolojisi kullanılarak yapılan terapilerin depresyon ve anksiyete tedavisinde etkileyici sonuçlar...
+                                </p>
+                                <div class="hidden-content">
+                                    <p>
+                                        ...verdiğini gösteriyor. Özellikle pandemi sonrası artan ruh sağlığı sorunlarına karşı geliştirilen bu yeni tedavi yöntemi, hastalara konforlu bir ortamda yüzleştirme terapisi imkanı sunuyor.
+                                    </p>
+                                    <p>
+                                        Hastaların %68'i sadece 8 haftalık tedavi sonrasında belirgin iyileşme gösterdi. Uzmanlar, teknolojinin erişilebilirliği sayesinde ruh sağlığı hizmetlerine ulaşımı artıracağını düşünüyor.
+                                    </p>
+                                </div>
+                                <a class="read-more mt-3 d-block" data-target="this">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="col-md-6">
+                        <div class="news-card">
+                            <img src="img/2.jpg" alt="Kuantum Bilgisayar" class="img-fluid">
+                            <div class="card-body">
+                                <div class="news-meta">
+                                    <span><i class="far fa-calendar tech-icon"></i> <span class="date-text">11 Mayıs 2025</span></span>
+                                    <span class="ms-3"><i class="far fa-comment tech-icon"></i> <span class="comment-text">15</span></span>
+                                </div>
+                                <h3 class="card-title h5">Kuantum Bilgisayarlar Artık Daha Erişilebilir</h3>
+                                <span class="category-badge">Bilişim</span>
+                                <span class="category-badge">Kuantum</span>
+                                <p class="card-text mt-3">
+                                    IBM, bulut üzerinden erişilebilen kuantum bilgisayar hizmetini duyurdu. Bu gelişme ile kuantum hesaplama gücü artık küçük şirketler ve...
+                                </p>
+                                <div class="hidden-content">
+                                    <p>
+                                        ...araştırmacılar tarafından da kullanılabilecek. 100 kübitlik işlem gücüne sahip olan bu sistem, özellikle ilaç geliştirme ve malzeme bilimi alanlarında büyük kolaylıklar sağlayacak.
+                                    </p>
+                                    <p>
+                                        Uzmanlar, kuantum bilişimin yaygınlaşmasının önümüzdeki 5 yıl içinde birçok endüstriyi kökten değiştireceğini öngörüyor.
+                                    </p>
+                                </div>
+                                <a class="read-more mt-3 d-block" data-target="this">Devamını Oku <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+                <div class="text-center mt-4 mb-5">
+                    <button id="loadMoreBtn" class="btn btn-primary btn-lg px-4">
+                        <i class="fas fa-sync-alt"></i> <span class="btn-text">Daha Fazla Yükle</span>
+                    </button>
+                </div>
+                <div class="mb-5">
+                    <h3 class="mb-4 border-bottom pb-2"><i class="fas fa-video"></i> <span class="section-title">Öne Çıkan Video</span></h3>
+                    <div class="ratio ratio-16x9 mb-3">
+                        <iframe src="https://www.youtube.com/embed/2ePf9rue1Ao" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                    <h4>AI nedir ? Bizim için ne anlam ifade eder ?</h4>
+                    <p class="text-muted">Bu videoda, AI'ın kısaca ne olduğu bizim için ne anlam ifade ettiği gibi sorulara cevap bulabilirsiniz.</p>
+                </div>               
+                <div class="mb-5">
+                    <h3 class="mb-4 border-bottom pb-2"><i class="fas fa-trophy"></i> <span class="section-title">En İyi Teknolojik Ürünler - Mayıs 2025</span></h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-latest-tech">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Ürün</th>
+                                    <th scope="col">Kategori</th>
+                                    <th scope="col">Fiyat</th>
+                                    <th scope="col">Puan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Samsung Galaxy Z Fold 7</td>
+                                    <td>Akıllı Telefon</td>
+                                    <td>1.799£/1.889£</td>
+                                    <td>9.5/10</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Apple Vision Pro 2</td>
+                                    <td>AR/VR Gözlük</td>
+                                    <td>58.499 ₺</td>
+                                    <td>9.3/10</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Dell XPS 16 (2025)</td>
+                                    <td>Dizüstü Bilgisayar</td>
+                                    <td>45.699 ₺</td>
+                                    <td>9.2/10</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Sony WH-2000XM6</td>
+                                    <td>Kablosuz Kulaklık</td>
+                                    <td>8.999 ₺</td>
+                                    <td>9.1/10</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Canon EOS R2</td>
+                                    <td>Fotoğraf Makinesi</td>
+                                    <td>75.899 ₺</td>
+                                    <td>9.0/10</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>               
+                <div class="mb-5">
+                    <h3 class="mb-4 border-bottom pb-2">
+                        <i class="fas fa-comments"></i> <span class="section-title">Yorumlar</span> <span class="badge bg-secondary">12</span>
+                    </h3>                  
+                    <div class="d-flex mb-4">
+                        <div class="flex-shrink-0"> 
+                        </div>
+                        <div class="flex-grow-1 ms-3 p-3 bg-white rounded shadow-sm">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6 class="mb-0 fw-bold">Yusuf Altıparmak</h6>
+                                <small class="text-muted">8 saat önce</small>
+                            </div>
+                            <p>Apple'ın yeni işletim sistemi gerçekten çok etkileyici görünüyor. Özellikle yapay zeka entegrasyonu ve gizlilik özellikleri dikkatimi çekti. Bir an önce deneyimlemek için sabırsızlanıyorum! Fakat Nintendo'dan da aynı özveriyi beklerdim maalesef Nintendo Switch 2 şimdiden beni hayal kırıklığına uğratıyor!</p>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-sm btn-outline-primary me-2">
+                                    <i class="far fa-thumbs-up"></i> <span class="btn-text">Beğen</span> (34)
+                                </button>
+                                <button class="btn btn
