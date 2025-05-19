@@ -1,0 +1,441 @@
+/* Genel Stiller */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+body.dark-mode {
+    background-color: #222;
+    color: #f1f1f1;
+}
+
+.container {
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 0;
+    transition: all 0.3s;
+}
+
+.navbar.scrolled {
+    background-color: #fff !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-text {
+    font-weight: bold;
+    color: #d17b88;
+    font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/salon-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #d17b88;
+}
+
+/* Bölüm Başlıkları */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.title-border {
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #d17b88;
+    margin: 0 auto 20px;
+}
+
+/* Hizmet Kartları */
+.service-card {
+    margin-bottom: 30px;
+    transition: all 0.3s;
+}
+
+.service-card .card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.service-card .card-body {
+    padding: 25px;
+}
+
+.service-card .card-title {
+    color: #d17b88;
+    margin-bottom: 15px;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #d17b88;
+}
+
+.highlighted-service .card {
+    box-shadow: 0 10px 20px rgba(209, 123, 136, 0.3);
+}
+
+/* Galeri */
+.salon-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.gallery-item {
+    flex: 1 1 45%;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Başarılar */
+.achievements {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.achievement-badge {
+    background-color: #f0f0f0;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.dark-mode .achievement-badge {
+    background-color: #444;
+}
+
+/* Takım Tablosu */
+.team-table {
+    margin-top: 20px;
+}
+
+.team-table th {
+    background-color: #d17b88;
+    color: white;
+}
+
+/* Harita */
+.map-container {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* İletişim Formu */
+#contactForm {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode #contactForm {
+    background-color: #333;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+/* İletişim Bilgileri */
+.contact-info-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    margin-bottom: 20px;
+}
+
+.dark-mode .contact-info-card {
+    background-color: #333;
+}
+
+.contact-info-card h4 {
+    color: #d17b88;
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.dark-mode .footer {
+    background-color: #111;
+}
+
+.footer h4 {
+    color: #d17b88;
+    margin-bottom: 20px;
+}
+
+.footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #d17b88;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+}
+/* İletişim Formu Ana Stilleri */
+#contactForm {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(209, 123, 136, 0.1);
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+}
+
+#contactForm:hover {
+    box-shadow: 0 15px 35px rgba(209, 123, 136, 0.15);
+}
+
+/* Form Başlık Stilleri */
+.section-title h2 {
+    color: #d17b88;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-title p {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.title-border {
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, #d17b88, #f8c8d3);
+    margin: 0 auto 25px;
+    border-radius: 2px;
+}
+
+/* Form Elemanları Stilleri */
+.form-label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 0.95rem;
+}
+
+.form-control, .form-select {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    height: auto;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #d17b88;
+    box-shadow: 0 0 0 0.25rem rgba(209, 123, 136, 0.25);
+    outline: none;
+}
+
+/* Checkbox Stilleri */
+.form-check-input {
+    width: 18px;
+    height: 18px;
+    margin-top: 0.2rem;
+}
+
+.form-check-label {
+    margin-left: 5px;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.form-check-input:checked {
+    background-color: #d17b88;
+    border-color: #d17b88;
+}
+
+/* Buton Stilleri */
+.btn {
+    padding: 12px 25px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #d17b88;
+    border-color: #d17b88;
+}
+
+.btn-primary:hover {
+    background-color: #c06c7a;
+    border-color: #c06c7a;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Hata Mesajı Stilleri */
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Link Stilleri */
+a {
+    color: #d17b88;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover {
+    color: #a85a67;
+    text-decoration: underline;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 768px) {
+    #contactForm {
+        padding: 25px;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Özel Efektler */
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    transition: all 0.3s;
+}
+
+.form-group:focus-within label {
+    color: #d17b88;
+}
+
+/* Textarea Özel Stili */
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Gizlilik Politikası Linki */
+.form-check-label a {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Tarih ve Saat Seçicileri */
+input[type="date"], input[type="time"] {
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}

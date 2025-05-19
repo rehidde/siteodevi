@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Beauty - İletişim</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><span class="logo-text">Elite Beauty</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#services">Hizmetler</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">Hakkımızda</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="container mt-5">
+        <div class="section-title">
+            <h2>İletişim Formu</h2>
+            <span class="title-border"></span>
+            <p>Randevu almak veya sorularınız için bize ulaşın.</p>
+        </div>
+        
+        <form id="contactForm" onsubmit="validateForm(event)">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="firstName" class="form-label">Adınız*</label>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="lastName" class="form-label">Soyadınız*</label>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-posta Adresiniz*</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Telefon Numaranız*</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-3">
+                <label for="service" class="form-label">İlgilendiğiniz Hizmet</label>
+                <select class="form-select" id="service">
+                    <option value="">Seçiniz</option>
+                    <option value="sac-bakimi">Saç Bakımı</option>
+                    <option value="cilt-bakimi">Cilt Bakımı</option>
+                    <option value="makyaj">Makyaj</option>
+                    <option value="epilasyon">Epilasyon</option>
+                    <option value="masaj">Masaj</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="preferredDate" class="form-label">Tercih Ettiğiniz Tarih</label>
+                <input type="date" class="form-control" id="preferredDate">
+            </div>
+            
+            <div class="mb-3">
+                <label for="preferredTime" class="form-label">Tercih Ettiğiniz Saat</label>
+                <input type="time" class="form-control" id="preferredTime">
+            </div>
+            
+            <div class="mb-3">
+                <label for="message" class="form-label">Mesajınız</label>
+                <textarea class="form-control" id="message" rows="5"></textarea>
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="newsletter">
+                <label class="form-check-label" for="newsletter">Yenilikler ve kampanyalar hakkında bilgi almak istiyorum</label>
+            </div>
+            
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="terms" required>
+                <label class="form-check-label" for="terms"><a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Gizlilik Politikası</a>'nı okudum ve kabul ediyorum*</label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Gönder</button>
+            <button type="reset" class="btn btn-secondary">Temizle</button>
+        </form>
+    </div>
+
+    <!-- Contact Info Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="contact-info-card">
+                    <h4><i class="bi bi-geo-alt"></i> Adres</h4>
+                    <p>Örnek Mahallesi, Güzellik Sokak No:123<br>İstanbul / Türkiye</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-info-card">
+                    <h4><i class="bi bi-telephone"></i> Telefon</h4>
+                    <p>+90 212 123 45 67</p>
+                    <p>+90 555 123 45 67</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="contact-info-card">
+                    <h4><i class="bi bi-envelope"></i> E-posta</h4>
+                    <p>info@elitebeauty.com</p>
+                    <p>randevu@elitebeauty.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Gizlilik Politikası</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Kişisel verileriniz 6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında işlenmektedir. Detaylı bilgi için gizlilik politikamızı inceleyebilirsiniz.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Elite Beauty</h4>
+                    <p>Güzellik ve bakımda kalitenin adresi</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Çalışma Saatleri</h4>
+                    <p>Pazartesi - Cumartesi: 09:00 - 19:00</p>
+                    <p>Pazar: Kapalı</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="index.html#services">Hizmetler</a></li>
+                        <li><a href="index.html#about">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>&copy; 2025 Elite Beauty. Tüm hakları saklıdır.</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
