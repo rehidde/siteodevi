@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ana Sayfa - Müzik Önerileri</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body class="index-sayfasi"> <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mt-4">
+        <h1 class="display-4" id="anaBaslik">Müzik Önerileri</h1> <span id="hosgeldinMesaji">Hoş geldiniz! İşte size özel seçilmiş müzikler.</span>
+      </div>
+    </div>
+
+    <div class="contact-button-container">
+      <a href="iletisim.html" class="btn btn-primary">İletişim</a>
+    </div>
+
+     <div class="rastgele-sayi-bolumu">
+        7'den 70'e: <span id="rastgeleSayiDeger" class="rastgele-sayi">-</span>
+        <button class="btn btn-sm btn-dark mt-2" onclick="yetmistenYediyeSayiUret()">Yeni Sayı Üret</button>
+    </div>
+
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <button class="btn btn-info btn-block" onclick="listeGorselliginiDegistir('klasik')">Klasik Müzikler</button>
+        <div id="klasik" style="display:none;" class="p-3 border">
+          <div class="muzik-div"><span>Klasik Müzik 1</span></div>
+          <div class="muzik-div"><span>Klasik Müzik 2</span></div>
+          <div class="muzik-div"><span>Klasik Müzik 3</span></div>
+          <div class="muzik-div"><span>Klasik Müzik 4</span></div>
+          <div class="muzik-div"><span>Klasik Müzik 5</span></div>
+          <div class="muzik-div"><span>Klasik Müzik 6</span></div>
+          <div class="muzik-div"><span>Klasik Müzik 7</span></div>
+          <div class="muzik-div"><span>Klasik Müzik 8</span></div>
+          <div class="muzik-div"><span>Klasik Müzik 9</span></div>
+          <div class="muzik-div"><span>Klasik Müzik 10</span></div>
+        </div>
+
+        <button class="btn btn-info btn-block mt-3" onclick="listeGorselliginiDegistir('metal')">Metal Müzikler</button>
+        <div id="metal" style="display:none;" class="p-3 border">
+          <div class="muzik-div"><span>Metal Müzik 1</span></div>
+          <div class="muzik-div"><span>Metal Müzik 2</span></div>
+          <div class="muzik-div"><span>Metal Müzik 3</span></div>
+          <div class="muzik-div"><span>Metal Müzik 4</span></div>
+          <div class="muzik-div"><span>Metal Müzik 5</span></div>
+          <div class="muzik-div"><span>Metal Müzik 6</span></div>
+          <div class="muzik-div"><span>Metal Müzik 7</span></div>
+          <div class="muzik-div"><span>Metal Müzik 8</span></div>
+          <div class="muzik-div"><span>Metal Müzik 9</span></div>
+          <div class="muzik-div"><span>Metal Müzik 10</span></div>
+        </div>
+
+        <button class="btn btn-info btn-block mt-3" onclick="listeGorselliginiDegistir('jazz')">Jazz Müzikler</button>
+        <div id="jazz" style="display:none;" class="p-3 border">
+          <div class="muzik-div"><span>Jazz Müzik 1</span></div>
+          <div class="muzik-div"><span>Jazz Müzik 2</span></div>
+          <div class="muzik-div"><span>Jazz Müzik 3</span></div>
+          <div class="muzik-div"><span>Jazz Müzik 4</span></div>
+          <div class="muzik-div"><span>Jazz Müzik 5</span></div>
+          <div class="muzik-div"><span>Jazz Müzik 6</span></div>
+          <div class="muzik-div"><span>Jazz Müzik 7</span></div>
+          <div class="muzik-div"><span>Jazz Müzik 8</span></div>
+          <div class="muzik-div"><span>Jazz Müzik 9</span></div>
+          <div class="muzik-div"><span>Jazz Müzik 10</span></div>
+        </div>
+
+        <button class="btn btn-info btn-block mt-3" onclick="listeGorselliginiDegistir('utku')">Utku Özel</button>
+        <div id="utku" style="display:none;" class="p-3 border">
+          <div class="muzik-div"><span>Utku Müzik 1</span></div>
+          <div class="muzik-div"><span>Utku Müzik 2</span></div>
+          <div class="muzik-div"><span>Utku Müzik 3</span></div>
+          <div class="muzik-div"><span>Utku Müzik 4</span></div>
+          <div class="muzik-div"><span>Utku Müzik 5</span></div>
+          <div class="muzik-div"><span>Utku Müzik 6</span></div>
+          <div class="muzik-div"><span>Utku Müzik 7</span></div>
+          <div class="muzik-div"><span>Utku Müzik 8</span></div>
+          <div class="muzik-div"><span>Utku Müzik 9</span></div>
+          <div class="muzik-div"><span>Utku Müzik 10</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <h4>En Çok Dinlenenler Tablosu</h4>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Müzik Adı</th>
+              <th>Sanatçı</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Örnek Müzik</td>
+              <td>Sanatçı İsmi</td>
+            </tr>
+             <tr>
+              <td>2</td>
+              <td>Örnek Müzik 2</td>
+              <td>Sanatçı İsmi 2</td>
+            </tr>
+             <tr>
+              <td>3</td>
+              <td>Örnek Müzik 3</td>
+              <td>Sanatçı İsmi 3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+     <div class="row mt-5 mb-5 p-3 border rounded">
+         <div class="col-12">
+             <h4>Sayfayla Etkileşim</h4>
+             <div class="d-flex flex-wrap align-items-center gap-3">
+                 <button class="btn btn-secondary" onclick="anlikTarihiGoster()">Tarihi Göster</button>
+                 <button class="btn btn-secondary" onclick="baslikRenginiDegistirToggle()">Başlık Rengini Değiştir</button>
+                 <div class="d-flex align-items-center gap-2">
+                     <input type="number" id="sayiBirInput" class="form-control w-auto" placeholder="Sayı 1">
+                     +
+                     <input type="number" id="sayiIkiInput" class="form-control w-auto" placeholder="Sayı 2">
+                     <button class="btn btn-secondary" onclick="toplamaSonucunuGoster()">Topla</button>
+                     <span id="toplamSonucu" class="ml-2 font-weight-bold">-</span>
+                 </div>
+                  <div class="d-flex align-items-center gap-2">
+                     <button class="btn btn-success" onclick="robotOmerKonus()">RobotÖmer</button>
+                     <span id="robotOmerCikti" class="ml-2 font-weight-bold text-primary">-</span>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+
+    <div class="row mt-5">
+      <div class="col-12 text-center">
+        <h3>Önerilen Video</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2w5LWJSd42g?si=uFK_eFZN_ueQQuQr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-6 text-center">
+            <h4>utku</h4>
+            <img src="img/monalisa.jpg" alt="utku" class="img-fluid rounded">
+        </div>
+        <div class="col-6 text-center">
+             <h4>bne</h4>
+            <img src="img/sasirma.jpg" alt="bne" class="img-fluid rounded">
+        </div>
+    </div>
+
+  </div>
+</body>
+</html>

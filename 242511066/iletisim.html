@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css"> <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body class="iletisim-sayfasi"> <div class="container mt-5">
+    <h2 id="iletisimBaslik">İletişim Formu</h2> <form onsubmit="event.preventDefault(); iletisimGirisleriniKontrolEt();">
+      <input type="text" class="form-control mb-2" placeholder="Adınız" required> <input type="text" class="form-control mb-2" placeholder="Soyadınız" required> <input type="email" class="form-control mb-2" placeholder="E-posta" required> <input type="tel" class="form-control mb-2" placeholder="Telefon">
+      <input type="text" class="form-control mb-2" placeholder="Konu">
+      <input type="text" class="form-control mb-2" placeholder="Mesaj Başlığı">
+      <input type="url" class="form-control mb-2" placeholder="Web Siteniz (varsa)">
+      <input type="number" class="form-control mb-2" placeholder="Yaş" min="1" max="120"> <input type="date" class="form-control mb-2">
+      <input type="time" class="form-control mb-2">
+
+      <input type="password" class="form-control mb-2" placeholder="Şifre">
+      <label for="memnuniyet" class="form-label">Memnuniyet (1-10)</label> <input type="range" class="form-control mb-2" min="1" max="10" id="memnuniyet">
+      <label for="favoriRenk" class="form-label">Favori Renk</label> <input type="color" class="form-control mb-3" id="favoriRenk">
+
+      <textarea class="form-control mb-3" placeholder="Mesajınız" required></textarea> <div class="muzik-div p-3 mt-4 border rounded mb-3">
+           En sevdiğiniz şarkıcıyı yazın: <input type="text" class="form-control mt-2">
+       </div>
+
+
+      <div class="d-flex justify-content-between flex-wrap gap-2">
+        <button type="submit" class="btn btn-success mb-2">Gönder</button>
+        <button type="button" class="btn btn-secondary mb-2" onclick="formAlanlariniTemizle()">Temizle</button>
+        <button type="button" class="btn btn-primary mb-2" onclick="bilgiMesajiGoster('keyifli')">Mesaj Göster</button>
+        <button type="button" class="btn btn-danger mb-2" onclick="sayfaBasinaKaydir()">Yukarı Çık</button>
+        <button type="button" class="btn btn-warning mb-2" onclick="iletisimBasliginiDegistir()">Yazıyı Değiştir</button>
+        <button type="button" class="btn btn-dark mb-2" onclick="belirliSayfayaYonlendir('index.html')">Ana Sayfa</button>
+         </div>
+    </form>
+  </div>
+</body>
+</html>
