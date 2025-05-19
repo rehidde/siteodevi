@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ornitorenkler Alemi - İletişim</title>
+    <link href="CSS/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .form-control:focus, .form-select:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25), 0 0 10px rgba(0, 123, 255, 0.3) !important;
+        }
+        .animated-platypus-icon-form {
+            display: inline-block;
+            animation: spinPlatypus 3s linear infinite;
+        }
+        @keyframes spinPlatypus {
+            100% {transform: rotate(360deg);}
+        }
+        .modal-body h6 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        body.dark-theme .modal-body h6 {
+            color: #bb86fc;
+        }
+        .modal-body ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        .modal-body ul li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><i class="fa-solid fa-paw"></i> <span>Ornitorenkler</span> <span>Alemi</span></a>
+    <div>
+      <button id="themeToggleBtn" class="btn btn-outline-secondary me-2">
+        <i class="fa-solid fa-moon"></i> <span class="theme-text">Koyu Tema</span>
+      </button>
+      <a class="btn btn-outline-light" href="index.html"><i class="fa-solid fa-house"></i> <span>Anasayfa</span></a>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="text-center mb-4" data-aos="fade-down">
+        <i class="fas fa-envelope-open-text fa-3x text-primary animated-platypus-icon-form"></i>
+        <h1><span>İletişim</span> <span>Formu</span></h1>
+    </div>
+    <p class="lead text-center" data-aos="fade-up" data-aos-delay="100"><span>Ornitorenkler</span> <span>ve</span> <span>web</span> <span>sitemiz</span> <span>hakkında</span> <span>daha</span> <span>fazla</span> <span>bilgi</span> <span>almak</span>, <span>görüş</span> <span>ve</span> <span>önerilerinizi</span> <span>iletmek</span> <span>veya</span> <span>merak</span> <span>ettiklerinizi</span> <span>sormak</span> <span>için</span> <span>lütfen</span> <span>aşağıdaki</span> <span>formu</span> <span>dikkatlice</span> <span>doldurun</span>.</p>
+    
+    <form id="iletisimForm" class="p-4 border rounded shadow-lg bg-white" data-aos="zoom-in-up" data-aos-delay="200" novalidate>
+
+        <div class="row">
+            <div class="col-md-6 mb-3" data-aos="fade-up" data-aos-delay="300">
+                <label for="adsoyad" class="form-label"><i class="fas fa-user"></i> <span>Adınız</span> <span>Soyadınız</span> (*)</label>
+                <input type="text" class="form-control" id="adsoyad" placeholder="Örn: Emirhan Çalık" required pattern="[A-Za-zğüşöçıİĞÜŞÖÇı\s]{2,}">
+                <div class="invalid-feedback"><span>Lütfen</span> <span>geçerli</span> <span>bir</span> <span>ad</span> <span>soyad</span> <span>giriniz</span>.</div>
+            </div>
+
+            <div class="col-md-6 mb-3" data-aos="fade-up" data-aos-delay="350">
+                <label for="email" class="form-label"><i class="fas fa-envelope"></i> <span>E-posta</span> <span>Adresiniz</span> (*)</label>
+                <input type="email" class="form-control" id="email" placeholder="calik.emirhan@ogr.ahievran.edu.tr" required>
+                <div class="invalid-feedback"><span>Lütfen</span> <span>geçerli</span> <span>bir</span> <span>e-posta</span> <span>adresi</span> <span>giriniz</span>.</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3" data-aos="fade-up" data-aos-delay="400">
+                <label for="telefon" class="form-label"><i class="fas fa-phone"></i> <span>Telefon</span> <span>Numaranız</span></label>
+                <input type="tel" class="form-control" id="telefon" placeholder="05xxxxxxxxx" pattern="[0-9]{10,11}">
+                <div class="invalid-feedback"><span>Lütfen</span> <span>geçerli</span> <span>bir</span> <span>telefon</span> <span>numarası</span> <span>giriniz</span> (<span>Örn:</span> <span>05xxxxxxxxx</span>).</div>
+            </div>
+            <div class="col-md-6 mb-3" data-aos="fade-up" data-aos-delay="450">
+                <label for="konu" class="form-label"><i class="fas fa-bookmark"></i> <span>Konu</span> (*)</label>
+                <input type="text" class="form-control" id="konu" placeholder="Bilgi Talebi, Öneri, Soru..." required minlength="5">
+                <div class="invalid-feedback"><span>Konu</span> <span>en</span> <span>az</span> <span>5</span> <span>karakter</span> <span>olmalıdır</span>.</div>
+            </div>
+        </div>
+
+        <div class="mb-3" data-aos="fade-up" data-aos-delay="500">
+            <label for="mesaj" class="form-label"><i class="fas fa-pen-alt"></i> <span>Mesajınız</span> (*)</label>
+            <textarea class="form-control" id="mesaj" rows="5" placeholder="Ornitorenklerin yaşam alanları hakkında daha fazla detay alabilir miyim?" required minlength="10"></textarea>
+            <div class="invalid-feedback"><span>Mesajınız</span> <span>en</span> <span>az</span> <span>10</span> <span>karakter</span> <span>olmalıdır</span>.</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3" data-aos="fade-right" data-aos-delay="550">
+                <label for="dogumTarihi" class="form-label"><i class="fas fa-calendar-day"></i> <span>Doğum</span> <span>Tarihiniz</span></label>
+                <input type="date" class="form-control" id="dogumTarihi" max="2015-01-01">
+            </div>
+            <div class="col-md-6 mb-3" data-aos="fade-left" data-aos-delay="550">
+                <label for="ziyaretSikligi" class="form-label"><i class="fas fa-chart-bar"></i> <span>Sitemizi</span> <span>Ne</span> <span>Sıklıkla</span> <span>Ziyaret</span> <span>Edersiniz?</span> (<span>Ayda</span>)</label>
+                <input type="number" class="form-control" id="ziyaretSikligi" min="1" max="30" placeholder="Ayda kaç kez?">
+            </div>
+        </div>
+
+        <div class="mb-3" data-aos="fade-up" data-aos-delay="600">
+            <label class="form-label"><i class="fas fa-venus-mars"></i> <span>Cinsiyetiniz</span></label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="cinsiyet" id="erkek" value="Erkek">
+                <label class="form-check-label" for="erkek"><span>Erkek</span></label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="cinsiyet" id="kadin" value="Kadın">
+                <label class="form-check-label" for="kadin"><span>Kadın</span></label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="cinsiyet" id="belirtmekIstemiyorum" value="Belirtmek İstemiyorum" checked>
+                <label class="form-check-label" for="belirtmekIstemiyorum"><span>Belirtmek</span> <span>İstemiyorum</span></label>
+            </div>
+        </div>
+
+        <div class="mb-3" data-aos="fade-up" data-aos-delay="650">
+            <label for="favoriHayvan" class="form-label"><i class="fas fa-paw"></i> <span>Favori</span> <span>Hayvanınız</span> (<span>Ornitorenk</span> <span>Dışında</span>)</label>
+            <input type="text" list="hayvanlar" class="form-control" id="favoriHayvan" placeholder="Bir hayvan ismi girin veya seçin">
+            <datalist id="hayvanlar">
+                <option value="Kedi">
+                <option value="Köpek">
+                <option value="Panda">
+                <option value="Kaplan">
+                <option value="Yunus">
+                <option value="Fil">
+                <option value="Diğer">
+            </datalist>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mb-3" data-aos="fade-up" data-aos-delay="700">
+                <label for="renkSecimi" class="form-label"><i class="fas fa-palette"></i> <span>Favori</span> <span>Renginiz</span></label>
+                <input type="color" class="form-control form-control-color" id="renkSecimi" value="#563d7c" title="Favori renginizi seçin">
+            </div>
+            <div class="col-md-6 mb-3" data-aos="fade-up" data-aos-delay="750">
+                <label for="sehir" class="form-label"><i class="fas fa-city"></i> <span>Yaşadığınız</span> <span>Şehir</span></label>
+                <select class="form-select" id="sehir">
+                    <option selected disabled value=""><span>Lütfen</span> <span>bir</span> <span>şehir</span> <span>seçiniz...</span></option>
+                    <option value="Istanbul"><span>İstanbul</span></option>
+                    <option value="Ankara"><span>Ankara</span></option>
+                    <option value="Izmir"><span>İzmir</span></option>
+                    <option value="Bursa"><span>Bursa</span></option>
+                    <option value="Antalya"><span>Antalya</span></option>
+                    <option value="Kırşehir"><span>Kırşehir</span></option>
+                    <option value="Diğer"><span>Diğer</span></option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mb-3" data-aos="fade-up" data-aos-delay="800">
+            <label class="form-label"><i class="fas fa-info-circle"></i> <span>Ornitorenkler</span> <span>hakkında</span> <span>hangi</span> <span>konular</span> <span>daha</span> <span>çok</span> <span>ilginizi</span> <span>çekiyor?</span></label><br>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ilgiAlani" value="YasamAlani" id="ilgiYasam">
+                <label class="form-check-label" for="ilgiYasam"><span>Yaşam</span> <span>Alanları</span> <span>ve</span> <span>Habitatları</span></label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ilgiAlani" value="Beslenme" id="ilgiBeslenme">
+                <label class="form-check-label" for="ilgiBeslenme"><span>Beslenme</span> <span>Alışkanlıkları</span> <span>ve</span> <span>Avlanma</span> <span>Teknikleri</span></label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ilgiAlani" value="Ureme" id="ilgiUreme">
+                <label class="form-check-label" for="ilgiUreme"><span>Üreme</span> <span>Davranışları</span> <span>ve</span> <span>Yavru</span> <span>Bakımı</span></label>
+            </div>
+             <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ilgiAlani" value="Zehir" id="ilgiZehir">
+                <label class="form-check-label" for="ilgiZehir"><span>Zehirli</span> <span>Mahmuzları</span> <span>ve</span> <span>Savunma</span> <span>Mekanizmaları</span></label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ilgiAlani" value="Koruma" id="ilgiKoruma">
+                <label class="form-check-label" for="ilgiKoruma"><span>Koruma</span> <span>Durumları</span> <span>ve</span> <span>Tehditler</span></label>
+            </div>
+        </div>
+
+        <div class="mb-3" data-aos="fade-up" data-aos-delay="850">
+            <label for="dosyaYukle" class="form-label"><i class="fas fa-file-upload"></i> <span>Ek</span> <span>Dosya</span> (<span>Max</span> <span>2MB</span>, <span>isteğe</span> <span>bağlı</span> - <span>Ornitorenk</span> <span>çiziminiz</span>, <span>soru</span> <span>metniniz</span> <span>vb.</span>)</label>
+            <input class="form-control" type="file" id="dosyaYukle" accept=".jpg, .jpeg, .png, .pdf, .doc, .docx, .txt">
+            <small class="form-text text-muted"><span>Kabul</span> <span>edilen</span> <span>formatlar:</span> <span>JPG,</span> <span>PNG,</span> <span>PDF,</span> <span>DOC,</span> <span>TXT.</span></small>
+        </div>
+        
+        <div class="mb-4" data-aos="fade-up" data-aos-delay="900">
+            <label for="degerlendirme" class="form-label"><i class="fas fa-star-half-alt"></i> <span>Site</span> <span>Genel</span> <span>Değerlendirmeniz</span> (<span>1</span>=<span>Çok</span> <span>Kötü</span>, <span>5</span>=<span>Harika</span>)</label>
+            <input type="range" class="form-range" min="1" max="5" step="1" id="degerlendirme" value="3">
+            <div class="d-flex justify-content-between text-muted small">
+                <span><span>Çok</span> <span>Kötü</span></span>
+                <span><span>Kötü</span></span>
+                <span><span>Orta</span></span>
+                <span><span>İyi</span></span>
+                <span><span>Harika</span></span>
+            </div>
+        </div>
+        
+        <input type="hidden" id="formKaynak" name="formKaynak" value="iletisimSayfasi">
+        <input type="hidden" id="gizliBilgi" name="gizliBilgiInput" value="ornitorenk_sever_kullanici"> <div class="form-check mb-3" data-aos="fade-up" data-aos-delay="950">
+            <input class="form-check-input" type="checkbox" value="" id="kvkkOnay" required>
+            <label class="form-check-label" for="kvkkOnay">
+                <a href="#" onclick="kvkkModalGoster(event)"><span>KVKK</span> <span>Aydınlatma</span> <span>Metni</span></a>'<span>ni</span> <span>okudum</span>, <span>anladım</span> <span>ve</span> <span>kabul</span> <span>ediyorum</span>. (*)
+            </label>
+            <div class="invalid-feedback"><span>Lütfen</span> <span>KVKK</span> <span>metnini</span> <span>onaylayınız</span>.</div>
+        </div>
+        
+        <div class="btn-group w-100" data-aos="fade-up" data-aos-delay="1000">
+            <button type="submit" class="btn btn-primary btn-lg flex-grow-1 me-2"><i class="fas fa-paper-plane"></i> <span>Gönder</span></button>
+            <button type="button" onclick="formTemizle('iletisimForm')" class="btn btn-warning btn-lg flex-grow-0"><i class="fas fa-eraser"></i> <span>Temizle</span></button>
+            <button type="reset" class="btn btn-danger btn-lg flex-grow-0 ms-2"><i class="fas fa-undo"></i> <span>Sıfırla</span></button>
+        </div>
+        <div id="formSonuc" class="mt-3"></div> </form>
+</div>
+
+<div class="modal fade" id="kvkkModal" tabindex="-1" aria-labelledby="kvkkModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="kvkkModalLabel"><i class="fas fa-shield-alt"></i> <span>Kişisel</span> <span>Verilerin</span> <span>Korunması</span> <span>Kanunu</span> (<span>KVKK</span>) <span>Aydınlatma</span> <span>Metni</span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Veri Sorumlusu</h6>
+        <p>Emirhan Çalık</p>
+        <p>Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, "Ornitorenkler Alemi" web sitesi ("Web Sitesi") üzerinden bizimle iletişime geçmeniz halinde elde edilen kişisel verilerinizin işlenmesi hakkında sizi bilgilendirmek amacıyla hazırlanmıştır.</p>
+        
+        <h6>İşlenen Kişisel Verileriniz ve İşleme Amaçları</h6>
+        <p>Web sitemizdeki iletişim formu aracılığıyla aşağıdaki kişisel verileriniz toplanmakta ve işlenmektedir:</p>
+        <ul>
+            <li><strong>Adınız Soyadınız:</strong> İletişim talebinizin ve kimliğinizin belirlenmesi, size doğru şekilde hitap edebilmek ve iletişim kurabilmek amacıyla işlenmektedir.</li>
+            <li><strong>E-posta Adresiniz:</strong> İletişim talebinize yanıt verebilmek, bilgi sağlamak ve gerektiğinde sizinle iletişime geçebilmek amacıyla işlenmektedir.</li>
+            <li><strong>Telefon Numaranız (isteğe bağlı):</strong> İletişim talebinize daha hızlı yanıt verebilmek veya e-posta yoluyla iletişim kurulamaması durumunda sizinle iletişime geçebilmek amacıyla işlenebilir.</li>
+            <li><strong>Konu:</strong> İletişim talebinizin içeriğini anlamak ve ilgili konuda size yardımcı olabilmek amacıyla işlenmektedir.</li>
+            <li><strong>Mesajınız:</strong> Sorularınızı, taleplerinizi ve iletmek istediğiniz bilgileri değerlendirebilmek ve yanıtlayabilmek amacıyla işlenmektedir.</li>
+            <li><strong>Doğum Tarihiniz (isteğe bağlı):</strong> Demografik analizler yapmak ve web sitesi deneyiminizi kişiselleştirmek amacıyla anonim veya toplu olarak işlenebilir. Bu veri zorunlu değildir.</li>
+            <li><strong>Sitemizi Ne Sıklıkla Ziyaret Edersiniz? (isteğe bağlı):</strong> Web sitesi kullanım alışkanlıklarını anlamak ve içeriğimizi geliştirmek amacıyla anonim veya toplu olarak işlenebilir. Bu veri zorunlu değildir.</li>
+            <li><strong>Cinsiyetiniz (isteğe bağlı):</strong> Demografik analizler yapmak ve web sitesi deneyiminizi kişiselleştirmek amacıyla anonim veya toplu olarak işlenebilir. Bu veri zorunlu değildir.</li>
+            <li><strong>Favori Hayvanınız (Ornitorenk Dışında) (isteğe bağlı):</strong> İlgi alanlarınızı anlamak ve gelecekteki içeriklerimizi şekillendirmek amacıyla anonim veya toplu olarak işlenebilir. Bu veri zorunlu değildir.</li>
+            <li><strong>Favori Renginiz (isteğe bağlı):</strong> Web sitesi deneyiminizi kişiselleştirmek amacıyla anonim veya toplu olarak işlenebilir. Bu veri zorunlu değildir.</li>
+            <li><strong>Yaşadığınız Şehir (isteğe bağlı):</strong> Demografik analizler yapmak ve içeriğimizi bölgesel ilgi alanlarına göre şekillendirmek amacıyla anonim veya toplu olarak işlenebilir. Bu veri zorunlu değildir.</li>
+            <li><strong>Ornitorenkler Hakkında Hangi Bilgiler İlginizi Çekiyor? (isteğe bağlı):</strong> İlgi alanlarınızı anlamak ve gelecekteki içeriklerimizi şekillendirmek amacıyla işlenmektedir.</li>
+            <li><strong>Ek Dosya (isteğe bağlı):</strong> İletişim talebinizi desteklemek amacıyla gönderdiğiniz dosyalar talebinizin değerlendirilmesi için işlenebilir.</li>
+            <li><strong>Site Değerlendirmeniz (isteğe bağlı):</strong> Web sitemiz hakkındaki görüşlerinizi anlamak ve hizmet kalitemizi artırmak amacıyla anonim veya toplu olarak işlenebilir.</li>
+            <li><strong>Form Kaynak Bilgisi:</strong> İletişim talebinizin hangi sayfadan yapıldığını anlamak amacıyla işlenmektedir.</li>
+        </ul>
+
+        <h6>Kişisel Veri Toplama Yöntemi ve Hukuki Sebebi</h6>
+        <p>Kişisel verileriniz, Web Sitemiz üzerindeki iletişim formunu doldurmanız suretiyle <strong>açık rızanız</strong> ve KVKK'nın 5. maddesinin (1) numaralı fıkrası gereğince toplanmaktadır. Zorunlu alanları doldurmanız iletişim talebinizin işleme alınması için gereklidir. İsteğe bağlı alanları doldurup doldurmamak tamamen sizin tercihinizdedir.</p>
+        
+        <h6>Kişisel Verilerinizin Aktarılması</h6>
+        <p>Toplanan kişisel verileriniz, yukarıda belirtilen işleme amaçları doğrultusunda <strong>üçüncü kişilerle paylaşılmamaktadır</strong>.</p>
+        
+        <h6>Kişisel Veri Saklama Süresi</h6>
+        <p>Kişisel verileriniz, iletişim talebinizin sonuçlandırılması ve ilgili süreçlerin tamamlanması için gerekli olan süre boyunca saklanacaktır. Yasal düzenlemeler veya olası hukuki süreçler gerektirdiği takdirde, bu süreler aşılabilir. İletişim talebiniz sonuçlandıktan sonra, mevzuatta öngörülen saklama süreleri saklı kalmak kaydıyla kişisel verileriniz silinecek, yok edilecek veya anonim hale getirilecektir.</p>
+        
+        <h6>Veri Sahibinin Hakları</h6>
+        <p>KVKK'nın 11. maddesi uyarınca kişisel veri sahibi olarak aşağıdaki haklara sahipsiniz:</p>
+        <ul>
+            <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
+            <li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme,</li>
+            <li>Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme,</li>
+            <li>Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme,</li>
+            <li>Kişisel verilerinizin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerinizin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+            <li>KVKK ve ilgili diğer kanun hükümlerine uygun olarak işlenmiş olmasına rağmen, işlenmesini gerektiren sebeplerin ortadan kalkması hâlinde kişisel verilerinizin silinmesini veya yok edilmesini isteme ve bu kapsamda yapılan işlemin kişisel verilerinizin aktarıldığı üçüncü kişilere bildirilmesini isteme,</li>
+            <li>İşlenen verilerinizin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme,</li>
+            <li>Kişisel verilerinizin kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme.</li>
+        </ul>
+        <p>Yukarıda belirtilen haklarınızı kullanmak için <strong>ornitorenkleralemi@gmail.com</strong> üzerinden bizimle iletişime geçebilirsiniz. Talepleriniz en kısa sürede ve en geç otuz gün içinde değerlendirilerek sonuçlandırılacaktır.</p>
+        
+        <h6>Veri Güvenliği</h6>
+        <p>Kişisel verilerinizin güvenliğini sağlamak için gerekli teknik ve idari tedbirler alınmaktadır.</p>
+        <p>İşbu Aydınlatma Metni, zaman zaman mevzuattaki değişiklikler veya işleme süreçlerimizdeki güncellemeler doğrultusunda revize edilebilir. Güncel metne her zaman Web Sitemiz üzerinden ulaşabilirsiniz.</p>
+        <p><strong>Son Güncelleme Tarihi:</strong> <span id="kvkkModalLastUpdateDate"></span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times-circle"></i> <span>Kapat</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button onclick="scrollToTop()" id="backToTopBtn" title="Yukarı Çık"><i class="fa-solid fa-arrow-up"></i></button>
+
+<footer class="bg-dark text-center p-4 mt-5">
+    <div class="container">
+        <p class="mb-0"><span>©</span> <span id="footerYilIletisim">2025</span> <span>Emirhan Çalık / 242511068</span> -<br class="d-sm-none"> <i class="fas fa-clock"></i> <span id="saat-iletisim"></span></p>
+         <div class="social-icons mt-2">
+            <a href="#" class="text-white me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="JS/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+      duration: 800, 
+      once: true, 
+      offset: 50,
+      debounceDelay: 50,
+      throttleDelay: 99,
+  });
+  document.getElementById('footerYilIletisim').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

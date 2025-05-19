@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ornitorenkler Alemi - Anasayfa</title>
+    <link href="CSS/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Sayfaya özel ek animasyonlar veya stiller buraya eklenebilir */
+        .animated-platypus-icon {
+            display: inline-block;
+            animation: bouncePlatypus 2s infinite;
+        }
+
+        @keyframes bouncePlatypus {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}  
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"><i class="fa-solid fa-paw animated-platypus-icon"></i> <span>Ornitorenkler</span> <span>Alemi</span></a>
+    <div>
+      <button id="themeToggleBtn" class="btn btn-outline-secondary me-2">
+        <i class="fa-solid fa-moon"></i> <span class="theme-text">Koyu Tema</span>
+      </button>
+      <a class="btn btn-outline-light" href="iletisim.html"><span>İletişim</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="container mt-5 text-center" data-aos="fade-in" data-aos-duration="1000">
+    <img src="IMG/Ornitorenk.jpg" alt="Ornitorenk Banner" class="img-fluid rounded shadow mb-4" style="max-height: 300px; object-fit: cover; width: 100%; object-position: center top;">
+    <h1 data-aos="fade-down"><span>Ornitorenkler:</span> <span>Doğanın</span> <span>Tuhaf</span> <span>Harikaları</span></h1>
+    <p class="lead" data-aos="fade-up" data-aos-delay="100"><span>Ornitorenkler</span> (<span>Ornithorhynchus anatinus</span>), <span>Avustralya'ya</span> <span>özgü</span>, <span>yarı</span> <span>sucul</span> bir <span>memeli</span> <span>türüdür</span>. <span>Gagalı</span> <span>memeli</span> <span>olarak</span> <span>da</span> <span>bilinirler</span> ve <span>doğanın</span> <span>en</span> <span>ilginç</span> <span>canlılarından</span> <span>biridir</span>.</p>
+</header>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="mt-4 mb-4 p-3 bg-light border rounded shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                <button onclick="renkDegistir()" class="btn btn-info me-2 mb-2"><i class="fas fa-palette"></i> <span>Arkaplan</span> <span>Rengini</span> <span>Değiştir</span></button>
+                <button onclick="yaziyiDegistir('anaBaslikMetni')" class="btn btn-warning me-2 mb-2"><i class="fas fa-pen-nib"></i> <span>Başlığı</span> <span>Değiştir</span></button>
+                <button onclick="divGizle('divler')" class="btn btn-secondary me-2 mb-2"><i class="fas fa-eye-slash"></i> <span>Bilgileri</span> <span>Gizle</span></button>
+                <button onclick="divGoster('divler')" class="btn btn-primary me-2 mb-2"><i class="fas fa-eye"></i> <span>Bilgileri</span> <span>Göster</span></button>
+                <button onclick="yeniDivEkle()" class="btn btn-success mb-2"><i class="fas fa-plus-circle"></i> <span>Yeni</span> <span>Bilgi</span> <span>Ekle</span></button>
+            </div>
+
+            <h2 id="anaBaslik" onmouseover="buyut(this)" onmouseout="kucult(this)" data-aos="fade-right" data-aos-delay="300"><span id="anaBaslikMetni"><span>Ornitorenkler</span> <span>Hakkında</span> <span>İlginç</span> <span>Bilgiler</span></span></h2>
+
+            <div id="divler" class="mt-3">
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="50"><span>1.</span> <span>Memeli</span> <span>ama</span> <span>yumurtlarlar!</span> <span>Evet</span>, <span>doğru</span> <span>duydunuz</span>, <span>bu</span> <span>sevimli</span> <span>hayvanlar</span> <span>yumurtlayan</span> <span>memelilerdir</span> (<span>monotrem</span>).</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="100"><span>2.</span> <span>Erkeklerinin</span> <span>zehirli</span> <span>mahmuzları</span> <span>vardır</span>. <span>Arka</span> <span>ayaklarındaki</span> <span>bu</span> <span>mahmuzlar</span> <span>savunma</span> <span>amaçlıdır</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="150"><span>3.</span> <span>Gagaları</span> <span>elektrik</span> <span>algılayabilir!</span> <span>Avlarını</span> <span>bulanık</span> <span>sularda</span> <span>bulmak</span> <span>için</span> <span>elektroresepsiyon</span> <span>kullanırlar</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="200"><span>4.</span> <span>Ördek</span> <span>gagalı</span>, <span>kunduz</span> <span>kuyruklu</span>, <span>su</span> <span>samuru</span> <span>ayaklıdırlar</span>. <span>Tam</span> <span>bir</span> <span>karışım!</span></div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="250"><span>5.</span> <span>Suda</span> <span>yaklaşık</span> <span>12</span> <span>saat</span> <span>geçirebilirler</span>. <span>Yiyecek</span> <span>ararken</span> <span>bu</span> <span>kadar</span> <span>uzun</span> <span>süre</span> <span>suda</span> <span>kalabilirler</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="300"><span>6.</span> <span><span>Kürkleri: <span>İki</span> <span>katmanlı</span> <span>kürkleri</span> <span>vardır</span>; <span>biri</span> <span>yalıtım</span>, <span>diğeri</span> <span>su</span> <span>geçirmezlik</span> <span>içindir</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="350"><span>7.</span> <span><span>Beslenme: <span>Böcek</span> <span>larvaları</span>, <span>tatlı</span> <span>su</span> <span>karidesleri</span> <span>ve</span> <span>solucanlarla</span> <span>beslenirler</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="400"><span>8.</span> <span><span>UV</span> <span>Işığı: <span>UV</span> <span>ışık</span> <span>altında</span> <span>mavi-yeşil</span> <span>bir</span> <span>parıltı</span> <span>yayarlar</span>. <span>Bilim</span> <span>insanları</span> <span>nedenini</span> <span>tam</span> <span>olarak</span> <span>bilmiyor!</span></div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="450"><span>9.</span> <span><span>Yaşam</span> <span>Alanı: <span>Doğu</span> <span>Avustralya</span> <span>ve</span> <span>Tazmanya'nın</span> <span>tatlı</span> <span>su</span> <span>ekosistemlerinde</span> <span>yaşarlar</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="500"><span>10.</span> <span><span>Dişleri</span> <span>Yoktur: <span>Yiyeceklerini</span> <span>gagalarındaki</span> <span>sert</span> <span>plakalarla</span> <span>ezerler</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-left" data-aos-delay="550"><span>11.</span> <span>Yavrularına</span> <span>süt</span> <span>verirler</span>, <span>ancak</span> <span>memeleri</span> <span>yoktur</span>; <span>süt</span> <span>derilerindeki</span> <span>gözeneklerden</span> <span>sızar</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-right" data-aos-delay="600"><span>12.</span> <span>"Platypus"</span> <span>kelimesi</span> <span>Yunanca</span> <span>"düz</span> <span>ayak"</span> <span>anlamına</span> <span>gelir</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="50"><span>13.</span> <span>Karada</span> <span>nispeten</span> <span>beceriksizdirler</span>, <span>perdeli</span> <span>ayaklarını</span> <span>korumak</span> <span>için</span> <span>parmak</span> <span>boğumları</span> <span>üzerinde</span> <span>yürürler</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="100"><span>14.</span> <span>Uzman</span> <span>yüzücülerdir</span>; <span>genellikle</span> <span>ön</span> <span>ayaklarını</span> <span>kullanarak</span> <span>kendilerini</span> <span>ileri</span> <span>iterler</span>, <span>arka</span> <span>ayakları</span> <span>ve</span> <span>kuyrukları</span> <span>dümen</span> <span>görevi</span> <span>görür</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="150"><span>15.</span> <span>Kuyruklarında</span> <span>yağ</span> <span>depolarlar</span>, <span>bu</span> <span>da</span> <span>onlara</span> <span>enerji</span> <span>rezervi</span> <span>sağlar</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="200"><span>16.</span> <span>Genellikle</span> <span>gececidirler</span> (<span>noktürnallerdir</span>) <span>veya</span> <span>alacakaranlıkta</span> (<span>krepüsküler</span>) <span>aktiftirler</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="250"><span>17.</span> <span>Nehir</span> <span>ve</span> <span>dere</span> <span>kenarlarında</span> <span>kazdıkları</span>, <span>karmaşık</span> <span>tünel</span> <span>sistemlerine</span> <span>sahip</span> <span>yuvalarda</span> <span>yaşarlar</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="300"><span>18.</span> <span>Bir</span> <span>gecede</span> <span>kendi</span> <span>vücut</span> <span>ağırlıklarının</span> <span>%20'si</span> <span>ile</span> <span>%50'si</span> <span>arasında</span> <span>yiyecek</span> <span>tüketebilirler</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="350"><span>19.</span> <span>Dişiler</span> <span>genellikle</span> <span>bir</span> <span>ile</span> <span>üç</span> (<span>çoğunlukla</span> <span>iki</span>) <span>yumuşak</span> <span>kabuklu</span>, <span>deri</span> <span>benzeri</span> <span>yumurta</span> <span>yumurtlar</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="400"><span>20.</span> <span>Yavrular</span> (<span>puggles</span> <span>olarak</span> <span>adlandırılır</span>) <span>kör</span>, <span>tüysüz</span> <span>ve</span> <span>çok</span> <span>küçük</span> <span>doğarlar</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="450"><span>21.</span> <span><span>Gözleri</span> <span>ve</span> <span>Kulakları: <span>Su</span> <span>altındayken</span> <span>gözlerini</span> <span>ve</span> <span>kulaklarını</span> <span>kapatan</span> <span>koruyucu</span> <span>bir</span> <span>deri</span> <span>kıvrımına</span> <span>sahiptirler</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="500"><span>22.</span> <span>Vücut</span> <span>ısıları</span> <span>diğer</span> <span>plasentalı</span> <span>memelilere</span> <span>göre</span> <span>oldukça</span> <span>düşüktür</span> (<span>yaklaşık</span> <span>32°C</span> <span>veya</span> <span>90°F</span>).</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="50"><span>23.</span> <span>Ornitorenkler</span> <span>genellikle</span> <span>yalnız</span> <span>yaşayan</span> <span>hayvanlardır</span>, <span>üreme</span> <span>mevsimi</span> <span>dışında</span> <span>sosyal</span> <span>değildirler</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="100"><span>24.</span> <span>Tehdit</span> <span>altında</span> <span>olmasalar</span> <span>da</span>, <span>habitat</span> <span>bozulması</span>, <span>su</span> <span>kirliliği</span> <span>ve</span> <span>iklim</span> <span>değişikliği</span> <span>onları</span> <span>etkileyen</span> <span>başlıca</span> <span>tehditlerdir</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="150"><span>25.</span> <span>Avustralya'nın</span> <span>20</span> <span>sentlik</span> <span>madeni</span> <span>parasında</span> <span>resmedilmişlerdir</span> <span>ve</span> <span>ülkenin</span> <span>ikonik</span> <span>bir</span> <span>sembolüdür</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="200"><span>26.</span> <span>Çok</span> <span>utangaç</span> <span>ve</span> <span>gizlenmeyi</span> <span>seven</span> <span>canlılardır</span>, <span>bu</span> <span>nedenle</span> <span>vahşi</span> <span>doğada</span> <span>görülmeleri</span> <span>oldukça</span> <span>zordur</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="250"><span>27.</span> <span>Bilimsel</span> <span>olarak</span> <span>ilk</span> <span>kez</span> <span>1799'da</span> <span>George</span> <span>Shaw</span> <span>tarafından</span> <span>tanımlandığında</span>, <span>bazı</span> <span>Avrupalı</span> <span>doğa</span> <span>bilimcileri</span> <span>onun</span> <span>farklı</span> <span>hayvanların</span> <span>parçalarından</span> <span>oluşturulmuş</span> <span>bir</span> <span>aldatmaca</span> <span>olduğunu</span> <span>düşünmüştür</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="300"><span>28.</span> <span>"Monotrem"</span> <span>terimi</span>, <span>üreme</span>, <span>boşaltım</span> <span>ve</span> <span>dışkılama</span> <span>için</span> <span>tek</span> <span>bir</span> <span>açıklığa</span> (<span>kloak</span>) <span>sahip</span> <span>olmaları</span> <span>anlamına</span> <span>gelir</span>. <span>Diğer</span> <span>monotremler</span> <span>ekidnalardır</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="350"><span>29.</span> <span>Ornitorenkler</span>, <span>yaklaşık</span> <span>120</span> <span>milyon</span> <span>yıl</span> <span>öncesine</span> <span>dayanan</span> <span>çok</span> <span>eski</span> <span>bir</span> <span>memeli</span> <span>soyundan</span> <span>gelmektedir</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="400"><span>30.</span> <span>Bu</span> <span>eşsiz</span> <span>hayvanlar</span>, <span>evrimin</span> <span>ne</span> <span>kadar</span> <span>şaşırtıcı</span> <span>ve</span> <span>çeşitli</span> <span>yollar</span> <span>izleyebileceğinin</span> <span>canlı</span> <span>bir</span> <span>kanıtıdır</span> <span>ve</span> <span>biyoçeşitliliğin</span> <span>korunmasının</span> <span>önemini</span> <span>vurgular</span>.</div>
+                <div class="platypus-fact-container" data-aos="fade-up" data-aos-delay="450"><span>31.</span> <span><span>Ek</span> <span>Bilgi: <span>Ornitorenklerin</span> <span>zehri</span>, <span>insanlar</span> <span>için</span> <span>öldürücü</span> <span>olmasa</span> <span>da</span> <span>şiddetli</span> <span>ağrıya</span> <span>neden</span> <span>olabilir</span>.</div>
+            </div>
+
+            <section id="ornitorenkOzellikleri" class="mt-5" data-aos="fade-left" data-aos-delay="400">
+                <h2 class="mt-5"><span>Ornitorenk</span> <span>Özellikleri</span> <span>Tablosu</span></h2>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th><span>Özellik</span></th>
+                                <th><span>Açıklama</span></th>
+                                <th><span>İlginç</span> <span>Not</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-aos="fade-up" data-aos-delay="50">
+                                <td><span>Tür</span></td>
+                                <td><span>Memeli</span> (<span>Monotrem</span>)</td>
+                                <td><span>Yumurtlar</span> <span>ve</span> <span>süt</span> <span>bezer</span>.</td>
+                            </tr>
+                            <tr data-aos="fade-up" data-aos-delay="100">
+                                <td><span>Yaşam</span> <span>Alanı</span></td>
+                                <td><span>Doğu</span> <span>Avustralya</span>, <span>Tazmanya</span></td>
+                                <td><span>Tatlı</span> <span>su</span> <span>ekosistemleri</span> (<span>nehirler</span>, <span>göller</span>).</td>
+                            </tr>
+                            <tr data-aos="fade-up" data-aos-delay="150">
+                                <td><span>Beslenme</span></td>
+                                <td><span>Etobur</span> (<span>Böcek</span> <span>larvaları</span>, <span>kabuklular</span>, <span>solucanlar</span>)</td>
+                                <td><span>Gagasındaki</span> <span>elektroreseptörlerle</span> <span>avını</span> <span>bulur</span>.</td>
+                            </tr>
+                            <tr data-aos="fade-up" data-aos-delay="200">
+                                <td><span>Boyut</span></td>
+                                <td><span>Ortalama</span> <span>40-60</span> <span>cm</span> (<span>kuyruk</span> <span>dahil</span>)</td>
+                                <td><span>Erkekler</span> <span>genellikle</span> <span>dişilerden</span> <span>biraz</span> <span>daha</span> <span>büyüktür</span>.</td>
+                            </tr>
+                            <tr data-aos="fade-up" data-aos-delay="250">
+                                <td><span>Ağırlık</span></td>
+                                <td><span>0.7</span> - <span>2.4</span> <span>kg</span></td>
+                                <td><span>Vücut</span> <span>ağırlığı</span> <span>mevsime</span> <span>ve</span> <span>cinsiyete</span> <span>göre</span> <span>değişir</span>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="conservationStatus" class="mt-5" data-aos="fade-right" data-aos-delay="450">
+                <h2 class="mt-5"><span>Koruma</span> <span>Durumu</span></h2>
+                <div class="platypus-fact-container" data-aos="fade-up">
+                    <span class="fact-title"><span>Mevcut</span> <span>Durum:</span></span>
+                    <p><span>Ornitorenkler</span>, <span>Uluslararası</span> <span>Doğa</span> <span>Koruma</span> <span>Birliği</span> (<span>IUCN</span>) <span>Kırmızı</span> <span>Listesi'nde</span> <span>"Neredeyse</span> <span>Tehdit</span> <span>Altında"</span> (<span>Near</span> <span>Threatened</span> - <span>NT</span>) <span>olarak</span> <span>sınıflandırılmaktadır</span>. <span>Popülasyonları</span>, <span>habitat</span> <span>kaybı</span> <span>ve</span> <span>bozulması</span>, <span>iklim</span> <span>değişikliğinin</span> <span>etkileri</span> (<span>kuraklık</span>, <span>orman</span> <span>yangınları</span>), <span>su</span> <span>kirliliği</span>, <span>nehir</span> <span>sistemlerindeki</span> <span>yapısal</span> <span>değişiklikler</span> (<span>barajlar</span>, <span>setler</span>) <span>ve</span> <span>balıkçılık</span> <span>araçlarına</span> <span>takılma</span> <span>gibi</span> <span>nedenlerle</span> <span>baskı</span> <span>altındadır</span>.</p>
+                    <span class="fact-title"><span>Başlıca</span> <span>Tehditler:</span></span>
+                    <ul>
+                        <li><span>Nehirlerin</span> <span>ve</span> <span>akarsuların</span> <span>barajlarla</span>, <span>bentlerle</span> <span>ve</span> <span>sulama</span> <span>kanallarıyla</span> <span>değiştirilmesi</span>, <span>su</span> <span>akış</span> <span>rejimlerini</span> <span>bozar</span>.</li>
+                        <li><span>Tarım</span>, <span>şehirleşme</span> <span>ve</span> <span>hayvancılık</span> <span>nedeniyle</span> <span>nehir</span> <span>kenarı</span> (<span>riparian</span>) <span>bitki</span> <span>örtüsünün</span> <span>kaybı</span> <span>ve</span> <span>bozulması</span>.</li>
+                        <li><span>Balıkçı</span> <span>ağlarına</span>, <span>yengeç</span> <span>ve</span> <span>kerevit</span> <span>tuzaklarına</span> (<span>özellikle</span> <span>yasadışı</span> <span>veya</span> <span>unutulmuş</span> <span>olanlara</span>) <span>takılarak</span> <span>boğulma</span>.</li>
+                        <li><span>Uzun</span> <span>süreli</span> <span>kuraklıklar</span> <span>ve</span> <span>aşırı</span> <span>su</span> <span>çekimi</span> <span>nedeniyle</span> <span>su</span> <span>kaynaklarının</span> <span>azalması</span> <span>ve</span> <span>kalitesinin</span> <span>düşmesi</span>.</li>
+                        <li><span>Pestisitler</span>, <span>ağır</span> <span>metaller</span> <span>ve</span> <span>diğer</span> <span>kirleticilerle</span> <span>su</span> <span>kirliliği</span>.</li>
+                    </ul>
+                    <span class="fact-title"><span>Koruma</span> <span>Çabaları:</span></span>
+                    <p><span>Avustralya'da</span> <span>çeşitli</span> <span>eyalet</span> <span>ve</span> <span>federal</span> <span>hükümet</span> <span>organları</span>, <span>doğa</span> <span>koruma</span> <span>kuruluşları</span> (<span>örneğin</span>, <span>WWF-Australia</span>, <span>Australian</span> <span>Platypus</span> <span>Conservancy</span>) <span>ve</span> <span>araştırma</span> <span>grupları</span>, <span>ornitorenk</span> <span>popülasyonlarını</span> <span>izlemek</span>, <span>habitatlarını</span> <span>iyileştirmek</span>, <span>tehditleri</span> <span>azaltmak</span> <span>ve</span> <span>halkı</span> <span>bilinçlendirmek</span> <span>için</span> <span>aktif</span> <span>olarak</span> <span>çalışmalar</span> <span>yürütmektedir</span>. <span>Bu</span> <span>çabalar</span>, <span>su</span> <span>kalitesinin</span> <span>artırılmasını</span>, <span>nehir</span> <span>kenarı</span> <span>bitki</span> <span>örtüsünün</span> <span>restore</span> <span>edilmesini</span>, <span>"ornitorenk</span> <span>dostu"</span> <span>balıkçılık</span> <span>uygulamalarının</span> <span>teşvik</span> <span>edilmesini</span> <span>ve</span> <span>su</span> <span>yönetimi</span> <span>planlarının</span> <span>iyileştirilmesini</span> <span>içerir</span>.</p>
+                </div>
+            </section>
+
+            <section id="cultureMedia" class="mt-5" data-aos="fade-left" data-aos-delay="500">
+                <h2 class="mt-5"><span>Kültürde</span> <span>ve</span> <span>Medyada</span> <span>Ornitorenk</span></h2>
+                <div class="platypus-fact-container" data-aos="fade-up">
+                    <p><span>Ornitorenkler</span>, <span>benzersiz</span> <span>ve</span> <span>alışılmadık</span> <span>görünümleri</span> <span>ile</span> <span>karışık</span> <span>özellikleriyle</span> <span>Avustralya</span> <span>kültüründe</span> <span>önemli</span> <span>bir</span> <span>yere</span> <span>sahiptir</span> <span>ve</span> <span>dünya</span> <span>çapında</span> <span>popüler</span> <span>kültürde</span> <span>de</span> <span>sıkça</span> <span>karşımıza</span> <span>çıkar</span>:</p>
+                    <ul>
+                        <li><strong><span>Maskotlar</span> <span>ve</span> <span>Semboller:</span></strong> <span>Ornitorenk</span>, <span>çeşitli</span> <span>Avustralya</span> <span>spor</span> <span>takımlarının</span>, <span>kuruluşların</span> <span>ve</span> <span>etkinliklerinin</span> <span>maskotu</span> <span>veya</span> <span>sembolü</span> <span>olmuştur</span>. <span>Örneğin</span>, <span>Sydney</span> <span>2000</span> <span>Yaz</span> <span>Olimpiyatları'nın</span> <span>üç</span> <span>resmi</span> <span>maskotundan</span> <span>biri</span> <span>"Syd"</span> <span>adlı</span> <span>bir</span> <span>ornitorenkti</span>.</li>
+                        <li><strong><span>Para</span> <span>ve</span> <span>Pullar:</span></strong> <span>Daha</span> <span>önce</span> <span>belirtildiği</span> <span>gibi</span>, <span>Avustralya'nın</span> <span>20</span> <span>sentlik</span> <span>madeni</span> <span>parasının</span> <span>üzerinde</span> <span>bir</span> <span>ornitorenk</span> <span>figürü</span> <span>bulunur</span>. <span>Ayrıca</span> <span>posta</span> <span>pullarında</span> <span>da</span> <span>yer</span> <span>almıştır</span>.</li>
+                        <li><strong><span>Çizgi</span> <span>Filmler,</span> <span>Kitaplar</span> <span>ve</span> <span>Oyunlar:</span></strong> <span>Ornitorenkler</span>, <span>özellikle</span> <span>çocuk</span> <span>edebiyatında</span> <span>ve</span> <span>animasyonlarda</span> <span>sevimli</span> <span>ve</span> <span>merak</span> <span>uyandıran</span> <span>karakterler</span> <span>olarak</span> <span>kullanılır</span>. <span>En</span> <span>bilinen</span> <span>örneklerden</span> <span>biri</span> <span>Disney</span> <span>çizgi</span> <span>dizisi</span> <span>"Fineas</span> <span>ve</span> <span>Förb"deki</span> <span>gizli</span> <span>ajan</span> <span>Perry</span> <span>the</span> <span>Platypus</span> (<span>Ajan</span> <span>P</span>) <span>karakteridir</span>. <span>Video</span> <span>oyunlarında</span> <span>da</span> <span>zaman</span> <span>zaman</span> <span>karşımıza</span> <span>çıkarlar</span>.</li>
+                        <li><strong><span>Bilimsel</span> <span>Merak</span> <span>ve</span> <span>Tarih:</span></strong> <span>Ornitorenk'in</span> <span>Avrupalı</span> <span>bilim</span> <span>insanları</span> <span>tarafından</span> <span>ilk</span> <span>keşfedildiğinde</span> <span>yarattığı</span> <span>şaşkınlık</span> <span>ve</span> <span>tartışmalar</span>, <span>bilim</span> <span>tarihinin</span> <span>ilginç</span> <span>bir</span> <span>parçasıdır</span>. <span>Birçok</span> <span>bilim</span> <span>insanı</span>, <span>ilk</span> <span>örnekleri</span> <span>gördüğünde</span>, <span>farklı</span> <span>hayvanların</span> <span>parçalarının</span> <span>ustaca</span> <span>birleştirildiği</span> <span>bir</span> <span>sahtekarlık</span> <span>olduğuna</span> <span>inanmıştır</span>.</li>
+                        <li><strong><span>Yerli</span> <span>Kültüründeki</span> <span>Yeri:</span></strong> <span>Avustralya</span> <span>Aborjinlerinin</span> <span>bazı</span> <span>"Dreamtime"</span> (<span>Yaradılış</span>) <span>hikayelerinde</span> <span>ornitorenklerle</span> <span>ilgili</span> <span>anlatılar</span> <span>bulunur</span>; <span>bu</span> <span>hikayeler</span> <span>onun</span> <span>kökenini</span> <span>ve</span> <span>doğadaki</span> <span>yerini</span> <span>açıklar</span>.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="videoSection" class="mt-5" data-aos="zoom-in-up" data-aos-delay="300">
+                <h2 class="mt-5"><span>Ornitorenkler</span> <span>Hakkında</span> <span>Video</span></h2>
+                <div class="ratio ratio-16x9 shadow-lg rounded">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/-QA-fo6AVpw?si=09eFOtV_m_QlRUDW" title="Ornitorenkler Hakkında Belgesel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+               <p class="mt-2"><strong> Video kaynağı: </strong><a href="https://www.youtube.com/embed/-QA-fo6AVpw?si=09eFOtV_m_QlRUDW" target="_blank"> Bizim Gezegenimiz</a></p>
+            </section>
+
+            <section id="gallerySection" class="mt-5">
+                <h2 class="mt-5" data-aos="fade-right" data-aos-delay="350"><span>Ornitorenk</span> <span>Görselleri</span></h2>
+                <div class="platypus-images row g-3">
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                        <figure class="figure">
+                            <img src="IMG/ornitorenk_suda.jpg" alt="Ornitorenk Suda Yüzerken" class="img-fluid rounded mb-2 platypus-gallery-img shadow" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="IMG/ornitorenk_suda.jpg" data-img-alt="Ornitorenk Suda Yüzerken">
+                            <figcaption class="figure-caption"><span>Sevimli</span> <span>bir</span> <span>ornitorenk</span> <span>suda</span> <span>çevikçe</span> <span>yüzerken</span>.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                         <figure class="figure">
+                            <img src="IMG/ornitorenk_karada.jpg" alt="Ornitorenk Karada Dinleniyor" class="img-fluid rounded mb-2 platypus-gallery-img shadow" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="IMG/ornitorenk_karada.jpg" data-img-alt="Ornitorenk Karada Dinleniyor">
+                            <figcaption class="figure-caption"><span>Bir</span> <span>ornitorenk</span> <span>karada,</span> <span>nemli</span> <span>bir</span> <span>ağaç</span> <span>kütüğünün</span> <span>üzerinde</span> <span>dinleniyor</span>.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                        <figure class="figure">
+                            <img src="IMG/ornitorenk_banner.jpg" alt="Suda Süzülen Ornitorenk" class="img-fluid rounded mb-2 platypus-gallery-img shadow" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="IMG/ornitorenk_banner.jpg" data-img-alt="Suda Süzülen Ornitorenk">
+                             <figcaption class="figure-caption"><span>Suda</span> <span>süzülürken</span> <span>bir</span> <span>ornitorenk</span>, <span>uzun</span> <span>bir</span> <span>solucan</span> <span>yakalamış</span>.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4 mt-md-3" data-aos="zoom-in" data-aos-delay="100">
+                        <figure class="figure">
+                            <img src="IMG/Orniitkorenk.jpeg" alt="Ornitorenk Portresi" class="img-fluid rounded mb-2 platypus-gallery-img shadow" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="IMG/Orniitkorenk.jpeg" data-img-alt="Ornitorenk Portresi Yakın Çekim">
+                            <figcaption class="figure-caption"><span>Yakından</span> <span>bir</span> <span>ornitorenk</span> <span>portresi</span>, <span>meraklı</span> <span>bakışlarıyla</span>.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4 mt-md-3" data-aos="zoom-in" data-aos-delay="200">
+                        <figure class="figure">
+                            <img src="IMG/ornitorenk_gagasi.jpg" alt="Ornitorenk Gagasının Detayı" class="img-fluid rounded mb-2 platypus-gallery-img shadow" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="IMG/ornitorenk_gagasi.jpg" data-img-alt="Ornitorenk Gagasının Elektroreseptörleri">
+                            <figcaption class="figure-caption"><span>Ornitorenk</span> <span>gagasının</span> <span>yakın</span> <span>çekimi</span>; <span>elektroreseptörlerle</span> <span>dolu</span> <span>hassas</span> <span>bir</span> <span>organ</span>.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-md-4 mt-md-3" data-aos="zoom-in" data-aos-delay="300">
+                        <figure class="figure">
+                            <img src="IMG/ornitorenk_yuva.jpg" alt="Ornitorenk Yuvası ve Yumurtaları İllüstrasyonu" class="img-fluid rounded mb-2 platypus-gallery-img shadow" data-bs-toggle="modal" data-bs-target="#imageModal" data-img-src="IMG/ornitorenk_yuva.jpg" data-img-alt="Ornitorenk Yuvası ve Yumurtaları (İllüstrasyon)">
+                            <figcaption class="figure-caption"><span>Bir</span> <span>ornitorenk</span> <span>yuvasının</span> <span>ve</span> <span>yumurtalarının</span> <span>sanatsal</span> <span>bir</span> <span>illüstrasyonu</span>.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="alert alert-info mt-4" data-aos="fade-up" data-aos-delay="400">
+                    <p class="mb-0"><span>Daha</span> <span>fazla</span> <span>görsel</span> <span>ve</span> <span>bilgi</span> <span>için</span> <a href="https://unsplash.com/s/photos/platypus" target="_blank" rel="noopener noreferrer" class="alert-link"><span>Unsplash</span></a>, <a href="https://www.freepik.com/free-photos-vectors/platypus" target="_blank" rel="noopener noreferrer" class="alert-link"><span>Freepik</span></a> <span>veya</span> <a href="https://www.nationalgeographic.com/animals/mammals/facts/platypus" target="_blank" rel="noopener noreferrer" class="alert-link"><span>National</span> <span>Geographic</span></a> <span>gibi</span> <span>kaynakları</span> <span>ziyaret</span> <span>edebilirsiniz</span>.</p>
+                </div>
+            </section>
+
+        </div>
+        <div class="col-md-3">
+            <aside class="p-3 bg-light border rounded mt-md-5 shadow-sm sticky-md-top" style="top: 80px;" data-aos="fade-left" data-aos-delay="600">
+                <h4><i class="fas fa-link"></i> <span>Hızlı</span> <span>Linkler</span></h4>
+                <ul class="list-unstyled">
+                    <li><a href="#anaBaslik"><span>İlginç</span> <span>Bilgiler</span></a></li>
+                    <li><a href="#ornitorenkOzellikleri"><span>Özellikler</span> <span>Tablosu</span></a></li>
+                    <li><a href="#conservationStatus"><span>Koruma</span> <span>Durumu</span></a></li>
+                    <li><a href="#cultureMedia"><span>Kültürde</span> <span>Ornitorenk</span></a></li>
+                    <li><a href="#videoSection"><span>Video</span></a></li>
+                    <li><a href="#gallerySection"><span>Görseller</span></a></li>
+                    <hr>
+                    <li><a href="https://platypus.org.au/" target="_blank" rel="noopener noreferrer"><span>Australian</span> <span>Platypus</span> <span>Conservancy</span></a></li>
+                    <li><a href="https://wwf.org.au/what-we-do/species/platypus/" target="_blank" rel="noopener noreferrer"><span>WWF</span> - <span>Ornitorenk</span> <span>Gerçekleri</span></a></li>
+                    <li><a href="https://www.bushheritage.org.au/species/platypus" target="_blank" rel="noopener noreferrer"><span>Bush</span> <span>Heritage</span> <span>Australia</span></a></li>
+                </ul>
+                <div id="tarihAlani" class="mt-3 text-muted">
+                    <i class="fas fa-calendar-alt"></i> <span>Bugünün</span> <span>Tarihi:</span> <span id="tarih"></span>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel"><i class="fas fa-image"></i> <span>Ornitorenk</span> <span>Görseli</span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="" id="modalImage" class="img-fluid rounded" alt="Genişletilmiş Ornitorenk Görseli">
+      </div>
+    </div>
+  </div>
+</div>
+
+<button onclick="scrollToTop()" id="backToTopBtn" title="Yukarı Çık"><i class="fa-solid fa-arrow-up"></i></button>
+
+<footer class="bg-dark text-center p-4 mt-5">
+    <div class="container">
+        <p class="mb-0"><span>©</span> <span id="footerYil">2025</span> <span>Emirhan Çalık / 242511068</span> -<br class="d-sm-none"> <i class="fas fa-clock"></i> <span id="saat"></span></p>
+        <div class="social-icons mt-2">
+            <a href="#" class="text-white me-2" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-2" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="JS/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+      duration: 800, 
+      once: true, 
+      offset: 50, 
+      debounceDelay: 50, 
+      throttleDelay: 99,
+  });
+  document.getElementById('footerYil').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
