@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gezi Formu</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="js/iletisim.js" defer></script>
+</head>
+<body class="container py-4">
+  <h1 class="mb-4">Gezi Bilgi Formu</h1>
+  <p>Buradan bizimle iletişime geçebilirsiniz.</p>
+
+  <a href="index.html" class="btn btn-secondary mb-4">Ana Sayfaya Dön</a>
+
+  <form id="iletisimformu" onsubmit="formuGonder(event)">
+    <!-- Ad -->
+    <div class="mb-3">
+      <label for="ad" class="form-label">Ad:</label>
+      <input type="text" id="ad" name="ad" class="form-control" required />
+    </div>
+
+    <!-- Soyad -->
+    <div class="mb-3">
+      <label for="soyad" class="form-label">Soyad:</label>
+      <input type="text" id="soyad" name="soyad" class="form-control" required />
+    </div>
+
+    <!-- Yaş -->
+    <div class="mb-3">
+      <label for="yas" class="form-label">Yaş:</label>
+      <input type="number" id="yas" name="yas" class="form-control" min="1" max="120" />
+    </div>
+
+    <!-- Öneri -->
+    <div class="mb-3">
+      <label for="oneri" class="form-label">Öneriniz:</label>
+      <input type="text" id="oneri" name="oneri" class="form-control" />
+    </div>
+
+    <!-- Gezilmek istenilen yer -->
+    <div class="mb-3">
+      <label for="gidilecek" class="form-label">Gezilmek İstenen Yer:</label>
+      <input type="text" id="gidilecek" name="gidilecek" class="form-control" />
+    </div>
+
+    <!-- Zaten gezilen yer -->
+    <div class="mb-3">
+      <label for="gezilen" class="form-label">Gezilen Yer:</label>
+      <input type="text" id="gezilen" name="gezilen" class="form-control" />
+    </div>
+
+    <!-- Tarih (gezi tarihi) -->
+    <div class="mb-3">
+      <label for="tarih" class="form-label">Gezi Tarihi:</label>
+      <input type="date" id="tarih" name="tarih" class="form-control" />
+    </div>
+
+    <!-- Rezervasyon -->
+    <div class="mb-3 form-check">
+      <input type="checkbox" id="rezervasyon" name="rezervasyon" class="form-check-input" />
+      <label for="rezervasyon" class="form-check-label">Rezervasyon Yapıldı mı?</label>
+    </div>
+
+    <!-- Kişi sayısı -->
+    <div class="mb-3">
+      <label for="kisi" class="form-label">Kişi Sayısı:</label>
+      <input type="number" id="kisi" name="kisi" class="form-control" min="1" max="100" />
+    </div>
+
+    <!-- Şifre -->
+    <div class="mb-3">
+      <label for="sifre" class="form-label">Şifre:</label>
+      <input type="password" id="sifre" name="sifre" class="form-control" />
+    </div>
+
+    <!-- E-posta -->
+    <div class="mb-3">
+      <label for="email" class="form-label">E-posta:</label>
+      <input type="email" id="email" name="email" class="form-control" />
+    </div>
+
+    <!-- Telefon numarası -->
+    <div class="mb-3">
+      <label for="tel" class="form-label">Telefon Numarası:</label>
+      <input type="tel" id="tel" name="tel" class="form-control" />
+    </div>
+
+    <!-- Web sitesi -->
+    <div class="mb-3">
+      <label for="url" class="form-label">Web Sitesi (varsa):</label>
+      <input type="url" id="url" name="url" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Gönder</button>
+  </form>
+</body>
+</html>
