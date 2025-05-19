@@ -1,0 +1,23 @@
+/* İletişim Formu */
+.contact-form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+/* Input Efektleri */
+.form-control:focus {
+    border-color: #8B4513;
+    box-shadow: 0 0 0 0.25rem rgba(139, 69, 19, 0.25);
+}
+
+/* İletişim Bilgisi Kartları */
+.bg-white.rounded {
+    transition: transform 0.3s;
+}
+
+.bg-white.rounded:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}

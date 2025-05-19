@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahve Dünyası - İletişim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .coffee-bg {
+            background-color: #f5e9dc;
+        }
+        .navbar-custom {
+            background-color: #4b3832;
+        }
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .footer {
+            background-color: #4b3832;
+            color: white;
+        }
+    </style>
+</head>
+<body class="coffee-bg">
+   
+    <div class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container">
+            <span class="navbar-brand">Kahve Dünyası</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><span class="nav-link" onclick="navigateToHome()">Ana Sayfa</span></li>
+                    <li class="nav-item"><span class="nav-link active">İletişim</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-form p-4">
+                    <h2 class="text-center mb-4">Bizimle İletişime Geçin</h2>
+                    <form id="contactForm" onsubmit="submitForm(event)">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">Adınız</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Soyadınız</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Adresiniz</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefon Numaranız</label>
+                            <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Konu</label>
+                            <select class="form-select" id="subject" required>
+                                <option value="">Seçiniz</option>
+                                <option value="siparis">Sipariş</option>
+                                <option value="sikayet">Şikayet</option>
+                                <option value="bilgi">Bilgi</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="coffeeType" class="form-label">En Sevdiğiniz Kahve (Çoklu Seçim)</label>
+                            <select class="form-select" id="coffeeType" multiple>
+                                <option value="espresso">Espresso</option>
+                                <option value="latte">Latte</option>
+                                <option value="cappuccino">Cappuccino</option>
+                                <option value="americano">Americano</option>
+                                <option value="mocha">Mocha</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Kahve Tüketim Sıklığınız</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frequency" id="daily" value="daily">
+                                <label class="form-check-label" for="daily">Günde 1+</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frequency" id="weekly" value="weekly">
+                                <label class="form-check-label" for="weekly">Haftada birkaç</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="frequency" id="monthly" value="monthly">
+                                <label class="form-check-label" for="monthly">Ayda birkaç</label>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mesajınız</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="newsletter">
+                            <label class="form-check-label" for="newsletter">Bültenimize kaydolmak istiyorum</label>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="birthdate" class="form-label">Doğum Tarihiniz</label>
+                            <input type="date" class="form-control" id="birthdate">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="favColor" class="form-label">En Sevdiğiniz Renk (Kahve Tonları)</label>
+                            <input type="color" class="form-control form-control-color" id="favColor" value="#8B4513">
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-4">Gönder</button>
+                            <button type="reset" class="btn btn-secondary ms-2 px-4">Temizle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-4 text-center mb-3">
+                <div class="p-3 bg-white rounded">
+                    <span class="fw-bold d-block">Adres</span>
+                    <span>Kahve Sokak No:123</span><br>
+                    <span>Beyoğlu/İstanbul</span>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-3">
+                <div class="p-3 bg-white rounded">
+                    <span class="fw-bold d-block">Telefon</span>
+                    <span>0212 123 45 67</span><br>
+                    <span>0555 123 45 67</span>
+                </div>
+            </div>
+            <div class="col-md-4 text-center mb-3">
+                <div class="p-3 bg-white rounded">
+                    <span class="fw-bold d-block">Çalışma Saatleri</span>
+                    <span>Pazartesi-Cuma: 08:00-20:00</span><br>
+                    <span>Haftasonu: 09:00-18:00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Hakkımızda</h5>
+                    <span>Kahve Dünyası 2010'dan beri kaliteli kahve sunmaktadır.</span>
+                </div>
+                <div class="col-md-4">
+                    <h5>İletişim</h5>
+                    <span>Email: info@kahvedunyasi.com</span><br>
+                    <span>Telefon: 0212 123 45 67</span>
+                </div>
+                <div class="col-md-4">
+                    <h5>Sosyal Medya</h5>
+                    <span class="me-2" onclick="openSocial('instagram')">Instagram</span>
+                    <span class="me-2" onclick="openSocial('twitter')">Twitter</span>
+                    <span onclick="openSocial('facebook')">Facebook</span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center">
+                    <span>&copy; 2023 Kahve Dünyası. Tüm hakları saklıdır.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    
+        function navigateToHome() {
+            window.location.href = 'index.html';
+        }
+
+        function openSocial(platform) {
+            const urls = {
+                'instagram': 'https://instagram.com',
+                'twitter': 'https://twitter.com',
+                'facebook': 'https://facebook.com'
+            };
+            window.open(urls[platform], '_blank');
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            if (validateForm()) {
+                alert('Formunuz başarıyla gönderildi!');
+                saveFormData();
+                document.getElementById('contactForm').reset();
+            }
+        }
+
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            if (!email.includes('@')) {
+                alert('Geçerli bir email adresi giriniz.');
+                return false;
+            }
+            return true;
+        }
+
+        function saveFormData() {
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+            console.log('Form verileri:', formData);
+            localStorage.setItem('lastContactForm', JSON.stringify(formData));
+        }
+
+        function loadLastFormData() {
+            const savedData = localStorage.getItem('lastContactForm');
+            if (savedData) {
+                const formData = JSON.parse(savedData);
+                console.log('Kayıtlı form verileri yüklendi:', formData);
+            }
+        }
+
+        function showFormFieldCount() {
+            const inputs = document.querySelectorAll('input, textarea, select');
+            console.log('Formdaki alan sayısı:', inputs.length);
+        }
+
+        function getSelectedCoffeeTypes() {
+            const select = document.getElementById('coffeeType');
+            const selected = [];
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].selected) {
+                    selected.push(select.options[i].value);
+                }
+            }
+            console.log('Seçilen kahve türleri:', selected);
+            return selected;
+        }
+
+        function checkNewsletterSubscription() {
+            const subscribed = document.getElementById('newsletter').checked;
+            console.log('Bülten aboneliği:', subscribed ? 'Evet' : 'Hayır');
+            return subscribed;
+        }
+
+        $(document).ready(function() {
+            
+            $('input, textarea, select').focus(function() {
+                $(this).css('background-color', '#fff8e1');
+            }).blur(function() {
+                $(this).css('background-color', 'white');
+            });
+            
+         
+            $('#contactForm').submit(function() {
+                console.log('Form gönderim işlemi başladı');
+            });
+            
+           
+            $('input[type="radio"]').change(function() {
+                console.log('Seçilen sıklık:', $(this).val());
+            });
+            
+            $('#birthdate').change(function() {
+                console.log('Doğum tarihi seçildi:', $(this).val());
+            });
+         
+            $('#favColor').change(function() {
+                console.log('Seçilen renk:', $(this).val());
+                $('.contact-form').css('border-top', '3px solid ' + $(this).val());
+            });
+        });
+
+       
+        window.onload = function() {
+            loadLastFormData();
+            showFormFieldCount();
+        };
+    </script>
+</body>
+</html>

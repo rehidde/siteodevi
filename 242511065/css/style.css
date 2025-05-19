@@ -1,0 +1,37 @@
+/* Genel Stiller */
+.coffee-bg {
+    background-color: #f5e9dc;
+}
+
+.navbar-custom {
+    background-color: #4b3832;
+}
+
+.coffee-card {
+    transition: transform 0.3s;
+}
+
+.coffee-card:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    background-color: #4b3832;
+    color: white;
+}
+
+/* Hero Section */
+.container-fluid.bg-dark {
+    padding: 80px 0;
+}
+
+/* Tablo Stilleri */
+.table-hover tbody tr:hover {
+    background-color: rgba(75, 56, 50, 0.1);
+}
+
+/* Accordion */
+.accordion-button:not(.collapsed) {
+    background-color: #f5e9dc;
+    color: #4b3832;
+}
