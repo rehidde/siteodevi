@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern Oyun</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container text-center">
+    <nav class="mb-4">
+<nav class="mb-4">
+    <a href="index.html" class="btn btn-outline-light me-2">Ana Sayfa</a>
+    <a href="contact.html" class="btn btn-outline-light me-2">İletişim</a>
+    <button class="btn btn-info me-2" onclick="suggestRandomGame()">Oyun Öner</button>
+    <button class="btn btn-secondary" onclick="toggleDarkMode()">Karanlık Mod</button>
+    <button id="showCartBtn" class="btn btn-success position-relative ms-2">
+        <i class="bi bi-cart"></i> Sepet
+        <span id="cartBadge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            0
+        </span>
+    </button>
+</nav>
+
+<div id="notifications-container" class="position-fixed top-0 end-0 p-3" style="z-index: 1100;"></div>
+
+<div class="modal fade" id="gameDetailsModal" tabindex="-1" aria-labelledby="gameDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="gameDetailsLabel">Oyun Detayları</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Fiyat:</strong> <span id="gameDetailsPrice">-</span></p>
+                <p><strong>Tür:</strong> <span id="gameDetailsGenre">-</span></p>
+                <p><strong>Puan:</strong> <span id="gameDetailsRating">-</span></p>
+                <p><strong>Açıklama:</strong> <span id="gameDetailsDescription">-</span></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Sepetim</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items-container"></div>
+                <hr>
+                <p class="text-end fw-bold">Toplam: <span id="modal-cart-total">0</span> TL</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="clearCart()">Sepeti Temizle</button>
+                <button type="button" class="btn btn-success" id="purchaseBtn">Satın Al</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    </nav>
+
+    <h1>Modern Oyun</h1>
+
+    <input type="text" id="searchInput" placeholder="Oyun Ara..." onkeyup="searchGames()" aria-label="Oyun Ara" />
+
+    </div>
+<div class="div-box" tabindex="0">
+      <img src="https://th.bing.com/th/id/OIP.asTGFPZgpZXYfHfOnXUmRgHaHa?rs=1&pid=ImgDetMain" alt="call of duty" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">call of duty</span>
+<button class="btn btn-primary btn-add-to-cart" onclick="addToCart('Oyun Adı')">Sepete Ekle</button>      <button class="btn btn-success btn-like" onclick="likeGame('call of duty')"><i class="bi bi-hand-thumbs-up"></i></button>
+     
+<button class="btn btn-danger btn-dislike" onclick="dislikeGame('call of duty')"><i class="bi bi-hand-thumbs-down"></i></button>
+<button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Oyun Adı')">
+    <i class="bi bi-star"></i>
+</button>  
+</div>
+    <div class="div-box" tabindex="0">
+      <img src="https://th.bing.com/th/id/OIP.thY7u5jXUg1pkBXhqsCj9gHaEK?cb=iwp2&rs=1&pid=ImgDetMain" alt="Minecraft" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Minecraft</span>
+      <button class="btn btn-primary" onclick="addToCart('Minecraft')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Minecraft')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Minecraft')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Minecraf')">
+    <i class="bi bi-star"></i>
+</button>
+  </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/548430/header.jpg?t=1745514515" alt="Deep Rock Galactic" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Deep Rock Galactic</span>
+      <button class="btn btn-primary" onclick="addToCart('Deep Rock Galactic')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Deep Rock Galactic')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Deep Rock Galactic')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Deep Rock Galactic')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/header.jpg?t=1745368562" alt="Left 4 Dead 2" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Left 4 Dead 2</span>
+      <button class="btn btn-primary" onclick="addToCart('Left 4 Dead 2')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Left 4 Dead 2')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Left 4 Dead 2')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Left 4 Dead 2')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440/header.jpg?t=1745368581" alt="Team Fortress 2" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Team Fortress 2</span>
+      <button class="btn btn-primary" onclick="addToCart('Team Fortress 2')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Team Fortress 2')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Team Fortress 2')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Team Fortress 2')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/header.jpg?t=1744748041" alt="ELDEN RING" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">ELDEN RING</span>
+      <button class="btn btn-primary" onclick="addToCart('ELDEN RING')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('ELDEN RING')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('ELDEN RING')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('ELDEN RING')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1091500/e9047d8ec47ae3d94bb8b464fb0fc9e9972b4ac7/header.jpg?t=1746519355" alt="Cyberpunk 2077" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Cyberpunk 2077</span>
+      <button class="btn btn-primary" onclick="addToCart('Cyberpunk 2077')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Cyberpunk 2077')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Cyberpunk 2077')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Cyberpunk 2077')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/435150/header.jpg?t=1725653917" alt="Divinity: Original Sin 2 – Definitive Edition" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Divinity: Original Sin 2 – Definitive Edition</span>
+      <button class="btn btn-primary" onclick="addToCart('Divinity: Original Sin 2 – Definitive Edition')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Divinity: Original Sin 2 – Definitive Edition')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Divinity: Original Sin 2 – Definitive Edition')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Divinity: Original sin 2 - Definitive Edition')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367500/header.jpg?t=1701395331" alt="Dragon’s Dogma: Dark Arisen" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Dragon’s Dogma: Dark Arisen</span>
+      <button class="btn btn-primary" onclick="addToCart('Dragon’s Dogma: Dark Arisen')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Dragon’s Dogma: Dark Arisen')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Dragon’s Dogma: Dark Arisen')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Dragon’s Dogma: Dark Arisen')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/292030/ad9240e088f953a84aee814034c50a6a92bf4516/header.jpg?t=1746612330" alt="The Witcher 3: Wild Hunt – Game of the Year Edition" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">The Witcher 3: Wild Hunt – Game of the Year Edition</span>
+      <button class="btn btn-primary" onclick="addToCart('The Witcher 3: Wild Hunt – Game of the Year Edition')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('The Witcher 3: Wild Hunt – Game of the Year Edition')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('The Witcher 3: Wild Hunt – Game of the Year Edition')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('The Witcher 3: Wild Hunt - Game of the Year Edition')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/860510/header.jpg?t=1730127763" alt="Little Nightmares II" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Little Nightmares II</span>
+      <button class="btn btn-primary" onclick="addToCart('Little Nightmares II')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Little Nightmares II')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Little Nightmares II')"><i class="bi bi-hand-thumbs-down"></i></button>
+    <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Little Nightmares II')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/header.jpg?t=1699381053" alt="The Forest" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">The Forest</span>
+      <button class="btn btn-primary" onclick="addToCart('The Forest')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('The Forest')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('The Forest')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('The Forest')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/739630/header.jpg?t=1740090955" alt="Phasmophobia" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Phasmophobia</span>
+      <button class="btn btn-primary" onclick="addToCart('Phasmophobia')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Phasmophobia')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Phasmophobia')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Phasmophobia')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1693980/header.jpg?t=1702492799" alt="Dead Space (Remake)" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Dead Space (Remake)</span>
+      <button class="btn btn-primary" onclick="addToCart('Dead Space (Remake)')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Dead Space (Remake)')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Dead Space (Remake)')"><i class="bi bi-hand-thumbs-down"></i></button>
+    <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Dead Space (Remake)')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg?t=1736385712" alt="Resident Evil 4 (Remake)" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Resident Evil 4 (Remake)</span>
+      <button class="btn btn-primary" onclick="addToCart('Resident Evil 4 (Remake)')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Resident Evil 4 (Remake)')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Resident Evil 4 (Remake)')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Resident Evil 4 (Remake)')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/250760/header.jpg?t=1723577994" alt="Shovel Knight: Treasure Trove" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Shovel Knight: Treasure Trove</span>
+      <button class="btn btn-primary" onclick="addToCart('Shovel Knight: Treasure Trove')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Shovel Knight: Treasure Trove')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Shovel Knight: Treasure Trove')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Shovel Knight: Treasure Trove')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/268910/header.jpg?t=1709068852" alt="Cuphead" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Cuphead</span>
+      <button class="btn btn-primary" onclick="addToCart('Cuphead')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Cuphead')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Cuphead')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Cuphead')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/504230/header.jpg?t=1714089525" alt="Celeste" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Celeste</span>
+      <button class="btn btn-primary" onclick="addToCart('Celeste')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Celeste')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Celeste')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Celeste')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1057090/header.jpg?t=1701967625" alt="Ori and the Will of the Wisps" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Ori and the Will of the Wisps</span>
+      <button class="btn btn-primary" onclick="addToCart('Ori and the Will of the Wisps')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Ori and the Will of the Wisps')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Ori and the Will of the Wisps')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Ori and the Will of the Wisps')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/367520/header.jpg?t=1695270428" alt="Hollow Knight" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Hollow Knight</span>
+      <button class="btn btn-primary" onclick="addToCart('Hollow Knight')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Hollow Knight')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Hollow Knight')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Hollow Knight')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/383870/header.jpg?t=1738795199" alt="Firewatch" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Firewatch</span>
+      <button class="btn btn-primary" onclick="addToCart('Firewatch')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Firewatch')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Firewatch')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Firewatch')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/736260/header.jpg?t=1698353847" alt="Baba Is You" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Baba Is You</span>
+      <button class="btn btn-primary" onclick="addToCart('Baba Is You')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Baba Is You')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Baba Is You')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Baba Is You')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/210970/header.jpg?t=1720810823" alt="The Witness" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">The Witness</span>
+      <button class="btn btn-primary" onclick="addToCart('The Witness')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('The Witness')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('The Witness')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('The Witness')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/header.jpg?t=1745363004" alt="Portal 2" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Portal 2</span>
+      <button class="btn btn-primary" onclick="addToCart('Portal 2')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Portal 2')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Portal 2')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Portal 2')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/304430/header.jpg?t=1732629579" alt="Inside" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Inside</span>
+      <button class="btn btn-primary" onclick="addToCart('Inside')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Inside')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Inside')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Inside')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/391220/header.jpg?t=1729011444" alt="Rise of the Tomb Raider" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Rise of the Tomb Raider</span>
+      <button class="btn btn-primary" onclick="addToCart('Rise of the Tomb Raider')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Rise of the Tomb Raider')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Rise of the Tomb Raider')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Rise of the Tomb Raider')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/208650/header.jpg?t=1745534372" alt="Batman: Arkham Knight" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Batman: Arkham Knight</span>
+      <button class="btn btn-primary" onclick="addToCart('Batman: Arkham Knight')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Batman: Arkham Knight')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Batman: Arkham Knight')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Batman: Arkham Knight')">
+    <i class="bi bi-star"></i>
+</button>    
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817070/header.jpg?t=1725652915" alt="Marvel’s Spider-Man Remastered" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Marvel’s Spider-Man Remastered</span>
+      <button class="btn btn-primary" onclick="addToCart('Marvel’s Spider-Man Remastered')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Marvel’s Spider-Man Remastered')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Marvel’s Spider-Man Remastered')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Marvel’s Spider-Man Remastered')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/a3cdc6f40d97df8ac993679c2dd1edeb5222421e/header.jpg?t=1747346162" alt="Hogwarts Legacy" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Hogwarts Legacy</span>
+      <button class="btn btn-primary" onclick="addToCart('Hogwarts Legacy')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Hogwarts Legacy')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Hogwarts Legacy')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Hogwarts Legacy')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+    <div class="div-box" tabindex="0">
+      <img src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/header.jpg?t=1720558643" alt="Red Dead Redemption 2" class="img-fluid" style="margin-bottom:10px; border-radius:10px;">
+      <span class="label">Red Dead Redemption 2</span>
+      <button class="btn btn-primary" onclick="addToCart('Red Dead Redemption 2')">Sepete Ekle</button>
+      <button class="btn btn-success btn-like" onclick="likeGame('Red Dead Redemption 2')"><i class="bi bi-hand-thumbs-up"></i></button>
+      <button class="btn btn-danger btn-dislike" onclick="dislikeGame('Red Dead Redemption 2')"><i class="bi bi-hand-thumbs-down"></i></button>
+      <button class="btn btn-outline-secondary btn-favorite" onclick="toggleFavorite('Red Dead Redemption 2')">
+    <i class="bi bi-star"></i>
+</button>
+    </div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24755.15568836072!2d34.112531245382264!3d39.14300889812203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d572d2fa7b2291%3A0x7f5b14385700cd72!2sAhi%20Evran%20University!5e0!3m2!1sen!2str!4v1747508128358!5m2!1sen!2str" width="1000" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <table class="table table-bordered table-striped mt-4">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Oyun Adı</th>
+          <th>Değerlendirme</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>red gameDetailsDescription</td><td>⭐⭐⭐⭐</td></tr>
+        <tr><td>2</td><td>the Witness</td><td>⭐⭐⭐</td></tr>
+        <tr><td>3</td><td>Hogwarts Legacy</td><td>⭐⭐⭐⭐⭐</td></tr>
+      </tbody>
+    </table>
+
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <h2>Sepet Bilgisi</h2>
+        <p id="cart-count">Sepetteki Ürün Sayısı: 0</p>
+        <p id="cart-total">Toplam Fiyat: 0 TL</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

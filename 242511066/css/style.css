@@ -30,9 +30,8 @@ body {
   transition: background-color 0.3s ease; /* Hover efekti için geçiş */
 }
 
-/* Müzik div hover efekti (script.js'deki hoverEfekti fonksiyonu bunu değiştirecek) */
 .muzik-div:hover {
-    background-color: #e2e6ea; /* Hover'da hafif koyulaşma */
+  background-color: #e2e6ea; /* Hover'da hafif koyulaşma */
 }
 
 
@@ -69,28 +68,45 @@ h1, h2, h3, h4 {
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     color: #333;
-    display: flex; /* Butonu yanına almak için flexbox */
-    flex-direction: column; /* Alt alta sıralamak için */
-    align-items: center; /* Ortalamak için */
 }
 
-.rastgele-sayi {
-    font-size: 1.5em;
-    color: #dc3545; /* Kırmızı renk */
-    margin-bottom: 5px; /* Sayı ile buton arasına boşluk */
+/* "Bu mən deyiləm" butonu için stil */
+.bne-button {
+    display: inline-block; /* Alan tanımlamak için */
+    padding: 10px 20px;
+    margin-top: 15px; /* Fotoğraf ile arasına boşluk */
+    background-color: #ff4500; /* Canlı turuncu renk */
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hover ve tıklama efektleri için geçiş */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3); /* Hafif yazı gölgesi */
+    border: 2px solid #e63900; /* Hafif koyu kenarlık */
 }
 
-/* Kullanılmayan renkDegistir fonksiyonu için örnek bir stil */
-.baslik-rengi-degisti {
-    color: #28a745 !important; /* Başlık değişince yeşil olsun */
+.bne-button:hover {
+    background-color: #e63900; /* Hover'da koyu turuncu */
+    transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Gölgeyi büyütme */
 }
 
-/* Fotoğraflar için basit bir stil */
-.img-fluid {
-    max-width: 100%;
-    height: auto;
+.bne-button:active {
+    background-color: #cc3300; /* Tıklayınca daha koyu turuncu */
+    transform: translateY(0); /* Geri inme efekti */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Gölgeyi küçültme */
 }
 
-.rounded {
-    border-radius: 0.25rem !important; /* Bootstrap'in rounded sınıfı */
+/* Son mesaj için stil */
+#bneSonMesaj {
+    font-style: italic;
+    color: #6c757d; /* Gri tonu */
+    font-size: 1.1em;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-left: 5px solid #007bff; /* Mavi bir kenarlık */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

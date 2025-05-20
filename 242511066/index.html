@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ana Sayfa - Müzik Önerileri</title>
+  <title>Ana Sayfa - Bach'ın Sol Kulağı</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="js/script.js"></script>
 </head>
-<body class="index-sayfasi"> <div class="container">
+<body class="index-sayfasi">
+  <div class="container">
     <div class="row">
       <div class="col-12 text-center mt-4">
-        <h1 class="display-4" id="anaBaslik">Müzik Önerileri</h1> <span id="hosgeldinMesaji">Hoş geldiniz! İşte size özel seçilmiş müzikler.</span>
+        <h1 class="display-4" id="anaBaslik">Bach'ın Sol Kulağı</h1>
+        <span id="hosgeldinMesaji">Μηδεὶς ἀγεωμέτρητος εἰσίτω μου τὴν στέγην</span>
       </div>
     </div>
 
@@ -20,68 +22,68 @@
       <a href="iletisim.html" class="btn btn-primary">İletişim</a>
     </div>
 
-     <div class="rastgele-sayi-bolumu">
-        7'den 70'e: <span id="rastgeleSayiDeger" class="rastgele-sayi">-</span>
-        <button class="btn btn-sm btn-dark mt-2" onclick="yetmistenYediyeSayiUret()">Yeni Sayı Üret</button>
+    <div class="rastgele-sayi-bolumu">
+        7'den 77'ye: <span id="rastgeleSayiDeger" class="rastgele-sayi">-</span>
+        <br> <button class="btn btn-sm btn-dark mt-2" onclick="yetmistenYediyeSayiUret()">Anlamadım?</button>
     </div>
 
 
     <div class="row mt-5">
       <div class="col-12">
-        <button class="btn btn-info btn-block" onclick="listeGorselliginiDegistir('klasik')">Klasik Müzikler</button>
+        <button class="btn btn-info btn-block" onclick="listeGorselliginiDegistir('klasik')">All Time Favorites</button>
         <div id="klasik" style="display:none;" class="p-3 border">
-          <div class="muzik-div"><span>Klasik Müzik 1</span></div>
-          <div class="muzik-div"><span>Klasik Müzik 2</span></div>
-          <div class="muzik-div"><span>Klasik Müzik 3</span></div>
-          <div class="muzik-div"><span>Klasik Müzik 4</span></div>
-          <div class="muzik-div"><span>Klasik Müzik 5</span></div>
-          <div class="muzik-div"><span>Klasik Müzik 6</span></div>
-          <div class="muzik-div"><span>Klasik Müzik 7</span></div>
-          <div class="muzik-div"><span>Klasik Müzik 8</span></div>
-          <div class="muzik-div"><span>Klasik Müzik 9</span></div>
-          <div class="muzik-div"><span>Klasik Müzik 10</span></div>
+          <div class="muzik-div"><span>İmkansız - Zeki Müren</span></div>
+          <div class="muzik-div"><span>Phantasmagoria in Two - Tim Buckley</span></div>
+          <div class="muzik-div"><span>Beatiful Innocence - Dominia</span></div>
+          <div class="muzik-div"><span>Zeytuni Zar - Arto Tunçboyacıyan</span></div>
+          <div class="muzik-div"><span>Forget Her - Jeff Buckley</span></div>
+          <div class="muzik-div"><span>Aşk, Virüs - Redd</span></div>
+          <div class="muzik-div"><span>Ay Gız - Selva Erdener</span></div>
+          <div class="muzik-div"><span>Yaşım Çocuk - Mabel Matiz</span></div>
+          <div class="muzik-div"><span>Ode To Joy - Beethoven</span></div>
+          <div class="muzik-div"><span>Mountains of God's Depression - Dominia</span></div>
         </div>
 
-        <button class="btn btn-info btn-block mt-3" onclick="listeGorselliginiDegistir('metal')">Metal Müzikler</button>
+        <button class="btn btn-info btn-block mt-3" onclick="listeGorselliginiDegistir('metal')">Gürültülü Parçalar</button>
         <div id="metal" style="display:none;" class="p-3 border">
-          <div class="muzik-div"><span>Metal Müzik 1</span></div>
-          <div class="muzik-div"><span>Metal Müzik 2</span></div>
-          <div class="muzik-div"><span>Metal Müzik 3</span></div>
-          <div class="muzik-div"><span>Metal Müzik 4</span></div>
-          <div class="muzik-div"><span>Metal Müzik 5</span></div>
-          <div class="muzik-div"><span>Metal Müzik 6</span></div>
-          <div class="muzik-div"><span>Metal Müzik 7</span></div>
-          <div class="muzik-div"><span>Metal Müzik 8</span></div>
-          <div class="muzik-div"><span>Metal Müzik 9</span></div>
-          <div class="muzik-div"><span>Metal Müzik 10</span></div>
+          <div class="muzik-div"><span>Somnium Obmutum - Estatic Fear</span></div>
+          <div class="muzik-div"><span>The Egoism - Fleshgod Apocalypse</span></div>
+          <div class="muzik-div"><span>BlackBird - Alter Bridge</span></div>
+          <div class="muzik-div"><span>The Mirror And The Ripper - Volbeat</span></div>
+          <div class="muzik-div"><span>Gasoline - I Prevail</span></div>
+          <div class="muzik-div"><span>War Eternal - Arch Enemy</span></div>
+          <div class="muzik-div"><span>Popular Monster - Falling In Reverse</span></div>
+          <div class="muzik-div"><span>The Purge - Within Temptation</span></div>
+          <div class="muzik-div"><span>Worth Dying For - Withing Temptation</span></div>
+          <div class="muzik-div"><span>Strong - Amaranthe</span></div>
+          
         </div>
 
-        <button class="btn btn-info btn-block mt-3" onclick="listeGorselliginiDegistir('jazz')">Jazz Müzikler</button>
+        <button class="btn btn-info btn-block mt-3" onclick="listeGorselliginiDegistir('jazz')">Enstrümental Parçalar</button>
         <div id="jazz" style="display:none;" class="p-3 border">
-          <div class="muzik-div"><span>Jazz Müzik 1</span></div>
-          <div class="muzik-div"><span>Jazz Müzik 2</span></div>
-          <div class="muzik-div"><span>Jazz Müzik 3</span></div>
-          <div class="muzik-div"><span>Jazz Müzik 4</span></div>
-          <div class="muzik-div"><span>Jazz Müzik 5</span></div>
-          <div class="muzik-div"><span>Jazz Müzik 6</span></div>
-          <div class="muzik-div"><span>Jazz Müzik 7</span></div>
-          <div class="muzik-div"><span>Jazz Müzik 8</span></div>
-          <div class="muzik-div"><span>Jazz Müzik 9</span></div>
-          <div class="muzik-div"><span>Jazz Müzik 10</span></div>
+          <div class="muzik-div"><span>Sarabande - George Frideric Handel</span></div>
+          <div class="muzik-div"><span>Sposa son disprezzata - Antonio Vivaldi</span></div>
+          <div class="muzik-div"><span>Air on the G String - Johann Sebastian Bach</span></div>
+          <div class="muzik-div"><span>Hıçkırıklar - Can Atilla</span></div>
+          <div class="muzik-div"><span>Faulkner's Sleep - Evgeny Grinko</span></div>
+          <div class="muzik-div"><span>Remembrance - Balmorhea</span></div>
+          <div class="muzik-div"><span>Taghatam Deh - Farid Farjad</span></div>
+          <div class="muzik-div"><span>Gone - Gavin Luke</span></div>
+          <div class="muzik-div"><span>The Four Seasons(no4 fminor favorim) - Antonio Vivaldi</span></div>
         </div>
 
         <button class="btn btn-info btn-block mt-3" onclick="listeGorselliginiDegistir('utku')">Utku Özel</button>
         <div id="utku" style="display:none;" class="p-3 border">
-          <div class="muzik-div"><span>Utku Müzik 1</span></div>
-          <div class="muzik-div"><span>Utku Müzik 2</span></div>
-          <div class="muzik-div"><span>Utku Müzik 3</span></div>
-          <div class="muzik-div"><span>Utku Müzik 4</span></div>
-          <div class="muzik-div"><span>Utku Müzik 5</span></div>
-          <div class="muzik-div"><span>Utku Müzik 6</span></div>
-          <div class="muzik-div"><span>Utku Müzik 7</span></div>
-          <div class="muzik-div"><span>Utku Müzik 8</span></div>
-          <div class="muzik-div"><span>Utku Müzik 9</span></div>
-          <div class="muzik-div"><span>Utku Müzik 10</span></div>
+          <div class="muzik-div"><span>Evet hepsi Anne-Marie</span></div>
+          <div class="muzik-div"><span>Cry Baby</span></div>
+          <div class="muzik-div"><span>YOU & I</span></div>
+          <div class="muzik-div"><span>Ciao Adios</span></div>
+          <div class="muzik-div"><span>Then</span></div>
+          <div class="muzik-div"><span>That's What You Get</span></div>
+          <div class="muzik-div"><span>Don't Panic</span></div>
+          <div class="muzik-div"><span>Rewrite The Stars</span></div>
+          <div class="muzik-div"><span>2002</span></div>
+          <div class="muzik-div"><span>Baby Don't Hurt Me</span></div>
         </div>
       </div>
     </div>
@@ -100,18 +102,23 @@
           <tbody>
             <tr>
               <td>1</td>
-              <td>Örnek Müzik</td>
-              <td>Sanatçı İsmi</td>
+              <td>Beatiful Innocence</td>
+              <td>Dominia</td>
             </tr>
              <tr>
               <td>2</td>
-              <td>Örnek Müzik 2</td>
-              <td>Sanatçı İsmi 2</td>
+              <td>Silent Gold</td>
+              <td>Pain Of Salvation</td>
             </tr>
              <tr>
               <td>3</td>
-              <td>Örnek Müzik 3</td>
-              <td>Sanatçı İsmi 3</td>
+              <td>Things Called Love</td>
+              <td>NF</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Sana çok bağlıyam</td>
+              <td>Celal Öz</td>
             </tr>
           </tbody>
         </table>
@@ -120,15 +127,15 @@
 
      <div class="row mt-5 mb-5 p-3 border rounded">
          <div class="col-12">
-             <h4>Sayfayla Etkileşim</h4>
+             <h4>Hayatımda ki gereksizlikler</h4>
              <div class="d-flex flex-wrap align-items-center gap-3">
-                 <button class="btn btn-secondary" onclick="anlikTarihiGoster()">Tarihi Göster</button>
-                 <button class="btn btn-secondary" onclick="baslikRenginiDegistirToggle()">Başlık Rengini Değiştir</button>
+                 <button class="btn btn-secondary" onclick="anlikTarihiGoster()">fuşyaçakmak</button>
+                 <button class="btn btn-secondary" onclick="baslikRenginiDegistirToggle()">düşünmek</button>
                  <div class="d-flex align-items-center gap-2">
                      <input type="number" id="sayiBirInput" class="form-control w-auto" placeholder="Sayı 1">
                      +
                      <input type="number" id="sayiIkiInput" class="form-control w-auto" placeholder="Sayı 2">
-                     <button class="btn btn-secondary" onclick="toplamaSonucunuGoster()">Topla</button>
+                     <button class="btn btn-secondary" onclick="toplamaSonucunuGoster()">sallabunualttakibaşyapıtıizle</button>
                      <span id="toplamSonucu" class="ml-2 font-weight-bold">-</span>
                  </div>
                   <div class="d-flex align-items-center gap-2">
@@ -149,12 +156,14 @@
 
     <div class="row mt-5">
         <div class="col-6 text-center">
-            <h4>utku</h4>
+            <h4>düşesim</h4>
             <img src="img/monalisa.jpg" alt="utku" class="img-fluid rounded">
         </div>
         <div class="col-6 text-center">
              <h4>bne</h4>
-            <img src="img/sasirma.jpg" alt="bne" class="img-fluid rounded">
+            <img src="img/sasirma.jpg" alt="bne" class="img-fluid rounded" id="bneFoto">
+            <p id="bneYazisi" class="bne-button" onclick="bneFotografiDegistir()">Bu mən deyiləm</p>
+            <div id="bneSonMesaj" class="mt-3 text-center" style="display: none;"></div>
         </div>
     </div>
 

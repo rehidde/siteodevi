@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Kişisel Blogum</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body onload="initializePage()">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span>Benim</span> <span>Blogum</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Gezinmeyi Değiştir">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#hakkimda"><span>Hakkımda</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#siber-guvenlik"><span>Siber</span> <span>Güvenlik</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#kavramlar"><span>Kavramlar</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#kaynaklar"><span>Kaynaklar</span></a></li>
+                    <li class="nav-item active"><a class="nav-link" href="iletisim.html"><span>İletişim</span> <span class="sr-only">(şu anki)</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-3"><span>Benimle</span> <span>İletişime</span> <span>Geçin</span></h1>
+                    <div class="div-contact-1"><span>Aşağıdaki</span> <span>formu</span> <span>doldurarak</span> <span>bana</span> <span>ulaşabilirsiniz.</span> <span>Tüm</span> <span>alanları</span> <span>dikkatlice</span> <span>doldurunuz.</span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="iletisim" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h3 class="text-center mb-4"><span>İletişim</span> <span>Formu</span></h3>
+                    <div id="formSubmissionMessage" class="div-contact-2"></div> <form id="contactForm" onsubmit="return validateContactForm()" novalidate>
+                        <input type="hidden" id="formIdentifier" name="formIdentifier" value="iletisim_sayfasi_v1">
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6 div-contact-3">
+                                <label for="inputName"><span>Adınız</span> <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="inputName" name="name" placeholder="Adınızı Giriniz" required onkeyup="validateRequiredField('inputName')" aria-describedby="nameHelp">
+                                <small id="nameHelp" class="form-text text-muted"><span>Lütfen adınızı girin.</span></small>
+                                <div class="invalid-feedback"><span>Ad alanı boş bırakılamaz.</span></div>
+                            </div>
+                            <div class="form-group col-md-6 div-contact-4">
+                                <label for="inputSurname"><span>Soyadınız</span> <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="inputSurname" name="surname" placeholder="Soyadınızı Giriniz" required onkeyup="validateRequiredField('inputSurname')" aria-describedby="surnameHelp">
+                                <small id="surnameHelp" class="form-text text-muted"><span>Lütfen soyadınızı girin.</span></small>
+                                <div class="invalid-feedback"><span>Soyad alanı boş bırakılamaz.</span></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group div-contact-5">
+                            <label for="inputEmail"><span>E-posta Adresiniz</span> <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="ornek@mail.com" required onblur="validateEmailField(this.value)" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted"><span>Size bu adresten geri dönüş yapacağız.</span></small>
+                            <div class="invalid-feedback"><span>Lütfen geçerli bir e-posta adresi giriniz.</span></div>
+                        </div>
+
+                        <div class="form-group div-contact-6">
+                            <label for="inputPhone"><span>Telefon Numaranız</span></label>
+                            <input type="tel" class="form-control" id="inputPhone" name="phone" placeholder="05XX XXX XX XX" pattern="[0-9]{10,11}" onblur="validatePhoneField(this.value)" aria-describedby="phoneHelp">
+                             <small id="phoneHelp" class="form-text text-muted"><span>Format: 05XXXXXXXXX (Opsiyonel)</span></small>
+                             <div class="invalid-feedback"><span>Lütfen geçerli bir telefon numarası giriniz (10-11 haneli).</span></div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6 div-contact-7">
+                                <label for="inputContactDate"><span>Tercih Edilen İletişim Tarihi</span></label>
+                                <input type="date" class="form-control" id="inputContactDate" name="contactDate" aria-describedby="dateHelp">
+                                <small id="dateHelp" class="form-text text-muted"><span>Sizinle ne zaman iletişime geçmemizi istersiniz?</span></small>
+                            </div>
+                            <div class="form-group col-md-6 div-contact-8">
+                                <label for="inputContactTime"><span>Tercih Edilen İletişim Saati</span></label>
+                                <input type="time" class="form-control" id="inputContactTime" name="contactTime" aria-describedby="timeHelp">
+                                <small id="timeHelp" class="form-text text-muted"><span>Gün içinde hangi saat aralığı uygun?</span></small>
+                            </div>
+                        </div>
+
+                        <div class="form-group div-contact-9">
+                            <label for="inputAge"><span>Yaşınız (18-99 arası)</span></label>
+                            <input type="number" class="form-control" id="inputAge" name="age" min="18" max="99" placeholder="Örn: 25" aria-describedby="ageHelp">
+                            <small id="ageHelp" class="form-text text-muted"><span>Yaşınızı belirtmek isterseniz.</span></small>
+                        </div>
+
+                        <div class="form-group div-contact-10">
+                            <label for="inputSatisfaction"><span>Blogdan Memnuniyet Düzeyiniz:</span> <span id="satisfactionValue" class="font-weight-bold">70</span><span>/100</span></label>
+                            <input type="range" class="form-control-range" id="inputSatisfaction" name="satisfaction" min="0" max="100" value="70" oninput="document.getElementById('satisfactionValue').textContent = this.value" aria-describedby="rangeHelp">
+                            <small id="rangeHelp" class="form-text text-muted"><span>Blog hakkındaki genel memnuniyetinizi belirtin.</span></small>
+                        </div>
+
+                        <div class="form-group div-contact-11">
+                            <label for="inputFavColor"><span>Favori Renginiz (Site teması için fikir olabilir!)</span></label>
+                            <input type="color" class="form-control" id="inputFavColor" name="favColor" value="#563d7c" title="Favori renginizi seçin" aria-describedby="colorHelp">
+                            <small id="colorHelp" class="form-text text-muted"><span>Bu sadece eğlence için!</span></small>
+                        </div>
+                        
+                        <div class="form-group div-contact-12">
+                            <label for="inputSecurityQuestion"><span>Güvenlik Sorusu: En sevdiğiniz siber güvenlik aracı nedir? (Yanıt gizlenecek)</span></label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="inputSecurityQuestion" name="securityAnswer" placeholder="Yanıtınız" aria-describedby="passwordHelp">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="togglePasswordVisibility('inputSecurityQuestion')" title="Yanıtı Göster/Gizle"><i class="fas fa-eye"></i></button>
+                                </div>
+                            </div>
+                             <small id="passwordHelp" class="form-text text-muted"><span>Bu alanı boş bırakabilirsiniz.</span></small>
+                        </div>
+
+                        <div class="form-group div-contact-13">
+                            <label><span>İletişim Tercihi:</span></label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="contactPreference" id="radioEmail" value="email" checked>
+                                <label class="form-check-label" for="radioEmail"><span>E-posta</span></label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="contactPreference" id="radioPhone" value="phone">
+                                <label class="form-check-label" for="radioPhone"><span>Telefon</span></label>
+                            </div>
+                             <div class="form-check">
+                                <input class="form-check-input" type="radio" name="contactPreference" id="radioNone" value="none">
+                                <label class="form-check-label" for="radioNone"><span>Belirtmek İstemiyorum</span></label>
+                            </div>
+                        </div>
+
+                        <div class="form-group div-contact-14">
+                            <label for="selectInquiry"><span>Konu</span> <span class="text-danger">*</span></label>
+                            <select class="form-control" id="selectInquiry" name="inquiryType" required aria-describedby="inquiryHelp">
+                                <option value="" selected disabled><span>Lütfen bir konu seçiniz...</span></option>
+                                <option value="genel_soru"><span>Genel Soru</span></option>
+                                <option value="is_birligi_teklifi"><span>İş Birliği Teklifi</span></option>
+                                <option value="geri_bildirim_oneri"><span>Geri Bildirim / Öneri</span></option>
+                                <option value="teknik_destek_sorun"><span>Teknik Destek / Sorun Bildirimi</span></option>
+                                <option value="makale_konu_onerisi"><span>Makale / Konu Önerisi</span></option>
+                                <option value="diger_konular"><span>Diğer Konular</span></option>
+                            </select>
+                            <small id="inquiryHelp" class="form-text text-muted"><span>Mesajınızın konusunu belirtin.</span></small>
+                            <div class="invalid-feedback"><span>Lütfen bir konu seçiniz.</span></div>
+                        </div>
+                        
+                        <div class="form-group div-contact-15">
+                            <label for="inputWebsite"><span>Web Siteniz (varsa)</span></label>
+                            <input type="url" class="form-control" id="inputWebsite" name="website" placeholder="https://www.orneksiteniz.com" aria-describedby="websiteHelp">
+                            <small id="websiteHelp" class="form-text text-muted"><span>Eğer varsa, web sitenizin adresini girin.</span></small>
+                        </div>
+
+                        <div class="form-group div-contact-16">
+                             <label for="inputSearchBlog"><span>Blog İçi Arama Terimi (Örnek Input Type 'Search')</span></label>
+                             <input type="search" class="form-control" id="inputSearchBlog" name="blogSearch" placeholder="Örn: Phishing nasıl anlaşılır?" aria-describedby="searchHelp">
+                             <small id="searchHelp" class="form-text text-muted"><span>Bu, 'search' tipinde bir input örneğidir.</span></small>
+                        </div>
+                        
+                        <div class="form-group div-contact-17">
+                            <label for="inputMonthYear"><span>Blogu Takip Etmeye Başladığınız Ay/Yıl (Örnek Input Type 'Month')</span></label>
+                            <input type="month" class="form-control" id="inputMonthYear" name="followMonthYear" aria-describedby="monthHelp">
+                            <small id="monthHelp" class="form-text text-muted"><span>Ne zamandır takip ediyorsunuz?</span></small>
+                        </div>
+
+                        <div class="form-group div-contact-18">
+                            <label for="textareaMessage"><span>Mesajınız</span> <span class="text-danger">*</span> <span id="charCountDisplay" class="text-muted">(0/500)</span></label>
+                            <textarea class="form-control" id="textareaMessage" name="message" rows="5" placeholder="Mesajınızı buraya detaylı bir şekilde yazınız..." required maxlength="500" onkeyup="updateCharacterCount('textareaMessage', 'charCountDisplay')" aria-describedby="messageHelp"></textarea>
+                            <small id="messageHelp" class="form-text text-muted"><span>En fazla 500 karakter.</span></small>
+                            <div class="invalid-feedback"><span>Mesaj alanı boş bırakılamaz.</span></div>
+                        </div>
+
+                        <div class="form-group div-contact-19">
+                            <label for="inputFile"><span>Dosya Ekle (Opsiyonel, max 2MB, .pdf, .txt, .jpg, .png)</span></label>
+                            <input type="file" class="form-control-file" id="inputFile" name="attachment" accept=".pdf,.doc,.docx,.txt,.jpg,.png" onchange="validateFileSize(this)" aria-describedby="fileHelp">
+                            <small id="fileHelp" class="form-text text-muted"><span>Gerekliyse bir dosya ekleyebilirsiniz.</span></small>
+                            <div id="fileError" class="text-danger small mt-1"></div>
+                        </div>
+                        
+                        <div class="form-group form-check div-contact-20">
+                            <input type="checkbox" class="form-check-input" id="checkNewsletter" name="newsletter">
+                            <label class="form-check-label" for="checkNewsletter"><span>Siber güvenlik bültenime abone olmak istiyorum.</span></label>
+                        </div>
+
+                        <div class="form-group form-check div-contact-21">
+                            <input type="checkbox" class="form-check-input" id="checkTerms" name="terms" required>
+                            <label class="form-check-label" for="checkTerms"><span>Kullanım</span> <span>koşullarını</span> <span>ve</span> <span>gizlilik</span> <span>politikasını</span> <a href="#" onclick="openModal('termsModal'); return false;"><span>okudum, kabul ediyorum</span></a><span class="text-danger">*</span></label>
+                             <div class="invalid-feedback"><span>Devam etmek için koşulları kabul etmelisiniz.</span></div>
+                        </div>
+                        <div class="div-contact-22 mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg" onclick="logUserClick('contactFormSubmit')"><span>Gönder</span> <i class="fas fa-paper-plane"></i></button>
+                            <button type="reset" class="btn btn-secondary btn-lg ml-2" onclick="resetContactFormVisuals()"><span>Temizle</span> <i class="fas fa-undo"></i></button>
+                            <input type="button" class="btn btn-info btn-lg ml-2" value="Örnek Input Buton" onclick="logGenericMessage('Input button tıklandı.')">
+                        </div>
+                    </form>
+                    <div class="div-contact-23 mt-3"><span>Formu</span> <span>doldurduktan</span> <span>sonra</span> <span>size</span> <span>en</span> <span>kısa</span> <span>sürede</span> <span>dönüş</span> <span>yapacağım.</span> <span>Teşekkürler!</span></div>
+                </div>
+            </div>
+            <hr class="my-5"> <div class="row mt-4 text-center">
+                <div class="col-md-4 div-contact-extra-1">
+                    <h5><i class="fas fa-clock text-info"></i> <span>Yanıt</span> <span>Süresi</span></h5>
+                    <p><span>Genellikle</span> <span>mesajlara</span> <span>24-48</span> <span>saat</span> <span>içinde</span> <span>yanıt</span> <span>vermeye</span> <span>çalışıyorum.</span> <span>Hafta</span> <span>sonları</span> <span>ve</span> <span>resmi</span> <span>tatillerde</span> <span>bu</span> <span>süre</span> <span>biraz</span> <span>uzayabilir.</span> <span>Anlayışınız</span> <span>için</span> <span>teşekkürler.</span></p>
+                </div>
+                <div class="col-md-4 div-contact-extra-2">
+                    <h5><i class="fab fa-linkedin text-primary"></i> <span>Sosyal</span> <span>Medyada</span> <span>Ben</span></h5>
+                    <p><span>Profesyonel</span> <span>ağım</span> <span>için</span> <a href="https://www.linkedin.com/in/07enesavci" target="_blank" title="[Adınız Soyadınız] LinkedIn Profili"><span>LinkedIn</span></a> <span>profilime</span> <span>göz</span> <span>atabilirsiniz.</span> <span>(Lütfen</span> <span>'kullaniciadiniz'</span> <span>kısmını</span> <span>kendi</span> <span>LinkedIn</span> <span>kullanıcı</span> <span>adınızla</span> <span>değiştirin.)</span> <span>Ayrıca</span> <a href="https://twitter.com/kullaniciadiniz" target="_blank" title="[Adınız Soyadınız] Twitter Profili"><span>Twitter'da</span></a> <span>da</span> <span>beni</span> <span>takip</span> <span>edebilirsiniz.</span></p>
+                </div>
+                <div class="col-md-4 div-contact-extra-3">
+                    <h5><i class="fas fa-exclamation-circle text-danger"></i> <span>Acil</span> <span>Durumlar</span> <span>ve</span> <span>Önemli</span> <span>Konular</span></h5>
+                    <p><span>Eğer</span> <span>konu</span> <span>gerçekten</span> <span>acilse</span> <span>ve</span> <span>hızlı</span> <span>bir</span> <span>yanıt</span> <span>gerektiriyorsa,</span> <span>lütfen</span> <span>e-postanızın</span> <span>konu</span> <span>kısmına</span> <span>"[ACİL]"</span> <span>ibaresini</span> <span>ekleyiniz.</span> <span>Bu,</span> <span>mesajınızın</span> <span>önceliklendirilmesine</span> <span>yardımcı</span> <span>olacaktır.</span></p>
+                </div>
+            </div>
+            <div class="row mt-4 text-left">
+                 <div class="col-md-6 div-contact-extra-4">
+                    <h6><i class="fas fa-question-circle text-success"></i> <span>Sıkça</span> <span>Sorulan</span> <span>Soru:</span> <span>İşbirliği</span> <span>Olanakları</span></h6>
+                    <p><span>Blogumda</span> <span>veya</span> <span>projelerimde</span> <span>işbirliği</span> <span>yapmak</span> <span>isterseniz,</span> <span>lütfen</span> <span>teklifinizi</span> <span>detaylı</span> <span>bir</span> <span>şekilde</span> <span>açıklayan</span> <span>bir</span> <span>mesaj</span> <span>gönderin.</span> <span>Blogumun</span> <span>temasıyla</span> <span>uyumlu</span> <span>ve</span> <span>okuyucularıma</span> <span>değer</span> <span>katacak</span> <span>fikirlere</span> <span>her</span> <span>zaman</span> <span>açığım.</span></p>
+                </div>
+                <div class="col-md-6 div-contact-extra-5">
+                     <h6><i class="fas fa-comments text-warning"></i> <span>Geri</span> <span>Bildirimleriniz</span> <span>Değerli</span></h6>
+                    <p><span>Bu</span> <span>blog</span> <span>ve</span> <span>içerikleri</span> <span>hakkındaki</span> <span>düşünceleriniz</span> <span>benim</span> <span>için</span> <span>çok</span> <span>önemli.</span> <span>Olumlu</span> <span>ya</span> <span>da</span> <span>olumsuz</span> <span>her</span> <span>türlü</span> <span>geri</span> <span>bildiriminizi,</span> <span>önerilerinizi</span> <span>veya</span> <span>karşılaştığınız</span> <span>teknik</span> <span>sorunları</span> <span>lütfen</span> <span>çekinmeden</span> <span>iletin.</span> <span>Bu</span> <span>sayede</span> <span>blogu</span> <span>daha</span> <span>iyi</span> <span>hale</span> <span>getirebiliriz.</span></p>
+                </div>
+            </div>
+             <div class="row mt-4 text-center">
+                <div class="col-md-6 div-contact-extra-6">
+                    <h5><i class="fas fa-user-shield text-primary"></i> <span>Kişisel</span> <span>Verilerin</span> <span>Korunması</span></h5>
+                    <p><span>Bu</span> <span>form</span> <span>aracılığıyla</span> <span>toplanan</span> <span>kişisel</span> <span>verileriniz,</span> <span>yalnızca</span> <span>sizinle</span> <span>iletişim</span> <span>kurmak</span> <span>ve</span> <span>taleplerinizi</span> <span>yanıtlamak</span> <span>amacıyla</span> <span>kullanılacaktır.</span> <span>Verileriniz</span> <span>üçüncü</span> <span>şahıslarla</span> <span>kesinlikle</span> <span>paylaşılmayacaktır.</span> <span>Detaylı</span> <span>bilgi</span> <span>için</span> <a href="#" onclick="openModal('termsModal'); return false;" title="Gizlilik Politikası ve Kullanım Koşulları"><span>Gizlilik Politikamızı</span></a> <span>okuyabilirsiniz.</span></p>
+                </div>
+                 <div class="col-md-6 div-contact-extra-7">
+                    <h5><i class="fas fa-map-marker-alt text-secondary"></i> <span>Konum</span> <span>(Genel)</span></h5>
+                    <p><span>Şu</span> <span>anda</span> <span>[Şehir Adınız, Ülke Adınız]</span> <span>konumunda</span> <span>bulunmaktayım.</span> <span>Ancak</span> <span>dijital</span> <span>dünyada</span> <span>sınırlar</span> <span>yok!</span> <span>Dünyanın</span> <span>her</span> <span>yerinden</span> <span>gelen</span> <span>mesajlara</span> <span>açığım.</span> <span>(Bu</span> <span>bilgiyi</span> <span>isteğe</span> <span>bağlı</span> <span>olarak</span> <span>paylaşabilirsiniz.)</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-white py-4">
+        <div class="container text-center">
+             <div class="div-block-footer-1">
+                <p class="mb-0"><span>Telif Hakkı © Muhammet Enes Avcı</span> <span id="currentYearContact">2025</span>. <span>Tüm hakları saklıdır.</span></p>
+            </div>
+            <div class="div-block-footer-2">
+                <small><span>Bu blog eğitim amaçlı oluşturulmuştur.</span> <span>Güvenliğiniz bizim için önemlidir.</span></small>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel"><span>Kullanım Koşulları</span> <span>ve</span> <span>Gizlilik Politikası</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Kapat" onclick="hideModal('termsModal')">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6><span>1. Giriş</span></h6>
+                    <p><span>Bu web sitesini kullanarak aşağıdaki kullanım koşullarını kabul etmiş sayılırsınız.</span> <span>Lütfen dikkatlice okuyunuz.</span></p>
+                    <h6><span>2. İçerik Kullanımı</span></h6>
+                    <p><span>Sitede yer alan tüm içerikler (yazılar, görseller vb.) aksi belirtilmedikçe tarafıma aittir.</span> <span>İzinsiz kullanılamaz.</span></p>
+                    <h6><span>3. Yorumlar ve Kullanıcı Katkıları</span></h6>
+                    <p><span>Yorumlarınızda saygılı bir dil kullanmanız beklenir.</span> <span>Spam, hakaret içeren yorumlar silinecektir.</span></p>
+                    <h6><span>4. Gizlilik Politikası</span></h6>
+                    <p><span>İletişim formu aracılığıyla topladığım kişisel bilgileriniz (ad, e-posta vb.) sadece sizinle iletişim kurmak amacıyla kullanılacak ve üçüncü şahıslarla paylaşılmayacaktır.</span> <span>Çerezler (cookies) site deneyiminizi iyileştirmek için kullanılabilir.</span></p>
+                    <h6><span>5. Sorumluluk Reddi</span></h6>
+                    <p><span>Bu blogda yer alan bilgiler genel bilgilendirme amaçlıdır ve profesyonel tavsiye niteliği taşımaz.</span> <span>Verilen bilgilerin güncelliği ve doğruluğu için çaba gösterilse de, kesinlik garanti edilmez.</span> <span>Bilgileri uygularken oluşabilecek zararlardan sorumlu değilim.</span></p>
+                    <h6><span>6. Değişiklikler</span></h6>
+                    <p><span>Bu koşulları zaman zaman güncelleme hakkımı saklı tutarım.</span> <span>Değişiklikler bu sayfada yayınlanacaktır.</span></p>
+                    <p><span>Son Güncelleme:</span> <span id="termsLastUpdated">20 Mayıs 2025</span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="hideModal('termsModal')"><span>Anladım</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

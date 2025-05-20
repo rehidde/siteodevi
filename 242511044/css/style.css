@@ -1,0 +1,456 @@
+ /* Genel Stiller */
+ body {
+     font-family: 'Poppins', sans-serif; /* Modern ve okunaklı bir font */
+     padding-top: 70px; /* Sabit navbar için biraz daha fazla boşluk */
+     /* Daha canlı bir arkaplan */
+     background: linear-gradient(135deg, #f0f8ff, #e0ffff); /* Açık mavi ve açık cyan gradient */
+     color: #333;
+     transition: background-color 0.5s ease, color 0.5s ease;
+ }
+ 
+ h1, h2, h3, h4, h5, h6 {
+     font-weight: 700; /* Başlıklar için daha kalın font */
+     color: #2c3e50; /* Koyu mavi başlık rengi */
+ }
+ 
+ a {
+     color: #3498db; /* Genel link rengi - canlı mavi */
+     transition: color 0.3s ease;
+ }
+ 
+ a:hover {
+     color: #2980b9; /* Link hover rengi - biraz daha koyu mavi */
+     text-decoration: none;
+ }
+ 
+ .btn-primary {
+     background-color: #3498db;
+     border-color: #3498db;
+     transition: background-color 0.3s ease, border-color 0.3s ease;
+ }
+ 
+ .btn-primary:hover {
+     background-color: #2980b9;
+     border-color: #2980b9;
+ }
+ 
+ .btn-secondary {
+     background-color: #95a5a6;
+     border-color: #95a5a6;
+ }
+ .btn-secondary:hover {
+     background-color: #7f8c8d;
+     border-color: #7f8c8d;
+ }
+ 
+ 
+ /* Navbar Stilleri */
+ #mainNav {
+     background-color: #2c3e50; /* Koyu arduvaz mavisi */
+     transition: background-color 0.3s ease-in-out, padding-top 0.3s ease, padding-bottom 0.3s ease;
+     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+ }
+ 
+ #mainNav .navbar-brand {
+     color: #1abc9c; /* Turkuaz */
+     font-weight: bold;
+     font-size: 1.6em; /* Biraz daha büyük */
+     transition: color 0.3s ease;
+ }
+ #mainNav .navbar-brand:hover {
+     color: #16a085; /* Koyu turkuaz */
+ }
+ #mainNav .navbar-brand span:first-child {
+     color: #ecf0f1; /* Açık gri */
+ }
+ 
+ #mainNav .nav-link {
+     color: #ecf0f1; /* Açık gri */
+     padding: 0.5rem 1rem;
+     transition: color 0.2s ease, background-color 0.2s ease;
+     border-radius: 4px; /* Hafif yuvarlak kenarlar */
+ }
+ 
+ #mainNav .nav-link:hover,
+ #mainNav .nav-item.active .nav-link {
+     color: #2c3e50; /* Koyu mavi */
+     background-color: #1abc9c; /* Turkuaz arkaplan */
+ }
+ 
+ #mainNav.navbar-scrolled {
+     background-color: rgba(44, 62, 80, 0.95); /* Scroll sonrası biraz daha koyu ve yarı saydam */
+     padding-top: 0.5rem;
+     padding-bottom: 0.5rem;
+     backdrop-filter: blur(5px); /* Arkaplanı bulanıklaştırma efekti (destekleyen tarayıcılarda) */
+ }
+ 
+ 
+ /* Header (Masthead) Stilleri */
+ .masthead {
+     position: relative;
+     background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.9)), url('../img/hero-bg.jpg') no-repeat center center;
+     background-size: cover;
+     padding-top: 10rem; /* Daha fazla üst boşluk */
+     padding-bottom: 10rem; /* Daha fazla alt boşluk */
+     min-height: 80vh; /* Ekran yüksekliğinin %80'i */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .masthead .overlay { /* Bu artık kullanılmıyor, gradient ile değiştirildi */
+     /* position: absolute; ... */
+ }
+ 
+ .masthead h1 {
+     font-size: 3rem; /* Daha büyük başlık */
+     text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+     font-weight: 700;
+ }
+ .masthead h1 span:first-child{
+     color: #1abc9c; /* Turkuaz vurgu */
+ }
+ .masthead .div-block-1 span {
+     background-color: rgba(26, 188, 156, 0.1); /* Çok hafif turkuaz arkaplan */
+     padding: 2px 5px;
+     border-radius: 3px;
+     margin: 0 2px;
+ }
+ 
+ 
+ /* Page Header (İletişim Sayfası için) */
+ .page-header {
+     background: linear-gradient(to right, #ff6b6b, #fca3a3); /* Canlı kırmızımsı gradient */
+     color: white;
+     padding-top: 6rem;
+     padding-bottom: 6rem;
+     margin-bottom: 0;
+ }
+ .page-header h1 {
+     font-size: 2.8rem;
+     color: white; /* Başlık rengi beyaz */
+ }
+ .page-header h1 span:nth-child(2){
+     color: #f1c40f; /* Sarı vurgu */
+     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+ }
+ .page-header .div-contact-1 span {
+     background-color: rgba(241, 196, 15, 0.1);
+     padding: 2px 5px;
+     border-radius: 3px;
+     margin: 0 2px;
+ }
+ 
+ /* Bölüm Stilleri */
+ section {
+     padding: 5rem 0; /* Bölümler arası daha fazla boşluk */
+ }
+ 
+ section#hakkimda {
+     background: linear-gradient(135deg, #afeeee, #e0f8f7); /* Açık turkuaz ve açık su yeşili gradient */
+ }
+ 
+ section#siber-guvenlik {
+     background: linear-gradient(135deg, #ffdab9, #ffe4c4); /* Şeftali ve açık bej gradient */
+ }
+ 
+ section#kavramlar {
+     background: linear-gradient(135deg, #f0e68c, #fff8dc); /* Haki ve bej gradient */
+ }
+ 
+ section#kaynaklar {
+     background: linear-gradient(135deg, #98fb98, #f0fff0); /* Açık yeşil ve krem beyazı gradient */
+ }
+ 
+ section#iletisim {
+     background: linear-gradient(135deg, #add8e6, #b0e0e6); /* Açık mavi tonları gradient */
+ }
+ 
+ .card {
+     border: 1px solid #ddd; /* Hafif bir sınır */
+     border-radius: 8px; /* Daha yuvarlak kenarlar */
+     box-shadow: 0 6px 20px rgba(0,0,0,0.08); /* Daha belirgin gölge */
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+     overflow: hidden; /* img-top'un kenarlarını düzgün tutmak için */
+     background-color: white; /* Kart arkaplanı beyaz kalsın */
+ }
+ 
+ .card:hover {
+     transform: translateY(-10px) scale(1.02); /* Hafif yukarı kalkma ve büyüme */
+     box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+ }
+ .card-img-top {
+     height: 200px;
+     object-fit: cover; /* Resimlerin orantılı kalmasını sağlar */
+ }
+ 
+ .card-title span:first-child {
+     color: #2980b9; /* Başlıklarda mavi tonu */
+ }
+ .card-footer {
+     background-color: #f8f9fa;
+     border-top: 1px solid #eee;
+ }
+ .card-footer .btn-link {
+     font-weight: bold;
+ }
+ 
+ /* Tablo Stilleri */
+ #kavramlarTable th {
+     background-color: #34495e; /* Koyu arduvaz mavisi */
+     color: white;
+     border-color: #4a627a; /* Sınır rengi */
+ }
+ #kavramlarTable th i {
+     margin-left: 5px;
+     color: #1abc9c; /* Turkuaz ikonlar */
+ }
+ #kavramlarTable tbody tr:hover {
+     background-color: #d4e6f1; /* Satır üzerine gelince hafif mavi */
+ }
+ .table-responsive {
+     border-radius: 8px;
+     overflow: hidden; /* Tablonun kenarlarını yuvarlak yapmak için */
+     background-color: white; /* Tablo arkaplanı beyaz kalsın */
+ }
+ 
+ /* iFrame Stilleri */
+ .embed-responsive {
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+     border: 1px solid #ddd;
+ }
+ 
+ /* Footer Stilleri */
+ .footer {
+     background: linear-gradient(to right, #4a00e0, #8e2de2); /* Mor gradient */
+     color: #bdc3c7; /* Daha açık gri metin */
+ }
+ .footer p, .footer small {
+     margin-bottom: 0;
+ }
+ .footer a {
+     color: #f9ca24; /* Sarı linkler */
+     text-decoration: none;
+ }
+ .footer a:hover {
+     text-decoration: underline;
+     color: #f0932b; /* Turuncu */
+ }
+ .footer #currentYear, .footer #currentYearContact {
+     font-weight: bold;
+     color: #ecf0f1; /* Açık gri */
+ }
+ 
+ /* İletişim Formu Stilleri */
+ #contactForm label {
+     font-weight: 600; /* Label'lar daha belirgin */
+     color: #34495e; /* Koyu gri-mavi */
+ }
+ #contactForm .form-control {
+     border-radius: 5px; /* Inputlar için hafif yuvarlak kenarlar */
+     border-color: #ced4da;
+     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+ }
+ #contactForm .form-control:focus {
+     border-color: #1abc9c; /* Odaklanınca turkuaz sınır */
+     box-shadow: 0 0 0 0.2rem rgba(26, 188, 156, 0.25); /* Bootstrap'in odak efekti */
+ }
+ #formSubmissionMessage .alert {
+     border-radius: 5px;
+ }
+ 
+ .invalid-feedback {
+     display: none;
+     width: 100%;
+     margin-top: .25rem;
+     font-size: .875em;
+     color: #e74c3c; /* Kırmızı hata mesajı rengi */
+ }
+ /* Bootstrap'in is-invalid sınıfı ile otomatik gösterilir */
+ .form-control.is-invalid {
+     border-color: #e74c3c;
+ }
+ .form-control.is-valid {
+     border-color: #2ecc71; /* Yeşil geçerli alan sınırı */
+ }
+ 
+ /* Tema Değiştirme (Örnek) */
+ body.dark-theme {
+     /* Daha koyu ve canlı gradient */
+     background: linear-gradient(135deg, #4b0082, #800080); /* Indigo ve mor */
+     color: #dcdde1; /* Açık gri metin */
+ }
+ body.dark-theme h1, body.dark-theme h2, body.dark-theme h3, body.dark-theme h4, body.dark-theme h5, body.dark-theme h6 {
+     color: #82ccdd; /* Açık mavi başlıklar */
+ }
+ body.dark-theme a {
+     color: #55efc4; /* Nane yeşili linkler */
+ }
+ body.dark-theme a:hover {
+     color: #00b894; /* Koyu nane yeşili */
+ }
+ body.dark-theme #mainNav {
+     background-color: #141a1f;
+ }
+ body.dark-theme #mainNav.navbar-scrolled {
+     background-color: rgba(20, 26, 31, 0.95);
+ }
+ body.dark-theme #mainNav .nav-link:hover,
+ body.dark-theme #mainNav .nav-item.active .nav-link {
+     color: #141a1f;
+     background-color: #55efc4;
+ }
+ 
+ body.dark-theme .card {
+     background-color: #2f3640; /* Daha koyu kart arkaplanı */
+     color: #dcdde1;
+     border-color: #485460;
+     box-shadow: 0 6px 20px rgba(255,255,255,0.05);
+ }
+ body.dark-theme .card:hover {
+      box-shadow: 0 10px 30px rgba(255,255,255,0.08);
+ }
+ body.dark-theme .card-title span:first-child {
+     color: #82ccdd; /* Açık mavi */
+ }
+ body.dark-theme .card-footer {
+     background-color: #3b424a;
+     border-top-color: #485460;
+ }
+ 
+ body.dark-theme section#hakkimda { background: linear-gradient(135deg, #6a5acd, #8470ff); } /* Slate mavisi ve açık mor */
+ body.dark-theme section#siber-guvenlik, body.dark-theme section#kaynaklar { background: linear-gradient(135deg, #d2691e, #cd853f); } /* Çikolata ve Peru */
+ body.dark-theme section#kavramlar, body.dark-theme section#iletisim { background: linear-gradient(135deg, #008b8b, #20b2aa); } /* Koyu deniz yeşili ve açık deniz mavisi */
+ 
+ body.dark-theme .footer {
+     background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Koyu mavimsi gradient */
+     color: #7f8fa6;
+ }
+ body.dark-theme .form-control {
+     background-color: #2f3640;
+     color: #dcdde1;
+     border-color: #485460;
+ }
+ body.dark-theme .form-control:focus {
+     background-color: #2f3640;
+     color: #dcdde1;
+     border-color: #55efc4;
+     box-shadow: 0 0 0 0.2rem rgba(85, 239, 196, 0.25);
+ }
+ body.dark-theme .masthead {
+      background: linear-gradient(rgba(20, 26, 31, 0.7), rgba(20, 26, 31, 0.9)), url('../img/hero-bg.jpg') no-repeat center center;
+      background-size: cover;
+ }
+ body.dark-theme .page-header {
+     background: linear-gradient(to right, #ff4d4d, #ff8080); /* Koyu ve açık kırmızı */
+ }
+ body.dark-theme #contactForm label {
+     color: #82ccdd;
+ }
+ body.dark-theme .text-muted {
+     color: #7f8fa6 !important;
+ }
+ 
+ 
+ /* Helper class for card highlighting */
+ .card-highlighted {
+     border: 2px solid #1abc9c; /* Turkuaz vurgu sınırı */
+     transform: translateY(-5px) scale(1.01); /* Hafifçe yukarı ve büyüt */
+ }
+ 
+ /* Div ve Span'lar için genel stiller (görselleştirme için) */
+ [class^="div-block-"], [class^="div-contact-"] {
+     padding: 8px;
+     margin-bottom: 8px;
+     border: 1px dashed #ced4da; /* Sınırları görmek için daha belirgin */
+     border-radius: 4px;
+     background-color: rgba(255, 255, 255, 0.15); /* Div'lere hafif renkli arkaplan */
+ }
+ body.dark-theme [class^="div-block-"], body.dark-theme [class^="div-contact-"] {
+     border-color: #485460;
+     background-color: rgba(0, 0, 0, 0.15);
+ }
+ 
+ 
+ [class^="div-block-"] span, [class^="div-contact-"] span {
+     padding: 1px 3px;
+     margin-right: 4px;
+     background-color: rgba(0,0,0,0.05); /* Span'ları hafifçe görmek için */
+     /* border: 1px solid rgba(0,0,0,0.05); */
+     border-radius: 2px;
+ }
+ body.dark-theme [class^="div-block-"] span, body.dark-theme [class^="div-contact-"] span {
+     background-color: rgba(255,255,255,0.05);
+ }
+ 
+ .clickable-span {
+     cursor: pointer;
+     text-decoration: underline;
+ }
+ .clickable-span:hover {
+     color: #e67e22; /* Turuncu hover */
+ }
+ 
+ /* Progress Bar */
+ .progress {
+     border-radius: 3px;
+     background-color: #e9ecef; /* Açık gri progress bar arkaplanı */
+ }
+ #pageProgress {
+     transition: width 0.1s ease-out; /* Yumuşak geçiş */
+     background-color: #28a745; /* Yeşil ilerleme rengi */
+ }
+ 
+ /* Modal stilleri */
+ .modal-content {
+     border-radius: 8px;
+     border: none;
+     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+     background-color: white;
+     color: #333;
+ }
+ .modal-header {
+     background-color: #3498db;
+     color: white;
+     border-bottom: none;
+     border-top-left-radius: 8px;
+     border-top-right-radius: 8px;
+ }
+ .modal-header .close {
+     color: white;
+     opacity: 0.8;
+     text-shadow: none;
+ }
+ .modal-header .close:hover {
+     opacity: 1;
+ }
+ .modal-title span:first-child {
+     font-weight: bold;
+ }
+ body.dark-theme .modal-content {
+     background-color: #2f3640;
+     color: #dcdde1;
+ }
+ body.dark-theme .modal-header {
+     background-color: #1e272e;
+     color: #82ccdd;
+ }
+ body.dark-theme .modal-header .close {
+     color: #82ccdd;
+ }
+ 
+ /* İletişim formundaki input grupları için iyileştirme */
+ #contactForm .input-group .form-control {
+     border-top-right-radius: 0;
+     border-bottom-right-radius: 0;
+ }
+ #contactForm .input-group .input-group-append .btn {
+     border-top-left-radius: 0;
+     border-bottom-left-radius: 0;
+ }
+ 
+ 

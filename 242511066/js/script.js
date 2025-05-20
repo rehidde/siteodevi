@@ -76,7 +76,7 @@ function iletisimGirisleriniKontrolEt() {
   if (bosAlanVar) {
     bilgiMesajiGoster("Lütfen gerekli (*) alanları doldurunuz."); // Mesaj güncellendi
   } else {
-    bilgiMesajiGoster("Form başarıyla gönderildi (Bu sadece bir simülasyondur). Keyifli!"); // Mesaj güncellendi ve "Keyifli" eklendi
+    bilgiMesajıGoster("Form başarıyla gönderildi (Bu sadece bir simülasyondur). Keyifli!"); // Mesaj güncellendi ve "Keyifli" eklendi
     formAlanlariniTemizle(); // Formu gönderdikten sonra temizle
   }
 }
@@ -118,6 +118,27 @@ function robotOmerKonus() {
     $('#robotOmerCikti').text(secilenKelime); // HTML'deki ilgili span'e yazdır
 }
 
+// "bne" fotoğrafını değiştiren fonksiyon ve son mesajı gösterir
+let currentBneImageIndex = 0;
+// 4 fotoğraf olduğu varsayımıyla diziyi güncelliyoruz
+const bneImages = ["img/bne1.jpg", "img/bne2.jpg", "img/bne3.jpg", "img/bne4.jpg"];
+const finalMessage = "Kimisi bakar geçer, kimisi kaybolur... ama bazı yüzler sadece müzede güler.";
+
+function bneFotografiDegistir() {
+    const bneFoto = $('#bneFoto');
+    const bneYazisi = $('#bneYazisi');
+    const bneSonMesaj = $('#bneSonMesaj');
+
+    if (currentBneImageIndex < bneImages.length) {
+        bneFoto.attr('src', bneImages[currentBneImageIndex]);
+        currentBneImageIndex++;
+    } else {
+        // Tüm fotoğraflar bittiğinde
+        bneFoto.hide(); // Fotoğrafı gizle
+        bneYazisi.hide(); // Yazı butonunu gizle
+        bneSonMesaj.html(finalMessage).show(); // Mesajı göster
+    }
+}
 
 // Sayfa yüklendiğinde çalışacak fonksiyonlar
 $(document).ready(function() {
@@ -129,5 +150,9 @@ $(document).ready(function() {
      // index sayfasında çalışacak başlangıç işlemleri
      if ($('body').hasClass('index-sayfasi')) { // index.html body etiketine class="index-sayfasi" ekleyeceğiz
         yetmistenYediyeSayiUret(); // Sayfa yüklendiğinde rastgele sayıyı göster
+        // İlk fotoğrafı göstermek için başlangıçta bir kez çağırabilirsiniz
+        // Ya da doğrudan ilk fotoğrafı HTML'de ayarlayabilirsiniz: <img src="img/bne1.jpg" ...
+        // Eğer HTML'de varsayılan bir başlangıç fotoğrafı varsa, bu kısmı kaldırabilirsiniz.
+        // Örneğin şu anki durumda HTML'de img/sasirma.jpg var, ilk tıklamada bne1.jpg gelecek.
      }
 });
