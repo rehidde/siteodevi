@@ -35,8 +35,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll("span").forEach(span => {
     span.addEventListener("mouseenter", () => {
-      span.style.color = "black";
+      span.style.color = "green";
     });
+
+    span.addEventListener("mouseleave", () => {
+  span.style.color = "black"; // veya varsayılan rengine döndür
+
+});
+
   });
 
   window.addEventListener("scroll", () => {
