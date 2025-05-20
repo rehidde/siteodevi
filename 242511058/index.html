@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Takı Dünyası</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <header class="my-4">
+      <header class="text-center">
+    <div class="butterfly">🦋</div>
+    <h1><span style="font-family: 'Georgia', Monospace; font-weight: bold;">Takı Dünyası</span></h1>
+    <p><span><i>Takı tutkunları için şıklığın ve zarafetin adresi</i></span></p>
+  </header>
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link" href="index.html" style="color:rgb(255, 255, 255);" >Anasayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="iletişim.html" style="color:rgb(255, 255, 255);">İletişim</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="row mb-4">
+      <div class="col-md-12">
+        <header class="text-center">
+        <h5><span><i>Ürünlerimizi Özenle Paketliyoruz.</i></span></h5>
+        </header>
+        <iframe width="100%" height="300" src="https://www.youtube.com/embed/VnICdz_FsZI?si=9naqR77CO99qcqAy" title="Takı Dünyası Tanıtım"></iframe>
+      </div>
+    </div>
+
+    <div class="row">
+      <h2 class="text-center" >Popüler Takılar</h2>
+      <!-- 10 ürün = 10 div -->
+      <div class="row">
+        <!-- Döngü yerine elle ekliyoruz -->
+        <!-- Her ürün 1 div, içinde 3 span -->
+        <!-- Toplam: 10 ürün * 3 span = 30 span -->
+        <!-- Toplam: en az 30 div sağlanmış olacak -->
+        <!-- Ürün örneği -->
+        <div class="col-md-4 mb-4" id="urun1">
+          <div class="card">
+            <img src="IMG/bileklik.jpg" class="card-img-top" alt="bileklik">
+            <div class="card-body">
+              <h5 class="card-title"><span>Bileklik</span> - <span>Flora</span></h5>
+              <p class="card-text"><span STYLE="font-size:150%"> 150 ₺</span></p>
+              <button class="btn btn-primary" onclick="urunBilgiGoster(1)">Favorilere Ekle</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" id="urun2">
+          <div class="card">
+            <img src="IMG/bileklik2.jpg" class="card-img-top" alt="Kolye">
+            <div class="card-body">
+              <h5 class="card-title"><span>Bileklik</span> - <span>Stella</span></h5>
+              <p class="card-text"><span STYLE="font-size:150%">120 ₺ </span></p>
+              <button class="btn btn-primary" onclick="urunBilgiGoster(1)">Favorilere Ekle</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" id="urun3">
+          <div class="card">
+            <img src="IMG/kolye1.jpg" class="card-img-top" alt="Kolye">
+            <div class="card-body">
+              <h5 class="card-title"><span>Kolye</span> - <span>Fraga</span></h5>
+              <p class="card-text"><span STYLE="font-size:150%">170 ₺</span></p>
+              <button class="btn btn-primary" onclick="urunBilgiGoster(1)">Favorilere Ekle</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" id="urun4">
+          <div class="card">
+            <img src="IMG/kolye2.jpg" class="card-img-top" alt="Kolye">
+            <div class="card-body">
+              <h5 class="card-title"><span>Kolye</span> - <span>Card</span></h5>
+              <p class="card-text"><span STYLE="font-size:150%">110 ₺</span></p>
+              <button class="btn btn-primary" onclick="urunBilgiGoster(1)">Favorilere Ekle</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" id="urun5">
+          <div class="card">
+            <img src="IMG/bileklik3.jpg" class="card-img-top" alt="Kolye">
+            <div class="card-body">
+              <h5 class="card-title"><span>Bileklik</span> - <span>Papilio</span></h5>
+              <p class="card-text"><span STYLE="font-size:150%">85 ₺</span></p>
+              <button class="btn btn-primary" onclick="urunBilgiGoster(1)">Favorilere Ekle</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" id="urun6">
+          <div class="card">
+            <img src="IMG/küpe.jpg" class="card-img-top" alt="Kolye">
+            <div class="card-body">
+              <h5 class="card-title"><span>Küpe</span> - <span>Jellyfish</span></h5>
+              <p class="card-text"><span STYLE="font-size:150%"> 70 ₺</span></p>
+              <button class="btn btn-primary" onclick="urunBilgiGoster(1)">Favorilere Ekle</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" id="urun7">
+          <div class="card">
+            <img src="IMG/küpe2.jpg" class="card-img-top" alt="Kolye">
+            <div class="card-body">
+              <h5 class="card-title"><span>Küpe</span> - <span>Lily</span></h5>
+              <p class="card-text"><span STYLE="font-size:150%">65 ₺</span></p>
+              <button class="btn btn-primary" onclick="urunBilgiGoster(1)">Favorilere Ekle</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" id="urun8">
+          <div class="card">
+            <img src="IMG/yüzük.jpg" class="card-img-top" alt="Kolye">
+            <div class="card-body">
+              <h5 class="card-title"><span>Yüzük</span> - <span>BigStar</span></h5>
+              <p class="card-text"><span STYLE="font-size:150%"> 50 ₺</span></p>
+              <button class="btn btn-primary" onclick="urunBilgiGoster(1)">Favorilere Ekle</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" id="urun9">
+          <div class="card">
+            <img src="IMG/yüzük2.jpg" class="card-img-top" alt="Kolye">
+            <div class="card-body">
+              <h5 class="card-title"><span>Yüzük</span> - <span>S&M</span></h5>
+              <p class="card-text"><span STYLE="font-size:150%">90 ₺ </span></p>
+              <button class="btn btn-primary" onclick="urunBilgiGoster(1)">Favorilere Ekle</button>
+            </div>
+          </div>
+        </div>
+        <!-- 9 tane daha böyle ürün eklenir -->
+        <!-- Devamında ekleyeceğim -->
+
+        <!-- Tablolu alan -->
+        <div class="col-md-12 mt-5">
+          <h3 class="text-center">Ürün Tablosu</h3>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Ürün</th>
+                <th>Fiyat</th>
+                <th>Stok</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Bileklik - Flora</td><td>150₺</td><td>20</td></tr>
+              <tr><td>Bileklik - Stella</td><td>120₺</td><td>35</td></tr>
+              <tr><td>Kolye - Fraga</td><td>170₺</td><td>15</td></tr>
+              <tr><td>Kolye - Card</td><td>110₺</td><td>20</td></tr>
+              <tr><td>Bileklik - Papilio</td><td>85₺</td><td>18</td></tr>
+              <tr><td>Küpe - Jellyfish</td><td>70₺</td><td>20</td></tr>
+              <tr><td>Küpe - Lily</td><td>65₺</td><td>10</td></tr>
+              <tr><td>Yüzük - BigStar</td><td>50₺</td><td>7</td></tr>
+              <tr><td>Yüzük - Sun&Moon</td><td>90₺</td><td>23</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center mt-5">
+      <p>&copy; 2025 Takı Dünyası</p>
+    </footer>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="JS/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Aydın Villas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Özel CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: rgb(166, 187, 210)">
+        <button id="darkModeToggle" class="dark-mode-toggle">
+    <i class="fas fa-moon light-icon"></i>
+    <i class="fas fa-sun dark-icon"></i>
+    <span class="mode-text">Karanlık Mod/</span>
+</button>
+    <!-- Navbar -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="navbar-container">
+                    <div class="logo-container">
+                        <div class="logo-inner">
+                            <span class="logo-text"><b>AYDIN</b></span>
+                            <span class="logo-text">VILLAS</span>
+                        </div>
+                    </div>
+                    <div class="menu-container">
+                        <div class="menu-item"><span><a href="index.html"  style="text-decoration: none;" >Ana Sayfa</a></span></div>
+                        <div class="menu-item"><span>Villalar</span></div>
+                        <div class="menu-item"><span>Hizmetler</span></div>
+                        <div class="menu-item"><span>Referanslar</span></div>
+                        <div class="menu-item active"><span>İletişim</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- İletişim Formu -->
+    <div class="container contact-form">
+        <div class="section-title">
+            <h2><span>Bizimle</span> <span>İletişime</span> <span>Geçin</span></h2>
+        </div>
+        <form id="contactForm" onsubmit="submitForm(event)">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="firstName"><span>Adınız</span></label>
+                        <input type="text" class="form-control" id="firstName" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lastName"><span>Soyadınız</span></label>
+                        <input type="text" class="form-control" id="lastName" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email"><span>E-posta</span></label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="phone"><span>Telefon</span></label>
+                        <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject"><span>Konu</span></label>
+                <select class="form-control" id="subject" required>
+                    <option value="" disabled selected>Konu seçiniz</option>
+                    <option value="villa-sorgu">Villa Sorgusu</option>
+                    <option value="randevu">Randevu Talebi</option>
+                    <option value="genel">Genel Sorgu</option>
+                    <option value="diger">Diğer</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="villaInterest"><span>İlgilendiğiniz Villa</span></label>
+                <select class="form-control" id="villaInterest">
+                    <option value="" selected>Seçiniz (isteğe bağlı)</option>
+                    <option value="bodrum">Bodrum Beauty Villa</option>
+                    <option value="cesme">Çeşme Hillside Villa</option>
+                    <option value="side">Side Golf Resort</option>
+                    <option value="bodrum">Fethiye Heaven Villa</option>
+                    <option value="cesme">Marmaris Ege Villa</option>
+                    <option value="side">Milas Altunsoy Villa</option>
+                    <option value="bodrum">Datça Kasımpatı Villa</option>
+                    <option value="cesme">Didim Gizmo Villa</option>
+                    <option value="side">Kalkan Gera Villa</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="budget"><span>Bütçeniz (USD)</span></label>
+                <input type="range" class="form-control-range" id="budget" min="500000" max="3000000" step="50000" value="1000000">
+                <span id="budgetValue">$1,000,000</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="visitDate"><span>Ziyaret Tarihi</span></label>
+                <input type="date" class="form-control" id="visitDate">
+            </div>
+            
+            <div class="form-group">
+                <label for="message"><span>Mesajınız</span></label>
+                <textarea class="form-control" id="message" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="newsletter">
+                <label class="form-check-label" for="newsletter"><span>Bülteninize abone olmak istiyorum.</span></label>
+            </div>
+            
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                <label class="form-check-label" for="agreeTerms"><span>Şartları okudum ve kabul ediyorum.</span></label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Gönder</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <h3><span>Aydın</span> <span>Villas</span></h3>
+                        <p><span>Lüks</span> <span>yaşamın</span> <span>en</span> <span>seçkin</span> <span>adresleri</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <h3><span>İletişim</span></h3>
+                        <p><span>info@aydinvillas.com</span></p>
+                        <p><span>+90 555 123 45 67</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <h3><span>Sosyal</span> <span>Medya</span></h3>
+                        <div class="social-icons">
+                            <span class="icon" onclick="openSocial('fb')">FB</span>
+                            <span class="icon" onclick="openSocial('ig')">IG</span>
+                            <span class="icon" onclick="openSocial('tw')">TW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Özel JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

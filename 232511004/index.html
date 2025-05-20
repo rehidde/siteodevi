@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aydın Villas-Lüks Yaşamın Adresi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Özel CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/icons/houses.svg">
+
+    
+</head>
+<body>
+    <button id="darkModeToggle" class="dark-mode-toggle">
+    <i class="fas fa-moon light-icon"></i>
+    <i class="fas fa-sun dark-icon"></i>
+    <span class="mode-text">Karanlık Mod/</span>
+</button>
+    <!-- Navbar (30 div kullanımına katkı) -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="navbar-container">
+                    <div class="logo-container">
+                        <div class="logo-inner">
+                            <span class="logo-text"><b>AYDIN</b></span>
+                            <span class="logo-text">VILLAS</span>
+                        </div>
+                    </div>
+                    <div class="menu-container">
+                        <div class="menu-item"><span>Ana Sayfa</span></div>
+                        <div class="menu-item"><span>Villalar</span></div>
+                        <div class="menu-item"><span>Hizmetler</span></div>
+                        <div class="menu-item"><span>Referanslar</span></div>
+                        <div class="menu-item"><span><a href="contact.html" style="text-decoration: none;">İletişim</a></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero-section" style="background-image: url(images/isim.jpg);">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1><span><b>Lüks</b></span> <span><b>Yaşamın</b></span> <span><b>Adresi</b></span></h1>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="showVillas()">Villaları Gör</button>
+                    <button class="btn-secondary" onclick="scrollToContact()"><i>İletişim</i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Öne Çıkan Villalar -->
+    <div class="container featured-villas">
+        <div class="section-title">
+            <h2><span>Öne</span> <span>Çıkan</span> <span>Villalar</span></h2>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="villa-card" onmouseover="zoomCard(this)" onmouseout="unzoomCard(this)">
+                    <div class="villa-image" id="villa1"></div>
+                    <div class="villa-details">
+                        <h3><span>Bodrum</span> <span>Beauty</span> <span>Villa</span></h3>
+                        <div class="villa-info">
+                            <span class="info-item">5 Yatak Odası</span>
+                            <span class="info-item">450 m²</span>
+                            <span class="info-item">Havuzlu</span>
+                        </div>
+                        <button class="btn-details" onclick="showDetails(1)">Detaylar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="villa-card" onmouseover="zoomCard(this)" onmouseout="unzoomCard(this)">
+                    <div class="villa-image" id="villa2"></div>
+                    <div class="villa-details">
+                        <h3><span>Çeşme</span> <span>Hillside</span> <span>Villa</span></h3>
+                        <div class="villa-info">
+                            <span class="info-item">4 Yatak Odası</span>
+                            <span class="info-item">380 m²</span>
+                            <span class="info-item">Deniz Manzarası</span>
+                        </div>
+                        <button class="btn-details" onclick="showDetails(2)">Detaylar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="villa-card" onmouseover="zoomCard(this)" onmouseout="unzoomCard(this)">
+                    <div class="villa-image" id="villa3"></div>
+                    <div class="villa-details">
+                        <h3><span>Side</span> <span>Golf</span> <span>Resort</span></h3>
+                        <div class="villa-info">
+                            <span class="info-item">6 Yatak Odası</span>
+                            <span class="info-item">520 m²</span>
+                            <span class="info-item">Spa ve Sauna</span>
+                        </div>
+                        <button class="btn-details" onclick="showDetails(3)">Detaylar</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4">
+                <div class="villa-card" onmouseover="zoomCard(this)" onmouseout="unzoomCard(this)">
+                    <div class="villa-image" id="villa4"></div>
+                    <div class="villa-details">
+                        <h3><span>Fethiye</span> <span>Heaven</span> <span>Villa</span></h3>
+                        <div class="villa-info">
+                            <span class="info-item">4 Yatak Odası</span>
+                            <span class="info-item">370 m²</span>
+                            <span class="info-item">Havuzlu</span>
+                        </div>
+                        <button class="btn-details" onclick="showDetails(4)">Detaylar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="villa-card" onmouseover="zoomCard(this)" onmouseout="unzoomCard(this)">
+                    <div class="villa-image" id="villa5"></div>
+                    <div class="villa-details">
+                        <h3><span>Marmaris</span> <span>Ege</span> <span>Villa</span></h3>
+                        <div class="villa-info">
+                            <span class="info-item">3 Yatak Odası</span>
+                            <span class="info-item">390 m²</span>
+                            <span class="info-item">Bahçeli</span>
+                        </div>
+                        <button class="btn-details" onclick="showDetails(5)">Detaylar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="villa-card" onmouseover="zoomCard(this)" onmouseout="unzoomCard(this)">
+                    <div class="villa-image" id="villa6"></div>
+                    <div class="villa-details">
+                        <h3><span>Milas</span> <span>Altunsoy</span> <span>Villa</span></h3>
+                        <div class="villa-info">
+                            <span class="info-item">6 Yatak Odası</span>
+                            <span class="info-item">420 m²</span>
+                            <span class="info-item">Havuzlu</span>
+                        </div>
+                        <button class="btn-details" onclick="showDetails(6)">Detaylar</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4">
+                <div class="villa-card" onmouseover="zoomCard(this)" onmouseout="unzoomCard(this)">
+                    <div class="villa-image" id="villa7"></div>
+                    <div class="villa-details">
+                        <h3><span>Datça</span> <span>Kasımpatı</span> <span>Villa</span></h3>
+                        <div class="villa-info">
+                            <span class="info-item">1 Yatak Odası</span>
+                            <span class="info-item">170 m²</span>
+                            <span class="info-item">Havuzlu</span>
+                        </div>
+                        <button class="btn-details" onclick="showDetails(7)">Detaylar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="villa-card" onmouseover="zoomCard(this)" onmouseout="unzoomCard(this)">
+                    <div class="villa-image" id="villa8"></div>
+                    <div class="villa-details">
+                        <h3><span>Didim</span> <span>Gizmo</span> <span>Villa</span></h3>
+                        <div class="villa-info">
+                            <span class="info-item">4 Yatak Odası</span>
+                            <span class="info-item">390 m²</span>
+                            <span class="info-item">Deniz Manzarası</span>
+                        </div>
+                        <button class="btn-details" onclick="showDetails(8)">Detaylar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="villa-card" onmouseover="zoomCard(this)" onmouseout="unzoomCard(this)">
+                    <div class="villa-image" id="villa9"></div>
+                    <div class="villa-details">
+                        <h3><span>Kalkan</span> <span>Gera</span> <span>Villa</span></h3>
+                        <div class="villa-info">
+                            <span class="info-item">2 Yatak Odası</span>
+                            <span class="info-item">210 m²</span>
+                            <span class="info-item">Spa ve Sauna</span>
+                        </div>
+                        <button class="btn-details" onclick="showDetails(9)">Detaylar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Özellikler Tablosu -->
+    <div class="container features-table" id="kalas">
+        <div class="section-title">
+            <h2><span>Villa</span> <span>Karşılaştırma</span> <span>Tablosu</span></h2>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Özellik</th>
+                    <th>Bodrum Villa</th>
+                    <th>Çeşme Villa</th>
+                    <th>Side Villa</th>
+                    <th>Fethiye Villa</th>
+                    <th>Marmaris Villa</th>
+                    <th>Milas Villa</th>
+                    <th>Datça Villa</th>
+                    <th>Didim Villa</th>
+                    <th>Kalkan Villa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fiyat</td>
+                    <td>$1,250,000</td>
+                    <td>$950,000</td>
+                    <td>$1,500,000</td>
+                    <td>$1,000,000</td>
+                    <td>$850,000</td>
+                    <td>$1.050,000</td>
+                    <td>$600,000</td>
+                    <td>$1,100,000</td>
+                    <td>$900,000</td>
+                </tr>
+                <tr>
+                    <td>Yatak Odası</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Banyo</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Alan</td>
+                    <td>450 m²</td>
+                    <td>380 m²</td>
+                    <td>520 m²</td>
+                    <td>370 m²</td>
+                    <td>390 m²</td>
+                    <td>420 m²</td>
+                    <td>170 m²</td>
+                    <td>390 m²</td>
+                    <td>210 m²</td>
+                </tr>
+                <tr>
+                    <td>Havuz</td>
+                    <td>Evet</td>
+                    <td>Evet</td>
+                    <td>Evet</td>
+                    <td>Evet</td>
+                    <td>Evet</td>
+                    <td>Evet</td>
+                    <td>Evet</td>
+                    <td>Evet</td>
+                    <td>Evet</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Google Haritalar (iframe) -->
+    <div class="container map-section">
+        <div class="section-title">
+            <h2><span>Konumlarımız</span></h2>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12767303.847143944!2d26.34748735!3d38.95910135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14b0155c964f2671%3A0x40d9dbd42a625f2a!2sTurkey!5e0!3m2!1sen!2str!4v1623760000000!5m2!1sen!2str" 
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <h3><span>Aydın</span> <span>Villas</span></h3>
+                        <p><span>Lüks</span> <span>yaşamın</span> <span>en</span> <span>seçkin</span> <span>adresleri</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <h3><span>İletişim</span></h3>
+                        <p><span>info@aydinvillas.com</span></p>
+                        <p><span>+90 555 123 45 67</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-section">
+                        <h3><span>Sosyal</span> <span>Medya</span></h3>
+                        <div class="social-icons">
+                            <span class="icon" onclick="openSocial('fb')">FB</span>
+                            <span class="icon" onclick="openSocial('ig')">IG</span>
+                            <span class="icon" onclick="openSocial('tw')">TW</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Özel JS -->
+    <script src="js/script.js"></script>
+    <div id="villaModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Villa Adı</h2>
+        <div class="modal-body">
+            <div class="image-gallery">
+                <img id="mainImage" src="" alt="Villa">
+                <div class="thumbnails"></div>
+            </div>
+            <div class="details">
+                <p><strong>Fiyat:</strong> <span id="modalPrice">-</span></p>
+                <p><strong>Konum:</strong> <span id="modalLocation">-</span></p>
+                <p><strong>Alan:</strong> <span id="modalSize">-</span></p>
+                <div class="features">
+                    <h3>Öne Çıkan Özellikler</h3>
+                    <ul id="featureList"></ul>
+                </div>
+                <button class="contact-btn" onclick="openContactForm()">İletişime Geçin</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

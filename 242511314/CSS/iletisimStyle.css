@@ -1,0 +1,329 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(55, 55, 55);
+  color: white;
+  font-variant: small-caps;
+}
+
+#iletisimHeader {
+  background-color: rgb(15, 15, 15);
+  width: 100%;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 15px;
+  user-select: none;
+}
+
+#iletisimH1 {
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-variant: small-caps;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+#iletisimH1 span:nth-child(1),
+#iletisimH1 span:nth-child(2) {
+  font-size: 35px;
+  color: steelblue;
+}
+
+.iletisimStart {
+  margin: 45px;
+  padding: 15px;
+  font-size: 25px;
+}
+
+.iletisimStart span {
+  font-size: 40px;
+  color: steelblue;
+}
+
+#iletisimFormContainer > fieldset {
+  border-top: 4px dashed steelblue;
+  border-right: 4px dashed white;
+  border-bottom: 4px dashed white;
+  border-left: 4px dashed steelblue;
+  margin-bottom: 60px;
+}
+
+#iletisimFormContainer > fieldset > legend span {
+  color: steelblue;
+  font-size: 30px;
+}
+
+#iletisimFormContainer > fieldset > legend {
+  font-size: 20px;
+}
+
+#iletisimForm {
+  padding: 20px;
+}
+
+.iletisimPersona label {
+  display: block;
+}
+
+.iletisimPersona input {
+  display: block;
+  margin: 5px 0 20px 0;
+}
+
+.iletisimPersona {
+  padding: 27px 0 27px 27px;
+}
+
+.iletisimPersona > legend span {
+  color: steelblue;
+  font-size: 20px;
+}
+
+.iletisimHardware {
+  padding: 27px 0 27px 27px;
+  margin-top: 25px;
+}
+
+.iletisimHardware > legend span {
+  color: steelblue;
+  font-size: 20px;
+}
+
+.spanNumbers {
+  font-size: 20px;
+}
+
+.historyContainer {
+  display: flex;
+  gap: 15px;
+  padding-top: 15px;
+}
+
+.iletisimTextarea {
+  padding: 27px 0 27px 27px;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 200px;
+}
+
+.iletisimTextarea > legend span {
+  color: steelblue;
+  font-size: 20px;
+}
+
+#iletisimMesaj {
+  display: block;
+  width: 500px;
+  height: 150px;
+  max-width: 1000px;
+  min-width: 250px;
+  resize: horizontal;
+}
+
+#metinLength {
+  border: 4px double steelblue;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.submitContainer {
+  width: 97%;
+  height: 100px;
+  margin: 25px 0 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20%;
+}
+
+div.submitContainer input[type="submit"] {
+  color: steelblue;
+  background-color: rgb(15, 15, 15);
+  font-weight: bolder;
+  font-size: x-large;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid steelblue;
+  border-radius: 12px;
+}
+
+div.submitContainer input[type="submit"]:hover {
+  box-shadow: 0 0 10px 3px steelblue;
+}
+
+div.submitContainer input[type="reset"] {
+  color: rgb(210, 31, 60);
+  background-color: rgb(15, 15, 15);
+  font-weight: bolder;
+  font-size: x-large;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid rgb(210, 31, 60);
+  border-radius: 12px;
+}
+
+div.submitContainer input[type="reset"]:hover {
+  box-shadow: 0 0 10px 3px rgb(210, 31, 60);
+}
+
+label,
+legend,
+output {
+  user-select: none;
+}
+
+#spanNumbersOutput {
+  font-size: 20px;
+  border: 1px solid steelblue;
+  border-radius: 5px;
+  box-sizing: content-box;
+  padding: 8px;
+}
+
+#iletisimTimeOutput {
+  font-size: 20px;
+  border: 1px solid steelblue;
+  border-radius: 5px;
+  box-sizing: content-box;
+  padding: 8px;
+  margin-left: 30px;
+}
+
+#backIndex {
+  width: 10%;
+  height: 30px;
+  float: right;
+  position: sticky;
+  top: 100px;
+}
+
+#iletisimFormContainer::before {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#backIndex button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10%;
+  color: white;
+  background-color: rgb(15, 15, 15);
+  border: 1px solid lightgrey;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-size: 17px;
+  padding: 15px 15px 15px 10px;
+}
+
+#backIndex button:hover {
+  box-shadow: 0 0 10px 3px lightgrey;
+}
+
+#backIndex button > span span {
+  color: steelblue;
+  font-size: 22px;
+}
+
+.bi-house-door-fill {
+  color: steelblue;
+}
+
+button,
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer;
+}
+
+#gameButton {
+  width: 11%;
+  height: 30px;
+  float: right;
+  position: sticky;
+  top: 175px;
+}
+
+#gameButton button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 10%;
+  color: white;
+  background-color: rgb(15, 15, 15);
+  border: 1px solid lightgrey;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  font-size: 17px;
+  padding: 15px 15px 15px 10px;
+}
+
+#gameButton button:hover {
+  box-shadow: 0 0 10px 3px lightgrey;
+}
+
+#gameButton button > span span {
+  color: steelblue;
+  font-size: 22px;
+}
+
+.bi-controller {
+  color: steelblue;
+}
+
+#hero::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#gameWindow {
+  width: 500px;
+  height: 300px;
+  background-color: steelblue;
+  border: 4px solid rgb(15, 15, 15);
+  border-radius: 15px;
+  position: absolute;
+  top: 880px;
+  left: 481px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#gameWindowContent {
+  font-weight: bolder;
+  font-size: 35px;
+}
+.gameWindowClose {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 10%;
+  height: 12%;
+  border: 3px solid rgb(15, 15, 15);
+  background-color: red;
+  border-radius: 10px;
+}
+
+.gameWindowClose:hover {
+  box-shadow: 0 0 10px 3px red;
+}
+
+#gameWindow:hover {
+  box-shadow: 0 0 10px 5px steelblue;
+}
+
+.bi-book-half {
+  color: steelblue;
+  font-size: 35px;
+  position: relative;
+  top: 3px;
+  left: -1.5px;
+}

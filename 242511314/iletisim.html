@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+  <head>
+    <link rel="stylesheet" href="CSS/iletisimStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script src="JS/iletisimScript.js"></script>
+    <title>LoreAtlas - Form</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/icons/book-half.svg"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Bu sayfa teması video oyunları olan bir Web Teknolojileri ödevinin iletişim sayfasıdır."
+    />
+    <meta
+      name="keywords"
+      content="Lore, Video games, Encyclopedia, Skyrim, Dungeons and Dragons, Project, University, Form Page"
+    />
+    <meta name="author" content="A.Samed Altunsoy" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="iletisimHeader">
+      <div id="iletisimH1"><span>L</span>ore<span>A</span>tlas</div>
+      <i class="bi bi-book-half"></i>
+    </div>
+    <p class="iletisimStart">
+      <span>L</span>ore<span>A</span>tlas ile iletişime geçip, sitemizde mevcut
+      olan yada olmayan bir oyun hakkında istek ve görüşlerinizi paylaşabilmek
+      ve aklınızda bulunan her türlü soru için aşağıdaki formu doldurabilirsiniz
+      <span>:</span>
+    </p>
+    <div id="backIndex">
+      <button onclick="backIndexScript();">
+        <i class="bi bi-house-door-fill"></i
+        ><span><span>A</span>na<span>S</span>ayfa</span>
+      </button>
+    </div>
+    <br />
+    <br />
+    <div id="hero"></div>
+    <br />
+    <br />
+    <div id="gameButton">
+      <button onclick="randomGame();">
+        <i class="bi bi-controller"></i>
+        <span><span>R</span>andom<span>G</span>ame</span>
+      </button>
+    </div>
+
+    <div id="iletisimFormContainer">
+      <fieldset>
+        <legend><span>L</span>ore<span>A</span>tlas FORM</legend>
+        <form action="#" id="iletisimForm" method="post">
+          <fieldset class="iletisimPersona">
+            <legend><span>K</span>işi <span>B</span>ilgisi</legend>
+            <label for="iletisimName">Adınızı giriniz:</label>
+            <input
+              type="text"
+              name="iletisimName"
+              id="iletisimName"
+              placeholder="Ad..."
+              required
+            />
+            <label for="iletisimSurName"
+              >Soyadınızı giriniz (isteğe bağlı):</label
+            >
+            <input
+              type="text"
+              name="iletisimSurName"
+              id="iletisimSurName"
+              placeholder="Soyad..."
+              value="-"
+            />
+            <label for="iletisimMail">E-mail adresiniz:</label>
+            <input
+              type="email"
+              name="iletisimMail"
+              id="iletisimMail"
+              placeholder="E-mail..."
+              required
+            />
+            <label for="iletisimTel">Telefon numaranız (isteğe bağlı):</label>
+            <input
+              type="tel"
+              name="iletisimTel"
+              id="iletisimTel"
+              placeholder="05XX XXX XXXX"
+              value="05XX XXX XXXX"
+              pattern="[0-9]{4} [0-9]{3} [0-9]{4}"
+              value="-"
+            />
+            <label for="birthday">Doğum tarihin (isteğe bağlı):</label>
+            <input type="date" id="birthday" name="birthday" />
+            <label for="iletisimHistory"
+              >Ne süredir oyun oynuyorsunuz (Yıl) ?</label
+            >
+            <div class="historyContainer">
+              <br />
+              <label for="zero"><span class="spanNumbers">0</span></label>
+              <input
+                type="range"
+                min="0"
+                max="75"
+                step="1"
+                value="0"
+                name="iletisimHistory"
+                id="iletisimHistory"
+                oninput="spanNumbersScript();"
+              />
+              <label for="seventyFive"
+                ><span class="spanNumbers">75</span></label
+              >
+              <sup><output id="spanNumbersOutput">---</output></sup>
+            </div>
+          </fieldset>
+          <fieldset class="iletisimHardware">
+            <legend>
+              <span>T</span>eknik <span>B</span>ilgiler (Yalnızca gerekli ise)
+            </legend>
+            <label for="iletisimCheck">Platform:</label>
+            <br />
+            <br />
+            <label for="iletisimCheckBox">PC:</label>
+            <input
+              type="checkbox"
+              name="iletisimCheckBox"
+              id="iletisimCheckBox"
+              value="-"
+            />
+            <br />
+            <label for="iletisimRadio">Konsol:</label>
+            <input
+              type="radio"
+              name="iletisimRadio"
+              id="iletisimRadio"
+              value="-"
+            />
+            <br />
+            <br />
+            <label for="iletisimCihazlar">Donanım:</label>
+            <br />
+            <select name="iletisimCihazlar" id="iletisimCihazlar">
+              <option value="PC-NV">NVidia</option>
+              <option value="PC-AMD">AMD</option>
+              <option value="Konsol-XBox">XBox</option>
+              <option value="Konsol-Playstation" selected>Playstation</option>
+              <option value="Nintendo">Nintendo</option>
+              <option value="Others">Diğer</option>
+            </select>
+            <br />
+            <br />
+            <label for="iletisimTime">Cihazın yaşı:</label>
+            <br />
+            <br />
+            <input
+              type="number"
+              id="iletisimTime"
+              name="iletisimTime"
+              value="0"
+              min="0"
+              max="25"
+              oninput="iletisimTimeScript();"
+            />
+            <sup><output id="iletisimTimeOutput">---</output></sup>
+            <br />
+            <br />
+            <label for="iletisimDosya">Dosya (Yalnızca gerekli ise):</label>
+            <br />
+            <br />
+            <input
+              type="file"
+              id="iletisimDosya"
+              name="iletisimDosya"
+              multiple
+            />
+          </fieldset>
+          <fieldset class="iletisimTextarea">
+            <legend><span>M</span>esajınız</legend>
+            <textarea
+              name="iletisimMesaj"
+              id="iletisimMesaj"
+              placeholder="Durum şu ki..."
+              required
+              oninput="karakterSay();"
+            ></textarea>
+            <div id="metinLength">---</div>
+          </fieldset>
+          <div class="submitContainer">
+            <input type="submit" value="GÖNDER" onclick="submitScript();" />
+            <input type="reset" value="RESET" />
+          </div>
+        </form>
+      </fieldset>
+    </div>
+
+    <div id="gameWindow">
+      <button class="gameWindowClose" onclick="closeWindow();">X</button>
+      <div id="contentContainer">
+        <output id="gameWindowContent">abcaaaaaaaaaaa</output>
+      </div>
+    </div>
+  </body>
+</html>

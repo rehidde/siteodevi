@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+  <head>
+    <link rel="stylesheet" href="CSS/indexStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script src="JS/indexScript.js"></script>
+    <title>LoreAtlas</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/icons/book-half.svg"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Bu sayfa teması video oyunları olan bir Web Teknolojileri ödevinin ana sayfasıdır."
+    />
+    <meta
+      name="keywords"
+      content="Lore, Video games, Encyclopedia, Skyrim, Dungeons and Dragons, Project, University, Main Page"
+    />
+    <meta name="author" content="A.Samed Altunsoy" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="indexHeader">
+      <div id="indexH1"><span>L</span>ore<span>A</span>tlas</div>
+      <div id="indexH2">
+        <input type="text" id="indexSearch" placeholder="LoreSearch..." />
+      </div>
+    </div>
+    <div id="indexImageContainer">
+      <div class="indexGo">
+        <a href="#" onclick="event.preventDefault(); goturSaat();"
+          ><span>&lt;</span></a
+        >
+      </div> 
+      <div id="indexTimerContainer">
+        <div id="indexTimer">---</div>
+      </div>
+      <div id="indexImage">
+        <div class="imageCenter">
+          <span>L</span>ore<span>A</span>tlas <br />yayın hayatına başladı!
+        </div>
+      </div>
+      <div class="indexGo">
+        <a href="#" onclick="event.preventDefault(); getirSaat();"
+          ><span>&gt;</span></a
+        >
+      </div>
+    </div>
+    <div id="indexNavbar">
+      <div class="indexMain indexNav">
+        <a href="index.html"><span>A</span>na<span>S</span>ayfa</a>
+      </div>
+      <div class="indexGames indexNav">
+        <a href="#" onclick="event.preventDefault();"><span>O</span>yunlar</a>
+        <div class="indexGameBar">
+          <a href="#" onclick="event.preventDefault();"
+            ><span>Sky</span><span>rim</span></a
+          >
+          <a href="#" onclick="event.preventDefault();"
+            ><span>Baldur's</span><span>&</span><span>Gate</span></a
+          >
+        </div>
+      </div>
+      <div class="indexContact indexNav">
+        <a href="iletisim.html"><span>İ</span>letişim</a>
+      </div>
+    </div>
+    <div id="indexContent">
+      <h1 class="indexHeader" id="kafaBir">
+        <span>Y</span>akın <span>Z</span>amanda <span>E</span>klenenler
+        <span>:</span>
+      </h1>
+      <div id="GameBoxContainer">
+        <div class="indexSkyrim GameBox">
+          <div class="SkyrimCentral"><span>SKY</span><span>RIM</span></div>
+          <div class="SkyrimInfo">
+            <div class="SkyrimProfile"></div>
+            <div class="SkyrimSpanKing">
+              <span>Oyun : The Elder Scrolls V: SKYRİM </span>
+              <span>Yıl : 2011</span>
+              <span>Yapımcı : Bethesda Game Studios</span>
+              <span>Tür : Action RPG</span>
+              <span>Oyun Motoru : Creation Engine</span>
+              <span>Yönetmen : Todd Howard</span>
+              <span>Besteci : Jeremy Soule</span>
+              <span>EVREN : The Elder Scrolls</span>
+            </div>
+            <div class="SkyrimSpanQuenn">
+              <span
+                >The Elder Scrolls V: Skyrim, The Elder Scrolls evreninin
+                merkezi olan
+                <span class="spanTerminolojiSkyrim">Nirn</span> adlı gezegenin
+                <span class="spanTerminolojiSkyrim">Tamriel</span> kıtasında
+                geçer. Önceki
+                <span class="spanTerminolojiSkyrim">Daggerfall</span>,
+                <span class="spanTerminolojiSkyrim">Morrowind</span> ve
+                <span class="spanTerminolojiSkyrim">Oblivion</span> oyunlarından
+                farklı olarak bu oyun bizi Tamriel kıtasının kuzeyine,
+                <span class="spanTerminolojiSkyrim">Nord</span> ülkesi soğuk
+                Skyrim topraklarına götürüyor.
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="indexDND GameBox">
+          <div class="DNDCentral">
+            <span>Baldur's </span><span>Gate</span> 3
+          </div>
+          <div class="DNDInfo">
+            <div class="DNDProfile"></div>
+            <div class="DNDSpanKing">
+              <span>Oyun : Baldur's Gate 3 </span>
+              <span>Yıl : 2023</span>
+              <span>Yapımcı : Larian Studios</span>
+              <span>Tür : RPG</span>
+              <span>Oyun Motoru : Divinity Engine</span>
+              <span>Yönetmen : Sven Vincke</span>
+              <span>Besteci : Borislav Slavov</span>
+              <span>EVREN : The Forgotten Realms</span>
+            </div>
+            <div class="DNDSpanQuenn">
+              <span
+                >Baldur's Gate 3,
+                <span class="spanTerminolojiDND">Dungeons and Dragons</span>
+                markasının mekanikleri ile
+                <span class="spanTerminolojiDND">The Forgotten Realms</span>
+                adlı yine D&D'den aşina olduğumuz bir evrenin kurgusunu
+                birleştiren bir RPG'dir. Önceki oyunlarda olduğu gibi bu oyunda
+                <span class="spanTerminolojiDND">Faerun</span> adlı kıtada
+                geçip, yolun yine
+                <span class="spanTerminolojiDND">Baldur's Gate</span> adlı
+                şehire düşeceği bir macerayı konu alır.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sınır" id="sınırBir">
+        <div id="kordinat"></div>
+      </div>
+      <h1 class="indexHeader" id="kafaİki">
+        <span>K</span>aynaklar <span>:</span>
+      </h1>
+      <div id="indexWindowContainer">
+        <div class="indexGo">
+          <a
+            href="#"
+            onclick="event.preventDefault(); changeDND('https://en.wikipedia.org/wiki/Forgotten_Realms');"
+            ><span>&lt;</span></a
+          >
+        </div>
+        <div class="gameWindow">
+          <iframe
+            src="https://elderscrolls.com.tr/"
+            frameborder="0"
+            id="iframeTheOne"
+          ></iframe>
+        </div>
+        <div class="indexGo">
+          <a
+            href="#"
+            onclick="event.preventDefault(); changeSkyrimTR('https://elderscrolls.com.tr/');"
+            ><span>&gt;</span></a
+          >
+        </div>
+      </div>
+      <div class="sınır">
+        <div id="scrollTop" onclick="yukarıZıpla();">
+          <i class="bi bi-chevron-double-up"></i>
+        </div>
+        <div id="scrollDown" onclick="asagıGit();">
+          <i class="bi bi-chevron-double-down"></i>
+        </div>
+      </div>
+      <h1 class="indexHeader" id="kafaÜç">
+        <span>M</span>etaveri <span>:</span>
+      </h1>
+      <table id="indexTable">
+        <caption>
+          <b
+            ><span class="skyrimTable">Skyrim </span> <span> VS </span>
+            <span class="dndTable"> Baldur's Gate 3</span></b
+          >
+        </caption>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Satış Adedi (Tahmin)</th>
+            <th>Brüt Gelir (AnaOyun)</th>
+            <th>Oyuncu Sayısı</th>
+            <th>Sahip Sayısı</th>
+            <th>İnceleme Sayısı</th>
+            <th>İnceleme Puanı</th>
+            <th>Ortalama Süre</th>
+            <th>Ortalama Oyuncu Sayısı</th>
+            <th>Takipçi Sayısı</th>
+            <th>Son 7 Günlük Satış</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="skyrimTable">The Elder Scrolls V: Skyrim</td>
+            <td>18.2M</td>
+            <td>268.9M $</td>
+            <td>23.3M</td>
+            <td>31.1M</td>
+            <td>335.1K</td>
+            <td>92%</td>
+            <td>65.9h</td>
+            <td>31.2K</td>
+            <td>529.5K</td>
+            <td>11.9K</td>
+          </tr>
+          <tr>
+            <td class="dndTable">Baldur's Gate 3</td>
+            <td>14.6M</td>
+            <td>725.8M $</td>
+            <td>15.5M</td>
+            <td>18.7M</td>
+            <td>755.8K</td>
+            <td>97%</td>
+            <td>107.5h</td>
+            <td>78.2K</td>
+            <td>934.9K</td>
+            <td>19.1K</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="indexFooter">
+        <div class="footerOne footerDiv">
+          <i class="bi bi-award-fill"></i>
+          <p>
+            <span>L</span>ore<span>A</span>tlası ziyaret ettiğiniz için
+            teşekkürler.
+          </p>
+        </div>
+        <div class="footerTwo footerDiv">
+          <h4>Medya</h4>
+          <a href="#" onclick="event.preventDefault();"
+            ><span>Y</span>outube <span>K</span>analı</a
+          >
+          <a href="#" onclick="event.preventDefault();"
+            ><span>T</span>witter <span>S</span>ayfası</a
+          >
+          <a href="#" onclick="event.preventDefault();"
+            ><span>I</span>nstagram <span>S</span>ayfası</a
+          >
+        </div>
+        <div class="footerThree footerDiv">
+          <ul class="footerList">
+            <h5><span>B</span>aşlıklar <span>:</span></h5>
+            <li>
+              <a href="#kafaBir"
+                ><span>Y</span>akın <span>Z</span>amanda
+                <span>E</span>klenenler</a
+              >
+            </li>
+            <li>
+              <a href="#kafaİki"><span>K</span>aynaklar</a>
+            </li>
+            <li>
+              <a href="#kafaÜç"><span>M</span>etaveri</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
