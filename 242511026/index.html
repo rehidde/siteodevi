@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TürkCs2Haber</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/CSS.css"> <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1 class="logo">TürkCs2Haber</h1>
+        <div class="nav-buttons">
+            <button class="nav-button" onclick="refreshHome()">Ana Sayfa</button>
+            <button class="nav-button" onclick="window.location.href='iletisim.html'">Kaydol</button> </div>
+    </div>
+
+    <div id="main-content">
+        <div class="container">
+            <div class="skin-section">
+                <h2 class="skin-title"><span>1. Desert Eagle | Blaze ★</span></h2>
+                <div class="weapon-info"><span>Desert Eagle: Yüksek hasar veren bir tabanca.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/deagle.jpg" alt="Desert Eagle Blaze"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc8')">Detaylar</button>
+                <div id="desc8" class="skin-description"><span>Desert Eagle Blaze, alevli tasarımıyla dikkat çeker. Ortalama fiyatı $1500 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <h2 class="skin-title"><span>2. USP-S | Kill Confirmed ★</span></h2>
+                <div class="weapon-info"><span>USP-S: Sessiz ve hassas bir tabanca.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/usps.jpg" alt="USP-S Kill Confirmed"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc10')">Detaylar</button>
+                <div id="desc10" class="skin-description"><span>USP-S Kill Confirmed, detaylı tasarımıyla bilinir. Ortalama fiyatı $1800 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <h2 class="skin-title"><span>3. Glock-18 | Fade ★</span></h2>
+                <div class="weapon-info"><span>Glock-18: Hızlı ateş eden bir tabanca.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/glock.jpg" alt="Glock-18 Fade"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc6')">Detaylar</button>
+                <div id="desc6" class="skin-description"><span>Glock-18 Fade, nadir bulunan bir pistoldür. Ortalama fiyatı $2000 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <h2 class="skin-title"><span>4. AK-47 | Fire Serpent ★</span></h2>
+                <div class="weapon-info"><span>AK-47: Güçlü ve güvenilir bir taarruz tüfeği.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/ak47.jpg" alt="AK-47 Fire Serpent"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc4')">Detaylar</button>
+                <div id="desc4" class="skin-description"><span>AK-47 Fire Serpent, efsanevi bir tasarıma sahiptir. Ortalama fiyatı $2500 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <h2 class="skin-title"><span>5. Karambit | Fade ★</span></h2>
+                <div class="weapon-info"><span>Karambit: Hızlı ve ölümcül bir yakın dövüş bıçağı.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/karambit.jpg" alt="Karambit Fade"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc2')">Detaylar</button>
+                <div id="desc2" class="skin-description"><span>Karambit Fade, renk geçişleriyle dikkat çeker. Ortalama fiyatı $3000 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <h2 class="skin-title"><span>6. Talon Knife | Crimson Web ★</span></h2>
+                <div class="weapon-info"><span>Talon Knife: Keskin ve tehditkar bir bıçak.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/talon.jpg" alt="Talon Knife Crimson Web"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc9')">Detaylar</button>
+                <div id="desc9" class="skin-description"><span>Talon Knife Crimson Web, kırmızı ağ desenleriyle öne çıkar. Ortalama fiyatı $3200 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <h2 class="skin-title"><span>7. Butterfly Knife | Gamma Doppler ★</span></h2>
+                <div class="weapon-info"><span>Butterfly Knife: Akrobatik hareketleriyle ünlü bir bıçak.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/butterfly.jpg" alt="Butterfly Knife Gamma Doppler"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc5')">Detaylar</button>
+                <div id="desc5" class="skin-description"><span>Butterfly Knife Gamma Doppler, yeşil tonlarıyla dikkat çeker. Ortalama fiyatı $3500 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <h2 class="skin-title"><span>8. M9 Bayonet | Doppler ★</span></h2>
+                <div class="weapon-info"><span>M9 Bayonet: Klasik ve zarif bir bıçak tasarımı.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/m9bayonet.jpg" alt="M9 Bayonet Doppler"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc3')">Detaylar</button>
+                <div id="desc3" class="skin-description"><span>M9 Bayonet Doppler, parlak renkleriyle öne çıkar. Ortalama fiyatı $4000 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <h2 class="skin-title"><span>9. M4A4 | Howl ★</span></h2>
+                <div class="weapon-info"><span>M4A4: Dengeli ve güçlü bir taarruz tüfeği.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/m4a4.jpg" alt="M4A4 Howl"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc7')">Detaylar</button>
+                <div id="desc7" class="skin-description"><span>M4A4 Howl, eşsiz tasarımıyla ünlüdür. Ortalama fiyatı $4500 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <h2 class="skin-title"><span>10. AWP | Dragon Lore ★</span></h2>
+                <div class="weapon-info"><span>AWP: Yüksek güçlü bir keskin nişancı tüfeği.</span></div>
+                <div class="skin-images">
+                    <div class="skin-image"><img src="img/dragonlore.jpg" alt="AWP Dragon Lore"></div> </div>
+                <button class="skin-button" onclick="toggleDescription('desc1')">Detaylar</button>
+                <div id="desc1" class="skin-description"><span>AWP Dragon Lore, CS2'nin en ikonik skinlerinden biridir. Ortalama fiyatı $5000 civarındadır.</span></div>
+            </div>
+
+            <div class="skin-section">
+                <div class="video-description">
+                    <span>2020'deki küresel COVID-19 pandemisi, CS:GO skinlerinin fiyatlarını önemli ölçüde artırdı.</span>
+                    <span>Dünya çapındaki karantinalarla insanlar eğlence için çevrimiçi oyunlara yöneldi ve bu da oyun içi ögelere, CS2 skinleri de dahil olmak üzere, talepte bir artışa yol açtı.</span>
+                    <span>Bu artan talep, nispeten sabit bir arz karşısında fiyatların yükselmesine neden olarak CS2 skinleri pazarını satıcılar için karlı bir girişim ve koleksiyoncular ve oyuncular için daha pahalı bir hobi haline getirdi.</span>
+                    <span>Peki başka etkenler var mı varsa nedir daha fazlasını merak ediyorsanız:</span>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            <div class="skin-image">
+                                <iframe src="https://www.youtube.com/embed/jMfZH84i2hA" allowfullscreen></iframe>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/JS.js"></script> </body>
+</html>
