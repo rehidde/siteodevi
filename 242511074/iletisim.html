@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Lüks Otomobil Galerisi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Lüks Otomobil</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="iletisim.html">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Form Section -->
+    <div class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <h2 class="text-center mb-4">İletişim Formu</h2>
+                    <form id="contactForm" onsubmit="return validateForm()">
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Ad Soyad</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-posta</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefon</label>
+                            <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="birthDate" class="form-label">Doğum Tarihi</label>
+                            <input type="date" class="form-control" id="birthDate" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="carModel" class="form-label">İlgilendiğiniz Model</label>
+                            <select class="form-select" id="carModel" required>
+                                <option value="">Seçiniz</option>
+                                <option value="mercedes">Mercedes-Benz S-Class</option>
+                                <option value="bmw">BMW 7 Series</option>
+                                <option value="audi">Audi A8</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="budget" class="form-label">Bütçe Aralığı</label>
+                            <input type="range" class="form-range" id="budget" 
+                                min="1000000" 
+                                max="20000000" 
+                                step="100000" 
+                                value="5000000">
+                            <div class="d-flex justify-content-between">
+                                <span>₺1.000.000</span>
+                                <span id="budgetValue">₺5.000.000</span>
+                                <span>₺20.000.000</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="color" class="form-label">Tercih Ettiğiniz Renk</label>
+                            <input type="color" class="form-control form-control-color" id="color" value="#000000">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="testDrive" class="form-label">Test Sürüşü Tarihi</label>
+                            <input type="datetime-local" class="form-control" id="testDrive">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mesajınız</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="file" class="form-label">Belge Yükle</label>
+                            <input type="file" class="form-control" id="file" accept=".pdf,.doc,.docx">
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="newsletter" required>
+                            <label class="form-check-label" for="newsletter">Kampanyalardan haberdar olmak istiyorum</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Gönder</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-section mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-center mb-4">Bize Ulaşın</h3>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.google.com/maps/embed?pb=example" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>İletişim</h4>
+                    <p>Email: info@luksotomobil.com</p>
+                    <p>Tel: +90 555 123 4567</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Adres</h4>
+                    <p>Lüks Otomobil Plaza</p>
+                    <p>İstanbul, Türkiye</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Sosyal Medya</h4>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2">Facebook</a>
+                        <a href="#" class="text-white me-2">Instagram</a>
+                        <a href="#" class="text-white">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html> 
