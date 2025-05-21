@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef'Ata</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <section>
+    
+  </section>
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">Chef'Ata</a>
+    <span class="date" id="dateArea"></span>
+    <button class="theme-toggle" onclick="toggleTheme()">🌗 Gündüz/Gece Modu</button>
+    <div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row gap-3">
+        <li class="nav-item"><a class="nav-link" href="#" data-target="corbalar">Çorbalar</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target="anayemekler">Ana Yemekler</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target="tatlilar">Tatlılar</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" data-target="icecekler">İçecekler</a></li>
+        <li class="nav-item"><a class="nav-link" href="#kalori" data-target="kalori">Kalori</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html" target="_blank">İletişim</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Anasayfa İçeriği -->
+<div class="homepage-header" style="text-align:center;margin-top:40px;">
+  <h1>Chef'Ata</h1>
+  <p class="span-pastel">Hoş geldiniz! Bugün ne pişireceksiniz?</p>
+</div>
+<div style="text-align:center;margin: 20px auto;">
+  <button class="span-pastel" onclick="suggestRecipe()">Hangi tarifi yapacağınızı bilmiyorsanız biz önerelim!!</button>
+  
+</div>
+<div id="suggestion" class="suggestion-box"></div>
+<div style="text-align:center;margin-top:20px;">
+  
+</div>
+<h2 style="text-align:center;margin: 20px auto;">Günün Menüsü:</h2>
+<div id="daily-recipe">Günün Menüsü:<br></div>
+
+
+<div class="search-bar text-center">
+  <input type="text" class="form-control form-control-lg shadow-sm" id="searchInput" placeholder="Tarif ara...">
+</div>
+
+
+<div class="container mt-4">
+  <!-- Çorbalar -->
+  <div id="corbalar" class="section active">
+    <h2 class="mb-4">Çorbalar</h2>
+    <div class="row g-4">
+      <div class="col-md-4" >
+  <div class="recipe-container" >
+    <img src="IMG/mercimek_çorbası.jpeg" class="card-img-top" alt="Mercimek Çorbası">
+    <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal"  data-title="Mercimek Çorbası" 
+    data-recipe="Kırmızı mercimek çorbası için sıvı yağı tencereye alınarak yemeklik doğranan soğanlar hafif pembeleşinceye kadar kavrulur.
+Daha sonra un ilave edilerek kısık ateşte kavurmaya devam edilir.
+Salça kullanılacak ise salça ilave edilir, kavrulduktan sonra küp küp doğranmış havuç ve iyice yıkanıp suyu süzülen mercimekler ilave edilir.
+Üzerine su eklenerek karıştırılır ve tencerenin kapağı kapatılır. Çorbamız kaynayana kadar orta ateşte, kaynadıktan sonra mercimekler ve havuçlar yumuşayana kadar ara ara karıştırılarak kısık ateşte pişirilir.
+Çorba piştikten sonra el blenderı ile güzelce ezilir. Eğer blenderiniz yoksa süzgeçten de geçirebilirsiniz.
+Karabiber, tuz ve isteğe bağlı olarak kimyon eklenir ve karıştırılır. 5 dakika daha pişirilerek ocaktan alınır.
+Kıvamı koyu gelirse size, bir miktar su ilave edilerek bir taşım kaynatılır.
+Bu arada küçük bir tavaya iki yemek kaşığı tereyağı alınır, kızdırılır ve bir tatlı kaşığı kırmızı toz biber eklenerek ocaktan alınır.
+Mercimek çorbası servis kasesine alındıktan sonra üzerine kırmızı biberli sos gezdirilir ve bir dilim limon ile servis edilir.
+"
+    data-ingredients="2 su bardağı kırmızı mercimek
+                      1 adet soğan
+                      2 yemek kaşığı un
+                      1 adet havuç
+                      Yarım yemek kaşığı biber ya da  domates salçası (rengi kırmızı olsun isterseniz artırabilir ya da hiç kullanmayabilirsiniz)
+                      1 tatlı kaşığı tuz
+                      Yarım çay kaşığı karabiber
+                      1 çay kaşığı kimyon (isteğe bağlı)
+                      2 litre sıcak su
+                      5 yemek kaşığı sıvı yağ
+                      Sosu için:
+                      2 yemek kaşığı tereyağı
+                      1 tatlı kaşığı kırmızı toz biber">
+      <h5 class="card-title">Mercimek Çorbası</h5>
+      <p>Kırmızı mercimekle yapılan, limonla lezzetlenen klasik bir Türk çorbası.</p>
+      <p>Toplam Süre : 1 Saat.</p>
+    </div>
+    <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+  </div>
+      <span class="span-pastel">Anne Eli!</span>
+      <span class="span-pastel">Bir Yudum Terapi!</span>
+      <span class="span-pastel">Sade-Derin-Eski!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="60">1 Saat Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+</div>
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/yogurt_corbası.jpeg" class="card-img-top" alt="Yoğurt Çorbası">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Yoğurt Çorbası" data-recipe="Tenceremize yoğurt, un ve suyu ilave ederek tel çırpıcı yardımı ile pürüzsüz bir kıvam alana kadar çırpalım. Kaynayana kadar orta ateşte karıştırarak pişirelim. Kaynadıktan sonra erişteyi ekleyelim ve kısık ateşte şehriyeler yumuşayana kadar pişirelim. Tuz ekleyip 1-2 dakika daha kaynatıp ocaktan alalım. Sos için tereyağında pul biber ve nane kızdırılır ve çorbanın üzerine gezdirilir."
+        data-ingredients="1 su bardağı yoğurt
+3 tepeleme yemek kaşığı un
+5 su bardağı su
+1 çay bardağı erişte
+1 silme tatlı kaşığı tuz
+Sosu için;
+
+1 yemek kaşığı tereyağı
+1 tatlı kaşığı kırmızı toz biber
+1 tatlı kaşığı nane">
+          <h5 class="card-title">Yoğurt Çorbası</h5>
+          <p>Yoğurtla hazırlanan, hafif ve lezzetli bir çorba.</p>
+          <p>Toplam Süre : 45 Dakika.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Serin Seher!</span>
+      <span class="span-pastel">Yumuşak Tat!</span>
+      <span class="span-pastel">Yoğurt Seli!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="45">45 Dakika Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/tarhana.jpeg" class="card-img-top" alt="Tarhana Çorbası">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Tarhana Çorbası" data-recipe="Tencereye sıvı yağ, nane, salça, baharatlar ve tarhanayı ekleyip karıştırarak kavurun. Suyu yavaşça ilave edip çırpıcıyla karıştırarak pişirin. Kaynayınca 5 dakika daha pişirip ocaktan alın. Afiyet olsun."
+        data-ingredients="3 yemek kaşığı ev tarhanası
+1 yemek kaşığı nane
+2 yemek kaşığı sıvı yağ
+1 yemek kaşığı salça
+6 su bardağı su
+Kırmızı pul biber
+Karabiber
+Tuz">
+          <h5 class="card-title">Tarhana Çorbası</h5>
+          <p>Geleneksel Anadolu lezzeti, sağlıklı ve doyurucu.</p>
+          <p>Toplam Süre : 1 Saat 15 Dakika.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Kırsal Ezgi!</span>
+      <span class="span-pastel">Nostalji!</span>
+      <span class="span-pastel">Ekşi Mükemmellik!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="75">1 Saat 15 Dakika Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <!-- Ana Yemekler -->
+  <div id="anayemekler" class="section">
+    <h2 class="mb-4">Ana Yemekler</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/karniyarik.jpeg" class="card-img-top" alt="Karnıyarık">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Karnıyarık" data-recipe="Patlıcanlar közlenip soyulur ve ortadan ikiye kesilir. İç harcı için kıyma, soğan, yeşil biber, domates ve baharatlar kavrulur. Hazırlanan harç patlıcanların içine doldurulur. Üzerine domates dilimleri yerleştirilir ve fırında pişirilir."
+        data-ingredients="6 adet küçük boy patlıcan (büyük ise ikiye bölebilirsiniz)
+3 adet sivri biber
+Kıymalı Harç İçin;
+
+2 adet orta boy soğan
+2 adet domates
+2 adet sivri biber
+2 diş sarımsak
+Sıvı yağ, tuz, karabiber, kırmızıbiber
+200 gr kıyma
+1 çay bardağı sıcak su
+Sosu İçin;
+
+1 yemek kaşığı salça
+1 su bardağı sıcak su">  
+          <h5 class="card-title">Karnıyarık</h5>
+          <p>Fırında pişen nefis patlıcan ve kıyma birleşimi.</p>
+          <p>Toplam Süre : 1 Saat 30 Dakika.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Ev Dumanı!</span>
+      <span class="span-pastel">Kıyma Şiiri!</span>
+      <span class="span-pastel">Patlıcan Patlaması!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="90">1 Saat 30 Dakika Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+    </div>
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/makarna.jpeg" class="card-img-top" alt="Tavuklu Mantarlı Fettucini Alfredo">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Tavuklu Mantarlı Fettucini Alfredo" data-recipe="Fettucini makarnası haşlanıp süzülür. Tavuk ve mantarlar sote edilip, krema ve parmesan peyniri ile karıştırılır. Makarnalar karışıma eklenir ve karıştırılarak servise sunulur."
+        data-ingredients="1 paket fettucini
+Sosu için :
+
+2 yemek kaşığı zeytinyağı 400 gram tavuk göğsü
+2 diş ezilmiş sarımsak
+300 gram mantar
+2 yemek kaşığı tereyağı
+1 tatlı kaşığı kırmızı toz biber Tuz karabiber
+50 gram rendelenmiş parmesan peyniri (isteğe bağlı)
+2 paket krema (400 ml)">
+          <h5 class="card-title">Tavuklu Mantarlı Fettucini Alfredo</h5>
+          <p>Kremalı ve peynirli lezzetli bir makarna.</p>
+          <p>Toplam Süre : 1 Saat.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Gurme Dokunuş!</span>
+      <span class="span-pastel">Kremsi Doku!</span>
+      <span class="span-pastel">İtalyan Lezzeti!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="60">1 Saat Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/kumpir.jpeg" class="card-img-top" alt="Kumpir">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Kumpir" data-recipe="2 adet kumpirlik büyük boy patatesi güzelce yıkayıp kuruladıktan sonra üzerine kürdanla delikler açıyoruz. (İçinin güzel pişmesi için)
+Önce yağlı kağıda, ardından alüminyum folyoya sarıp önceden ısıtılmış 200 derece fırında 1, 5 saat pişiriyoruz. (Folyo ya sarmazsanız yağlı kağıt tek başına yanıyor, aynı şekilde patatesin dışı da yanar)
+Bu süre patatesinizin boyutuna göre değişebilir, 1 saatten sonra kontrol etmeye başlayın. Kürdan batırınca içine kolay giriyorsa pişmiş demektir.
+Patates pişerken diğer malzemelerini hazırlıyoruz. Kısır, amerikan salatası hazırlayıp, siyah dilimli zeytin, mısır hazır ediyoruz. Sosis dilimleyip kızartıyoruz. İnce ince kornişon turşu doğruyoruz. Malzemeleri damak tadınıza göre çoğaltabilirsiniz.
+Fırında çıkardığımız patatesimize dağıtmadan sıcağıyla ortadan bıçakla kesik atıyoruz. (Tamamen kesilip ayrılmamasına dikkat edin. )
+Tatlı kaşığıyla patatesin içini oyup uygun bir kaba aktarıyoruz. (Kenarlarına fazla girmeyin)
+Patateslerin içini çatalla güzelce ezip 4 yemek kaşığı teremyağ ekliyoruz ve karıştırıyoruz. (Patatesin sıcaklığıyla eriyor) Son olarak 1 su bardağı kaşar peyniri rendesini de ekleyip karıştırdıktan sonra patateslerin içine tekrar dolduruyoruz.
+Üzerine hazırladığımız malzemelerden koyup ketçap mayonez sıkarak servis ediyoruz." data-ingredients="2 adet kumpirlik büyük boy patates
+4 yemek kaşığı teremyağ
+1 su bardağı kaşar rendesi
+Diğer Malzemeler ;
+
+Kısır
+Amerikan salatası
+Siyah dilimli zeytin
+Mısır
+Sosis
+Kornişon turşu
+Üzeri İçin ;
+
+Ketçap, mayonez">
+          <h5 class="card-title">Kumpir</h5>
+          <p>Patatesin müthiş köz aromasıyla dolu lezzetlerin buluşması....</p>
+          <p>Toplam Süre : 2 Saat.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Patates Festivali!</span>
+      <span class="span-pastel">Binbir Lezzet!</span>
+      <span class="span-pastel">Sokak Işıltısı!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="120">2 Saat Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Tatlılar -->
+  <div id="tatlilar" class="section">
+    <h2 class="mb-4">Tatlılar</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/künefe.jpeg" class="card-img-top" alt="Künefe">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Künefe" data-recipe="İlk olarak künefenin şerbeti hazırlanır. Şerbet için, su ve şeker bir tencereye alınarak kaynamaya bırakılır. (Şerbetin dibine tutmaması için ara ara karıştırılır.)
+Şerbet kaynamaya başlayınca şekerin kesilmemesi için 1 çay kaşığı limon suyu eklenip 10-15 dakika kadar daha kaynatılır ve şerbet soğumaya bırakılır.
+Künefe için, tereyağı kısık ateşte erimeye bırakılır.
+Eriyen tereyağı bir kenara alınarak bekletilir.
+Tereyağı donduktan sonra altında tereyağının suyu olacaktır bu suyu kullanmayın.
+Hafif donmuş olan tereyağına 1 çay kaşığı pekmezi eklenerek muhallebi kıvamına gelecek şekilde karıştırılır.
+Varsa künefe tepsisi yoksa alüminyum veya teflon tavanın altı bu pekmezli yağ karışımı ile yağlanır.
+Kadayıf tel tel tiftiklenerek ayrılır.
+Ardından bıçakla 1 cm kalınlığında kesilerek iki parçaya ayrılır.
+Ayırdığımız kadayıfın bir parçası yağlanmış tepsinin dibine aralarda boşluk kalmayacak şekilde serilir.
+Rendelenmiş peynirler kadayıfın üzerine yayılır.
+Diğer kadayıf da peynirin üzerinde boşluk kalmayacak şekilde kapatılır.
+Kenarları düzeltilir ve başka bir tepsi altıyla veya eliniz ile üzerine bastırılır.
+İyice bastırarak arasında boşluk kalmamasını dikkat edin.
+En kısık ateşte ocağın üzerinde tepsi çevrilerek pişirilir.
+Altının tamamen kızardığından emin olduğunuzda tepsiyi bir tabağın veya tepsinin üzerine ters çevrilir ve diğer tarafının pişmesi için ikinci tepsinin içi de yağlanır.
+Kızaran kısım üstte kalacak şekilde künefe tepsiye yerleştirilir ve altı kızartılır. Böylece iki tarafı da kızarmış olur.
+Şerbeti kenarından başlanarak dökülür. Antep fıstığı veya süt kaymağı ile servis edilir. Afiyet olsun." data-ingredients="250 gram tel kadayıf
+150 gr tuzsuz künefe peyniri
+4 yemek kaşığı tereyağı
+1 çay kaşığı pekmez
+Şerbeti için:
+
+2 su bardağı su
+2 su bardağı toz şeker
+1 çay kaşığı limon suyu
+Üzeri için;
+
+Toz Antep fıstığı
+Süt kaymağı veya dondurma (isteğe bağlı)">
+          <h5 class="card-title">Künefe</h5>
+          <p>Lezzetli tatlı, şerbetle tatlandırılmış çıtır kadayıf.</p>
+          <p>Toplam Süre : 1 Saat 30 Dakika.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Altın Tel!</span>
+      <span class="span-pastel">Sıcak Karşılama!</span>
+      <span class="span-pastel">Anadolu Sürprizi!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="90">1 Saat 30 Dakika Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+      </div>
+      <div class="col-md-4">
+       <div class="recipe-container">
+    <img src="IMG/waffle.jpeg" class="card-img-top" alt="Waffle">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Waffle" data-recipe="Yumurta ve şekeri, köpük köpük olana kadar çırpın.
+Sütü ve kabartma tozunu ilave edin. Unu, azar azar kek hamuru kıvamına ulaşıncaya kadar ilave ederek karıştırın.
+Waffle makinenizi kullanabilirsiniz. Yoksa teflon tavayı hafifçe yağlayarak, 1 kepçe kadar hamurdan dökün ve kendi ağırlığı ile hafifçe yayılmasını sağlayın.
+Bir spatula yardımı ile çevirerek, her iki yüzünü pişirin. Sık sık kontrol etmenizde fayda var çünkü çok kısa sürede pişecektir.
+Waffle hamurunu pişirdikten sonra, üzerine dilediğiniz şekilde siyah ya da beyaz çikolata sürerek sevdiğiniz meyvelerle süsleyebilirsiniz. Ben genelde muz, çilek ve kivi kullanmayı severim. Ayrıca üzerine fındık da serpebilirsiniz.
+Nefis waffle tatlımız servise hazır." data-ingredients="Waffle Hamuru İçin;
+
+2 adet yumurta
+1 su bardağı süt
+1 paket kabartma tozu
+4 yemek kaşığı toz şeker
+1,5 su bardağı un
+1 çimdik tuz
+1 paket vanilya
+Waffle Tatlısının Üzeri İçin;
+
+Çeşitli meyveler
+Fındık ve tercihen nutella">
+          <h5 class="card-title">Waffle</h5>
+          <p>Çikolata, meyve ve dondurma ile servis edilen tatlı.</p>
+          <p>Toplam Süre : 30 Dakika.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Renk Cümbüşü!</span>
+      <span class="span-pastel">Eğlenceli!</span>
+      <span class="span-pastel">Kıtır-Yumuşak Tat!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="30">30 Dakika Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/brownie.jpeg" class="card-img-top" alt="Brownie">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Brownie" data-recipe="150 gram tereyağını küçük küçük parçalar olacak şekilde kesip eritiyoruz. Tereyağını fazla kızdırmamaya dikkat edin.
+Ardından 260 gram bitter çikolatayı küçük küçük kesiyoruz.
+Bitter çikolata yerine sütlü çikolata da kullanabilirsiniz. Ya da 130 gram sütlü çikolata 130 gram bitter çikolata da kullanabilirsiniz. Bitter çikolatayla yapacağınız brownie daha lezzetli ve üzeri tül tül olacaktır.
+Erittiğimiz tereyağını karıştırma kabına alıp küçük küçük kestiğimiz çikolatayı da ekliyoruz.
+Çikolatayı ekler eklemez karıştırarak tereyağında eritmeye başlayın. Eğer tereyağı soğur ve çikolata erimezse sıcak su koyduğunuz tencerenin üzerine karıştırma kabını yerleştirip çikolatanızı eritebilirsiniz. Çikolatayı sos kıvamına gelene kadar karıştırarak eritiyoruz.
+Hemen ardından 3 yumurtayı ve 1 su bardağı toz şekeri başka bir kaba alıp 1-2 dakika kadar hızlıca çırpıyoruz.
+Ardından yumurta şeker karışımına çikolata tereyağı karışımını azar azar karıştıra karıştıra ekliyoruz.
+Kıvamı yakalamanız için lütfen malzemeleri belirttiğim ölçülerde kullanın. Kıvamı için tarife uymanız çok önemli.
+Çikolata iyice karıştıktan sonra 1 su bardağı unu eleyerek karışıma ekliyoruz. Ardından 1 paket vanilyayı eleyerek ekliyoruz.
+Son olarak da 1,5 yemek kaşığı kakaoyu eleyerek ekliyoruz. Unu vanilyayı ve kakaoyu mutlaka eleyin.
+Tüm malzemeleri ekledikten sonra spatulayla unu vanilyayı ve kakaoyu iyice hamura yediriyoruz. Bu işlemi yaparken spatula kullanmalı hamuru yanlardan üste itekleyerek karıştırmalısınız.
+Unun vanilyanın kakaonun iyice karıştığına emin olduktan sonra hamurumuzu yağlı kağıtla kapladığımız otuza yirmilik borcama yayarak döküyoruz. Otuza yirmilik borcam yerine yirmiye yirmilik kare borcam da kullanabilirsiniz.
+Hemen ardından hamurun üzerini düzleştirip önceden ısıtılmış 160 derecelik fansız fırında browniemizin üzeri çatlayana kadar 30-35 dakika pişiriyoruz. Pişme süresi fırından fırına değişebilir.
+Pişen browniemizi oda ısısında 1 saat kadar dinlendiriyoruz. Dinlenen browni yağlı kağıttan daha da kolay ayrılacaktır.
+Dinlendirdikçe browniemizin üzeri tül tül olacağını unutmayın. Tatlınızı dilediğinizce dilimleyip servis edebilirsiniz. Sizlere tavsiyem 1 gece oda ısısında dinledirmeniz yönünde.
+Buzdolabında dinlendirirseniz tereyağı donacağından brownieniniz sertleşecektir. Eğer içi ıslak ıslakken tüketmek istiyorsanız 1 saatin sonunda tüketebilirsiniz.Deneyenlere şimdiden afiyet olsun. Değerleri yorumlarınızı ve fotoğraflarınızı paylaşmayı unutmayın. " data-ingredients="150 gram tereyağı
+260 gram bitter çikolata (kullandığım çikolatanın kakao oranı %57. kakao oranı yüksek çikolata kullanmaya dikkat edin) (sütlü çikolatada kullanabilirsiniz. benim tercihim bitter çikolata yönünde.)
+3 yumurta
+1 su bardağı toz şeker
+1 su bardağı un
+1 paket vanilya
+1.5 yemek kaşığı kakao">
+          <h5 class="card-title">Brownie</h5>
+          <p>Yumuşak ve yoğun çikolatalı nefis bir tatlı.</p>
+          <p>Toplam Süre : 1 Saat 15 Dakika.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Yoğun Çikolata!</span>
+      <span class="span-pastel">Kadifemsi!</span>
+      <span class="span-pastel">Fırınlanmış Aşk!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="75">1 Saat 15 Dakika Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- İçecekler -->
+  <div id="icecekler" class="section">
+    <h2 class="mb-4">İçecekler</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/limonata.jpeg" class="card-img-top" alt="Limonata">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Limonata" data-recipe="Limonata yapımı için bol suda yıkadığınız 10 adet limonun, kabuklarını rendenin kalın tarafıyla rendeleyin. Beyaz kısımlarını almamaya özen gösterin.Kabuğu rendelenmiş dört adet limonu ortadan ikiye kesin ve suyunu sıkın. Kalan limonları küçük parçalar halinde dilimleyin.2 su bardağı toz şeker ve taze sıkılmış limonların suyunu karıştırın.Rendelenmiş limon kabuklarını, limon parçaları ve ayıkladığınız 1 demet nane yapraklarının yarısını da ekledikten sonra şeker tamamen eriyip, tüm limonların suyu çıkana kadar yoğurun.Nane yapraklarını da ekleyin.Özünün çıkması için bu karışımı tel bir süzgeç yardımıyla bir kaseye süzün.5 su bardağı içme suyunu ekledikten sonra limonatayı buzdolabında soğutun.2 su bardağı buz ilavesiyle karıştırdıktan sonra  limonatayı keyfini çıkararak için. Afiyet olsun!
+" data-ingredients="10 adet limon
+2 su bardağı toz şeker (az şekerli isterseniz 1 su bardağı ekleyebilirsiniz)
+5 su bardağı içme suyu
+1/2 demet nane
+2 su bardağı buz">
+          <h5 class="card-title">Limonata</h5>
+          <p>Ferahlık veren, taze limonlu içecek.</p>
+          <p>Toplam Süre : 15 Dakika.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Ekşi-Tatlı!</span>
+      <span class="span-pastel">Ferahlatıcı!</span>
+      <span class="span-pastel">Yazlık!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="15">15 Dakika Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/iced_pumpkin.jpeg" class="card-img-top" alt="Pumpkin Spice Iced Latte">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Pumpkin Spice Iced Latte" data-recipe="Pumpkin spice latte'nin şurubu için tarçın, muskat ve karanfili öğütün ya da havanda dövün.
+Ufak bir tencerede şeker, pekmez, su, baharatlar ve bal kabağını karıştırıp ocağa alın. Şurup kaynamaya başlayınca altını kısın ve 10 dakika kısık ateşte kaynatın. Şurubu ardından süzün. süzdüğünüz karışımı soğuduktan sonra buzdolabında 10 gün kadar muhafaza edebilirsiniz.
+İçeceği hazırlamak için soğuk sütün içine espresso ve şurubu karıştırın.Pumpkin spice latte'yi büyük bir bardağa alıp üzerine buzlarını koyup bir de üzerine bir tatlı kaşığı çırpılmış krema ve dilerseniz tarçın ya da muskat ekleyip servis edin. Afiyet olsun." data-ingredients="Bal kabağı şurubu için:
+1 adet çubuk tarçın
+150 gram şeker
+7-8 adet karanfil
+1/3 adet muskat cevizi
+50 gram pekmez
+1 su bardağı su
+125 gram bal kabağı(pişirilmiş)
+Latte için:
+300 mililitre soğuk süt
+15 gram kahve çekirdeği(kahve çekirdeğinden espresso hazırlanacak)
+20 mililitre bal kabağı şurubu(şerbeti)
+30 gram çırpılmış krema
+5-6 küp buz">
+          <h5 class="card-title">Pumpkin Spice Iced Latte</h5>
+          <p>Baharatlı ve soğuk kahve tadı.</p>
+          <p>Toplam Süre : 15 Dakika.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Balkabağı!</span>
+      <span class="span-pastel">Havalı!</span>
+      <span class="span-pastel">Sonbahar!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="15">15 Dakika Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+      </div>
+      <div class="col-md-4">
+        <div class="recipe-container">
+    <img src="IMG/şeftali_icedtea.jpeg" class="card-img-top" alt="Şeftali Aromalı Soğuk Çay">
+        <div class="card recipe-card p-3" data-bs-toggle="modal" data-bs-target="#tarifModal" data-title="Şeftali Aromalı Soğuk Çay" data-recipe="Şeftalilerin çekirdeklerini çıkarıp iri küpler halinde doğrayın. Uygun bir tencereye alıp şeker, limon tuzu ve suyu ekleyip yumuşayana kadar pişmeye bırakın. (15-20 dakika)
+Çayı sıcak suyla demleyin. İstediğiniz türde siyah çay kullanabilirsiniz. Poşetleri çıkarıp oda sıcaklığında soğumaya bırakın.
+Şeftalini suyunu süzün ve pişen meyvelerin üzerine kaşıkla bastırıp aromasının geçmesini sağlayın. Oda sıcaklığında soğumaya bırakın.
+Çay ve şeftali suyunu derin bir kasede birleştirip limon kabuklarını ekleyin.
+Buzdolabına kaldırın. Tamamen soğuduğunda istediğiniz gibi servis yapabilirsiniz. Afiyet olsun." data-ingredients="2-3 adet poşet çay
+2 su bardağı sıcak su(demlemek için)
+3-4 parça limon kabuğu(tercihen )
+3 adet büyük boy şeftali
+1 litre su
+1 çay bardağı şeker
+2-3 adet limon tuzu">
+          <h5 class="card-title">Şeftali Aromalı Soğuk Çay</h5>
+          <p>Soğuk, ferahlatıcı ve meyveli çay.</p>
+          <p>Toplam Süre : 20 Dakika.</p>
+        </div>
+        <div class="button-overlay">
+      <button class="overlay-btn left-btn">Malzemeler</button>
+      <button class="overlay-btn right-btn">Tarif</button>
+    </div>
+      </div>
+      <span class="span-pastel">Soğuk!</span>
+      <span class="span-pastel">Serinlik!</span>
+      <span class="span-pastel">Meyveli Çay!</span>
+      <button class="like-btn">❤️ Beğen (<span class="like-count">0</span>)</button>
+      <div class="tarif-karti">
+      <button class="start-timer-btn" data-time="20">20 Dakika Başlat</button>
+      <div class="countdownDisplay">Hazır değil</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Tarif Modal -->
+<div class="modal fade" id="tarifModal" tabindex="-1" aria-labelledby="tarifModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content p-4">
+      <h4 id="tarifModalLabel" class="modal-title mb-3"></h4>
+      <p id="tarifText"></p>
+      <button type="button" class="btn btn-secondary mt-3" data-bs-dismiss="modal">Kapat</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+<br>
+<section id="kalori" class="section">
+  <div class="container">
+    <h2 class="mb-4">Kalori Tablosu</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Tarif Adı</th>
+          <th>Kalori (1 porsiyon)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Mercimek Çorbası</td><td>180 kcal</td></tr>
+        <tr><td>Yoğurt Çorbası</td><td>120 kcal</td></tr>
+        <tr><td>Tarhana Çorbası</td><td>150 kcal</td></tr>
+        <tr><td>Karnıyarık</td><td>320 kcal</td></tr>
+        <tr><td>Tavuklu Mantarlı Fettucini Alfredo</td><td>450 kcal</td></tr>
+        <tr><td>Kumpir</td><td>600 kcal</td></tr>
+        <tr><td>Künefe</td><td>420 kcal</td></tr>
+        <tr><td>Waffle</td><td>500 kcal</td></tr>
+        <tr><td>Brownie</td><td>430 kcal</td></tr>
+        <tr><td>Limonata</td><td>90 kcal</td></tr>
+        <tr><td>Pumpkin Spice Iced Latte</td><td>240 kcal</td></tr>
+        <tr><td>Şeftali Aromalı Soğuk Çay</td><td>100 kcal</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<br>
+<h2>Chef'Ata olarak favori tarifim buradadır</h2><br>
+<div style="width: 595px; padding: 10px; background: #f9f9f9; border: 1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <iframe width="570" height="315" src="https://www.youtube.com/embed/6OuJzGA0Umg?si=YdkJTq-c9Y34Qlry" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div><br>
+<h2>Tarifler Hakkında Yorumlarınızı Buraya Yazabilirsiniz</h2>
+<ul id="commentList">
+  
+  <!-- Diğer yorumlar buraya eklenecek -->
+</ul>
+
+
+  <div id="commentSection">
+    <h3>Yorumlar:</h3>
+    <ul id="commentList">
+      <!-- Yorumlar burada görünecek -->
+       <li class="comment-item">
+    <img src="IMG/6.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">keyifliömer25</span>
+      <p class="comment-text">Tatlılar Keyifli,Pumpkin Spice Sıkıntı.</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/1.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">Berfin09</span>
+      <p class="comment-text">Ya wafle yaparken şeker döküldü heryer yapşak yapşak</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/2.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">Crk40</span>
+      <p class="comment-text">Yoğurt çorbam kesildi chef'ata ZORBALANACAKSIN.</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/3.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">senaödememis65</span>
+      <p class="comment-text">BEN HUKUK OKUYORUM tariflerçkgzl HUKUK OKUDUĞUMU SÖYLEMİŞ MİYDİM HUKU-</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/5.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">ödemişincimili</span>
+      <p class="comment-text">senaya waffle yapıcam umarım iyidir.</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/7.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">abdurrahmangıdıgıdıyandansağdansoldankıvırttagellan</span>
+      <p class="comment-text">yannız yogurt corbasinda yogurt olmaz?.! bilmiosanz yapmayın kardesm</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/8.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">sudedurmasıngitsin50</span>
+      <p class="comment-text">limonatanın rengi kombinime uyduğu için onu yapıcaamm tenkkss slaayy </p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/9.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">hazaldelaldelalhelal21</span>
+      <p class="comment-text">likörsüz brownie yoğurtsuz ayrana benzer kabul etmiyorum.</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/10.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">Yusufiii</span>
+      <p class="comment-text">hepsi çok güzel babam</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/4.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">minelamaçiçekçiolan52</span>
+      <p class="comment-text">Tarifler çok güzell! -ya benim sitemde yorum yapma yok ama bir şey olur mu?-</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/11.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">gökayhelikopter</span>
+      <p class="comment-text">kanka çorba yaparken içine hotwheels düştü ama tadı güzel yine de.</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/12.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">emirhancalimvegol35</span>
+      <p class="comment-text">kanka hepsi çok iyi eline sağlık.</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/13.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">aybümdeaybüm-murat63</span>
+      <p class="comment-text">nerde benim urfamın çiğköftesi</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/14.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">muratefeünlüşen</span>
+      <p class="comment-text">kanka voleybol oynarken çok yoruldum daha kısa süreli tarifler lazım</p>
+    </div>
+  </li>
+  <li class="comment-item">
+    <img src="IMG/15.jpeg" alt="Avatar" class="comment-avatar">
+    <div>
+      <span class="comment-author">danielllaaa</span>
+      <p class="comment-text">This site is so good dude holy shit! - ıı yani şey siteniz çok güzel efendim!</p>
+    </div>
+  </li>
+    </ul>
+    <form id="commentForm">
+      <textarea id="commentInput" placeholder="Yorumunuzu yazın..." rows="4"></textarea><br>
+      <button type="submit">Yorumu Gönder</button>
+    </form>
+  </div>
+  <button id="backToTop" title="Yukarı Çık">↑</button>
+<div class="footer">© 2025 Chef'Ata. Tüm hakları saklıdır.</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

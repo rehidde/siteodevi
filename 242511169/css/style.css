@@ -1,0 +1,21 @@
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+.city-info {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.savas-bilgileri {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.savas-bilgileri div {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}

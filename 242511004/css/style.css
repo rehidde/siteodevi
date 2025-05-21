@@ -1,0 +1,462 @@
+body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Raleway', sans-serif;
+      color: #333;
+      background: linear-gradient(-45deg, #fffaf4, #ffe0cc, #fff5e1, #9b0808);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #8B0000 !important;
+    }
+    .nav-link {
+      color: #6c4c41;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .nav-link:hover {
+      color: #b87333;
+    }
+    .section {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    .section.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .recipe-card {
+      background: #fff;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      
+    }
+    
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .search-bar {
+      margin: 40px auto;
+      max-width: 600px;
+    }
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .modal-content {
+      border-radius: 1rem;
+    }
+    .homepage-header {
+      text-align: center;
+      margin-top: 100px;
+    }
+    .homepage-header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #8B0000;
+      font-size: 4rem;
+      font-weight: 700;
+    }
+    .homepage-header p {
+      font-family: 'Raleway', sans-serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #6c4c41;
+    }
+    .hover-options {
+      display: none;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      gap: 10px;
+      z-index: 2;
+    }
+    
+    .recipe-card:hover .hover-options {
+      display: flex;
+    }
+    .hover-options button {
+      background-color: #ffe0cc;
+      color: #8B0000;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-family: 'Raleway', sans-serif;
+      font-style: italic;
+    }
+    .hover-options button:hover {
+      background-color: #f2e5d5;
+    }
+    .card-img {
+    height: 200px;
+    object-fit: cover;
+    display: flex;
+    }
+    .recipe-container {
+  position: relative;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.recipe-container:hover {
+  transform: translateY(-5px);
+}
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.recipe-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(236, 224, 196, 0.877);
+  transition: all 0.3s ease;
+}
+
+
+
+.recipe-container:hover .card,
+.recipe-container:hover img {
+  filter: blur(2px);
+  transition: filter 0.3s ease;
+}
+
+
+.button-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.recipe-container:hover .button-overlay {
+  opacity: 1;
+}
+
+.overlay-btn {
+  flex: 1;
+  border: none;
+  font-weight: bold;
+  color: white;
+  font-size: 1.1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: background 0.3s;
+}
+
+.overlay-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-btn {
+  border-right: 1px solid white;
+}
+
+.right-btn {
+  border-left: 1px solid white;
+}
+body.siyah-mode {
+      background-color: #1e1e1e;
+      color: #fff;
+    }
+    
+    .hovered {
+      background-color: #d1ffd1;
+    }
+    
+    body.siyah-mode {
+      background: linear-gradient(-45deg, #121212, #1f1f1f, #2c2c2c, #000000);
+      color: #fff;
+    }
+    .siyah-mode .navbar,
+    .siyah-mode .navbar-brand{
+      background-color: #222 !important;
+      color: #fff !important;
+    }
+    .siyah-mode .suggestion-box {
+      background-color: #333;
+      color: #fff;
+      border-color: #eee;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .navbar .navbar-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+      color: #8B0000;
+      text-decoration: none;
+    }
+    .navbar .date {
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .theme-toggle {
+      background-color: transparent;
+      border: 2px solid #8B0000;
+      color: #8B0000;
+      border-radius: 20px;
+      padding: 5px 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .theme-toggle:hover {
+      background-color: #8B0000;
+      color: #fff;
+    }
+    .siyah-mode .theme-toggle {
+      border-color: #fff;
+      color: #fff;
+    }
+    .siyah-mode .theme-toggle:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    .suggestion-box {
+      background-color: #fff;
+      border: 2px dashed #8B0000;
+      padding: 15px;
+      border-radius: 10px;
+      color: #8B0000;
+      font-weight: bold;
+      text-align: center;
+      max-width: 400px;
+      margin: 10px auto;
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    .span-pastel {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  background-color: #ffeef8;
+  color: #000000;
+  border-radius: 2rem;
+  border: 1px linear-gradient(-45deg, #fffaf4, #ffe0cc, #fff5e1, #9b0808);
+  box-shadow: 0 2px 6px rgba(255, 192, 203, 0.3);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.span-pastel:hover {
+  background-color: #ffd6eb;
+}
+ #daily-recipe {
+      color: #8B0000;
+      background-color: #fff8e1;
+      padding: 20px;
+      border-radius: 12px;
+      font-size: 1.2em;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 30px auto;
+      max-width: 400px;
+      font-family: sans-serif;
+    }
+    #commentForm {
+      margin-top: 20px;
+    }
+
+    #commentInput {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    #commentList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#commentList li {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#commentList li:hover {
+  transform: scale(1.02); /* Hover'da büyüme efekti */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Hover'da daha belirgin gölge */
+}
+
+    .comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.comment-item {
+  display: flex;
+  align-items: center;
+}
+
+.comment-item p {
+  flex: 1;
+}
+.comment-author {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.comment-text {
+  color: #555;
+  font-size: 14px;
+}
+#commentForm button {
+  background-color: #8B0000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#commentForm button:hover {
+  background-color: #fff5e1; 
+}
+
+#commentForm button:active {
+  background-color: #fff5e1; 
+}
+#backToTop {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8B0000, #fff5e1);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+  transform: scale(1.15);
+  background: linear-gradient(135deg, #fff5e1, #8B0000);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.like-btn {
+  background-color: #ffecb3;
+  color: #d84315;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.like-btn:hover {
+  background-color: #ffe082;
+}
+.tarif-karti {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin: 20px auto;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tarif-karti:hover {
+  transform: scale(1.02);
+}
+
+.tarif-karti h3 {
+  color: #e65100;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.start-timer-btn {
+  background-color: #ff7043;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-timer-btn:hover {
+  background-color: #f4511e;
+}
+
+.start-timer-btn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.countdownDisplay {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #4e342e;
+  font-weight: 500;
+  background-color: #fff8e1;
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+
+
+
+
+
