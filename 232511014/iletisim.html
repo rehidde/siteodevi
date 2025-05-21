@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol Dünyası - İletişim</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css">
+</head>
+
+<body>
+    <header class="bg-white text-dark py-3 border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2">
+                    <div class="logo-container"> <img src="img/logos/logo.png" alt="Futbol Dünyası Logo" class="img-fluid" style="max-width: 80%;"> </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="site-title">
+                        <h1><span class="fw-bold text-primary">Futbol</span> <span class="fw-light">Dünyası</span></h1>
+                    </div>
+                    <div class="site-slogan">
+                        <h3 class="text-secondary"><span class="slogan-text">Futbol hakkında her şey burada!</span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><span class="nav-text">Ana Sayfa</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#haberler"><span class="nav-text">Haberler</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#puandurumu"><span class="nav-text">Puan Durumu</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#fikstur"><span class="nav-text">Fikstür</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#golkralligi"><span class="nav-text">Gol Krallığı</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#galeriler"><span class="nav-text">Galeriler</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="takimlar.html"><span class="nav-text">Takımlar</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="iletisim.html"><span class="nav-text">İletişim</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="contact-banner py-5 bg-light text-center">
+            <div class="container">
+                <h2 class="mb-4 text-primary"><span class="banner-title">İletişim</span></h2>
+                <div class="divider mx-auto"></div>
+                <p class="lead"><span class="banner-text">Futbol Dünyası'na ulaşmak için aşağıdaki iletişim formunu kullanabilirsiniz.</span></p>
+            </div>
+        </div>
+
+        <div id="iletisim" class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <h3 class="card-title mb-4 text-primary">İletişim Bilgileri</h3>
+                                <div class="mb-3">
+                                    <i class="bi bi-geo-alt-fill me-2 text-primary"></i>
+                                    <span>Kırşehir, Türkiye</span>
+                                </div>
+                                <div class="mb-3">
+                                    <i class="bi bi-envelope-fill me-2 text-primary"></i>
+                                    <span>akdag.ahmetcan@ogr.ahievran.edu.tr</span>
+                                </div>
+                                <div class="mb-3">
+                                    <i class="bi bi-telephone-fill me-2 text-primary"></i>
+                                    <span>+90 505 197 25 69</span>
+                                </div>
+                                <div class="mb-4">
+                                    <i class="bi bi-clock-fill me-2 text-primary"></i>
+                                    <span>Pazartesi - Cuma: 09:00 - 18:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body">
+                                <form id="contactForm" onsubmit="return validateForm()">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName" class="form-label">Adınız <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Adınızı giriniz" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName" class="form-label">Soyadınız <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Soyadınızı giriniz" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">E-posta <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="E-posta adresinizi giriniz" required>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Telefon</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telefon numaranızı giriniz">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="birthdate" class="form-label">Doğum Tarihi</label>
+                                        <input type="date" class="form-control" id="birthdate" name="birthdate">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="city" class="form-label">Şehir</label>
+                                        <input type="text" class="form-control" id="city" name="city" placeholder="Şehrinizi giriniz">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="subject" class="form-label">Konu <span class="text-danger">*</span></label>
+                                        <select class="form-select" id="subject" name="subject" required>
+                                            <option value="" selected>Seçiniz</option>
+                                            <option value="bilgi">Genel Bilgi</option>
+                                            <option value="oneri">Öneri ve Görüşler</option>
+                                            <option value="reklam">Reklam ve İşbirliği</option>
+                                            <option value="hata">Hata Bildirimi</option>
+                                            <option value="diger">Diğer</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="urgency" class="form-label">Önem Derecesi</label>
+                                        <div class="range-container">
+                                            <input type="range" class="form-range" id="urgency" name="urgency" min="1" max="5" value="3">
+                                            <div class="d-flex justify-content-between">
+                                                <span>Düşük</span>
+                                                <span>Orta</span>
+                                                <span>Yüksek</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="file" class="form-label">Dosya Ekle</label>
+                                        <input type="file" class="form-control" id="file" name="file">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="message" class="form-label">Mesajınız <span class="text-danger">*</span></label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Mesajınızı giriniz" required></textarea>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label>Taraftar Olduğunuz Takım</label>
+                                        <div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="team" id="team1" value="gs">
+                                                <label class="form-check-label" for="team1">Galatasaray</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="team" id="team2" value="fb">
+                                                <label class="form-check-label" for="team2">Fenerbahçe</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="team" id="team3" value="bjk">
+                                                <label class="form-check-label" for="team3">Beşiktaş</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="team" id="team4" value="ts">
+                                                <label class="form-check-label" for="team4">Trabzonspor</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="team" id="team5" value="other">
+                                                <label class="form-check-label" for="team5">Diğer</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label>İlgilendiğiniz Konular</label>
+                                        <div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="interest1" name="interests[]" value="haberler">
+                                                <label class="form-check-label" for="interest1">
+                                                    Haberler
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="interest2" name="interests[]" value="puandurumu">
+                                                <label class="form-check-label" for="interest2">
+                                                    Puan Durumu
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="interest3" name="interests[]" value="transferler">
+                                                <label class="form-check-label" for="interest3">
+                                                    Transfer Haberleri
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="color" class="form-label">Favori Renginiz</label>
+                                        <input type="color" class="form-control form-control-color" id="color" name="color" value="#0d6efd">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="newsletter" class="form-label">Abone Olacağınız Bülten Türleri</label>
+                                        <select class="form-select" id="newsletterType" name="newsletterType" multiple>
+                                            <option value="gunluk">Günlük Haberler</option>
+                                            <option value="haftalik">Haftalık Özet</option>
+                                            <option value="aylik">Aylık Dergi</option>
+                                            <option value="ozel">Özel İçerikler</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                            <label class="form-check-label" for="newsletter">
+                                                Futbol Dünyası'nın haber bültenine abone olmak istiyorum.
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
+                                            <label class="form-check-label" for="agreement">
+                                                Kişisel verilerin işlenmesine ilişkin bilgilendirme metnini okudum, kabul ediyorum. <span class="text-danger">*</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="reset" class="btn btn-secondary px-3 me-2">Temizle</button>
+                                        <button type="submit" class="btn btn-primary px-5">Gönder</button>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="bg-light text-dark">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Futbol Dünyası</h4>
+                    <p>Futbol ile ilgili en güncel haberleri, analizleri ve istatistikleri sunan platformunuz.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Hızlı Linkler</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none">Ana Sayfa</a></li>
+                        <li><a href="index.html#haberler" class="text-decoration-none">Haberler</a></li>
+                        <li><a href="index.html#puandurumu" class="text-decoration-none">Puan Durumu</a></li>
+                        <li><a href="index.html#fikstur" class="text-decoration-none">Fikstür</a></li>
+                        <li><a href="index.html#golkralligi" class="text-decoration-none">Gol Krallığı</a></li>
+                        <li><a href="takimlar.html" class="text-decoration-none">Takımlar</a></li>
+                        <li><a href="iletisim.html" class="text-decoration-none">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>İletişim</h4>
+                    <p><i class="bi bi-geo-alt-fill"></i> Kırşehir, Türkiye</p>
+                    <p><i class="bi bi-envelope-fill"></i> akdag.ahmetcan@ogr.ahievran.edu.tr</p>
+                    <p><i class="bi bi-telephone-fill"></i> +90 505 197 25 69</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 Futbol Dünyası. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Gizli yönetici erişimi için tuş kombinasyonu (CTRL+SHIFT+M)
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.shiftKey && e.key === 'M') {
+                viewAllMessages();
+            }
+        });
+    </script>
+    <script>
+        function viewAllMessages() {
+            // Kayıtlı logları al
+            const contactLog = localStorage.getItem('contactLog');
+
+            if (!contactLog || contactLog.trim() === '') {
+                Swal.fire({
+                    title: 'Bilgi',
+                    text: 'Henüz kaydedilmiş mesaj bulunmamaktadır.',
+                    icon: 'info',
+                    confirmButtonText: 'Tamam'
+                });
+                return;
+            }
+
+            // Log kayıtlarını görüntüle
+            Swal.fire({
+                title: 'Kayıtlı Mesajlar',
+                html: `<div style="max-height: 400px; overflow-y: auto; white-space: pre-line; text-align: left; font-family: monospace;">${contactLog}</div>`,
+                width: 800,
+                confirmButtonText: 'Kapat',
+                showDenyButton: true,
+                denyButtonText: 'Logları Temizle',
+            }).then((result) => {
+                if (result.isDenied) {
+                    // Log kayıtlarını temizle
+                    localStorage.removeItem('contactLog');
+                    Swal.fire('Loglar temizlendi!', '', 'success');
+                }
+            });
+        }
+
+        function validateForm() {
+            let isValid = true;
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const birthdate = document.getElementById('birthdate').value;
+            const city = document.getElementById('city').value;
+            const subject = document.getElementById('subject').value;
+            const urgency = document.getElementById('urgency').value;
+            const file = document.getElementById('file').files[0];
+            const message = document.getElementById('message').value;
+            const team = document.querySelector('input[name="team"]:checked').value;
+            const interests = Array.from(document.querySelectorAll('input[name="interests[]"]:checked')).map(input => input.value);
+            const color = document.getElementById('color').value;
+            const newsletterType = Array.from(document.querySelectorAll('select[name="newsletterType"] option:selected')).map(option => option.value);
+            const newsletter = document.getElementById('newsletter').checked;
+
+            if (firstName.trim() === '') {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen adınızı giriniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (lastName.trim() === '') {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen soyadınızı giriniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen geçerli bir e-posta adresi giriniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (phone.trim() === '') {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen telefon numaranızı giriniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (birthdate.trim() === '') {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen doğum tarihinizi giriniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (city.trim() === '') {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen şehrinizi giriniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (message.trim() === '') {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen bir mesaj giriniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (team === undefined) {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen bir takım seçiniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (interests.length === 0) {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen en az bir konu seçiniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (color === '') {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen bir favori renk seçiniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (newsletterType.length === 0) {
+                isValid = false;
+                Swal.fire({
+                    title: 'Hata!',
+                    text: 'Lütfen en az bir bülten türü seçiniz.',
+                    icon: 'error',
+                    confirmButtonText: 'Tamam'
+                });
+                return false;
+            }
+
+            if (isValid) {
+                const formData = {
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phone: phone,
+                    birthdate: birthdate,
+                    city: city,
+                    subject: subject,
+                    urgency: urgency,
+                    file: file,
+                    message: message,
+                    team: team,
+                    interests: interests,
+                    color: color,
+                    newsletterType: newsletterType,
+                    newsletter: newsletter,
+                    date: new Date().toISOString()
+                };
+
+                const jsonData = JSON.stringify(formData, null, 2);
+                console.log(jsonData);
+
+                const filename = 'mesaj_' + new Date().getTime() + '.json';
+                const blob = new Blob([jsonData], {
+                    type: 'application/json'
+                });
+
+                // Tüm mesajları localStorage'a kaydet
+                const messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+                messages.push(formData);
+                localStorage.setItem('contactMessages', JSON.stringify(messages));
+
+                // Site dosyalarına log olarak kaydet
+                const logEntry = `
+--------- YENİ MESAJ (${new Date().toLocaleString('tr-TR')}) ---------
+İsim: ${firstName} ${lastName}
+E-posta: ${email}
+Telefon: ${phone}
+Doğum Tarihi: ${birthdate}
+Şehir: ${city}
+Konu: ${subject}
+Önem Derecesi: ${urgency}/5
+Mesaj: ${message}
+Takım: ${team}
+İlgilenilen Konular: ${interests.join(', ')}
+Favori Renk: ${color}
+Bülten Aboneliği: ${newsletter ? 'Evet' : 'Hayır'}
+-----------------------------------------------
+`;
+
+                // Mevcut logu al veya yeni oluştur
+                let contactLog = localStorage.getItem('contactLog') || '';
+                contactLog = logEntry + contactLog; // Yeni mesaj en üstte olsun
+                localStorage.setItem('contactLog', contactLog);
+
+                // Form verilerini JSON olarak indir
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = filename;
+                link.style.display = 'none';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                Swal.fire({
+                    title: 'Başarılı!',
+                    text: 'Mesajınız başarıyla gönderildi ve site kayıtlarına eklendi.',
+                    icon: 'success',
+                    confirmButtonText: 'Tamam'
+                });
+
+                document.getElementById('contactForm').reset();
+                return false;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+
+</html>

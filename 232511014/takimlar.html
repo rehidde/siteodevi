@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol Dünyası - Takımlar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="bg-white text-dark py-3 border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2">
+                    <div class="logo-container"> <img src="img/logos/logo.png" alt="Futbol Dünyası Logo" class="img-fluid" style="max-width: 80%;"> </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="site-title">
+                        <h1><span class="fw-bold text-primary">Futbol</span> <span class="fw-light">Dünyası</span></h1>
+                    </div>
+                    <div class="site-slogan">
+                        <h3 class="text-secondary"><span class="slogan-text">Futbol hakkında her şey burada!</span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><span class="nav-text">Ana Sayfa</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#haberler"><span class="nav-text">Haberler</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#puandurumu"><span class="nav-text">Puan Durumu</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#fikstur"><span class="nav-text">Fikstür</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#golkralligi"><span class="nav-text">Gol Krallığı</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#galeriler"><span class="nav-text">Galeriler</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="takimlar.html"><span class="nav-text">Takımlar</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletisim.html"><span class="nav-text">İletişim</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="teams-banner py-5 bg-light text-center">
+            <div class="container">
+                <h2 class="mb-4 text-primary"><span class="banner-title">Süper Lig Takımları</span></h2>
+                <div class="divider mx-auto"></div>
+                <p class="lead"><span class="banner-text">2024-2025 sezonu takımları hakkında detaylı bilgiler</span></p>
+            </div>
+        </div>
+
+        <div class="team-selection py-4">
+            <div class="container">
+                <div class="team-logos d-flex justify-content-center flex-wrap mb-4">
+                    <div class="team-logo-item mx-2 p-2 border rounded text-center" data-team="gs">
+                        <img src="img/teams/galatasaray.gif" alt="Galatasaray" class="img-fluid rounded-circle team-select-logo" style="width: 80px;">
+                        <p class="mt-2 mb-0 fw-bold">Galatasaray</p>
+                    </div>
+                    <div class="team-logo-item mx-2 p-2 border rounded text-center" data-team="fb">
+                        <img src="img/teams/fenerbahce.gif" alt="Fenerbahçe" class="img-fluid rounded-circle team-select-logo" style="width: 80px;">
+                        <p class="mt-2 mb-0 fw-bold">Fenerbahçe</p>
+                    </div>
+                    <div class="team-logo-item mx-2 p-2 border rounded text-center" data-team="bjk">
+                        <img src="img/teams/besiktas.gif" alt="Beşiktaş" class="img-fluid rounded-circle team-select-logo" style="width: 80px;">
+                        <p class="mt-2 mb-0 fw-bold">Beşiktaş</p>
+                    </div>
+                    <div class="team-logo-item mx-2 p-2 border rounded text-center" data-team="ts">
+                        <img src="img/teams/ts.gif" alt="Trabzonspor" class="img-fluid rounded-circle team-select-logo" style="width: 80px;">
+                        <p class="mt-2 mb-0 fw-bold">Trabzonspor</p>
+                    </div>
+                    <div class="team-logo-item mx-2 p-2 border rounded text-center" data-team="bsk">
+                        <img src="img/teams/istanbulbasaksehir.gif" alt="Başakşehir" class="img-fluid rounded-circle team-select-logo" style="width: 80px;">
+                        <p class="mt-2 mb-0 fw-bold">Başakşehir</p>
+                    </div>
+                </div>
+                <div class="team-search text-center">
+                    <div class="input-group mb-3 w-50 mx-auto">
+                        <input type="text" class="form-control" placeholder="Takım ara..." id="teamSearchInput">
+                        <button class="btn btn-primary" type="button" id="searchTeamButton" onclick="searchTeam()">
+                            <i class="bi bi-search"></i> <span class="search-text">Ara</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="teamInfo" class="py-5">
+            <div class="container">
+                <div class="team-details">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body text-center">
+                                    <div class="team-logo mb-3"> <img src="img/teams/galatasaray.gif" alt="Galatasaray" class="img-fluid rounded-circle" style="max-width: 150px;"> </div>
+                                    <h3 class="card-title"><span class="team-name">Galatasaray</span></h3>
+                                    <div class="text-muted mb-4">
+                                        <span class="team-founded">Kuruluş: 1905</span> | <span class="team-nickname">Cimbom</span>
+                                    </div>
+                                    <div class="list-group">
+                                        <div class="list-group-item d-flex justify-content-between">
+                                            <span>Şampiyonluk:</span>
+                                            <span class="fw-bold">23</span>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between">
+                                            <span>Türkiye Kupası:</span>
+                                            <span class="fw-bold">18</span>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between">
+                                            <span>Süper Kupa:</span>
+                                            <span class="fw-bold">16</span>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between">
+                                            <span>UEFA Kupası:</span>
+                                            <span class="fw-bold">1</span>
+                                        </div>
+                                        <div class="list-group-item d-flex justify-content-between">
+                                            <span>UEFA Süper Kupası:</span>
+                                            <span class="fw-bold">1</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-header bg-white">
+                                    <ul class="nav nav-tabs card-header-tabs" id="teamTabs" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">Genel Bilgi</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="squad-tab" data-bs-toggle="tab" data-bs-target="#squad" type="button" role="tab">Kadro</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="stadium-tab" data-bs-toggle="tab" data-bs-target="#stadium" type="button" role="tab">Stadyum</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="stats-tab" data-bs-toggle="tab" data-bs-target="#stats" type="button" role="tab">İstatistikler</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content" id="teamTabContent">
+                                        <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                                            <h4 class="text-primary mb-3">Kulüp Tarihi</h4>
+                                            <p>Galatasaray, 1905 yılında kurulmuş Türkiye'nin en başarılı spor kulüplerinden biridir. Sarı-kırmızı renklerle özdeşleşen kulüp, ulusal ve uluslararası arenada sayısız başarıya imza atmıştır.</p>
+                                            <p>Galatasaray, Türkiye'nin ilk UEFA kupasını kazanan takımı olarak tarihe geçmiştir. 2000 yılında UEFA Kupası'nı kazanarak Türk futbol tarihinde bir dönüm noktası oluşturmuştur.</p>
+
+                                            <h4 class="text-primary mt-4 mb-3">Başarılar</h4>
+                                            <p>Kulüp, 23 Süper Lig şampiyonluğu, 18 Türkiye Kupası, 16 Süper Kupa, 1 UEFA Kupası ve 1 UEFA Süper Kupası ile Türkiye'nin en çok kupa kazanan kulübü unvanına sahiptir.</p>
+
+                                            <h4 class="text-primary mt-4 mb-3">Güncel Durum</h4>
+                                            <p>2024-2025 sezonu itibariyle Okan Buruk yönetiminde başarılı bir performans sergileyen takım, hem ligde hem de Avrupa kupalarında mücadelesini sürdürmektedir.</p>
+                                        </div>
+                                        <div class="tab-pane fade" id="squad" role="tabpanel">
+                                            <h4 class="text-primary mb-3">Kaleciler</h4>
+                                            <div class="row row-cols-1 row-cols-md-3 g-3 mb-4">
+                                                <div class="col">
+                                                    <div class="card h-100">
+                                                        <img src="img/players/player1.jpg" class="card-img-top" alt="Futbolcu">
+                                                        <div class="card-body text-center">
+                                                            <h5 class="card-title mb-0">Fernando Muslera</h5>
+                                                            <span class="badge bg-primary">1</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="card h-100">
+                                                        <img src="https://placehold.co/100x100?text=34" class="card-img-top" alt="Futbolcu">
+                                                        <div class="card-body text-center">
+                                                            <h5 class="card-title mb-0">Günay Güvenç</h5>
+                                                            <span class="badge bg-primary">34</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <h4 class="text-primary mb-3">Defans</h4>
+                                            <div class="row row-cols-1 row-cols-md-3 g-3">
+                                                <!-- Defans oyuncuları buraya eklenecek -->
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="stadium" role="tabpanel">
+                                            <!-- Stadyum bilgileri buraya eklenecek -->
+                                        </div>
+                                        <div class="tab-pane fade" id="stats" role="tabpanel">
+                                            <!-- İstatistikler buraya eklenecek -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light text-dark">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Futbol Dünyası</h4>
+                    <p>Futbol ile ilgili en güncel haberleri, analizleri ve istatistikleri sunan platformunuz.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Hızlı Linkler</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none">Ana Sayfa</a></li>
+                        <li><a href="index.html#haberler" class="text-decoration-none">Haberler</a></li>
+                        <li><a href="index.html#puandurumu" class="text-decoration-none">Puan Durumu</a></li>
+                        <li><a href="index.html#fikstur" class="text-decoration-none">Fikstür</a></li>
+                        <li><a href="index.html#golkralligi" class="text-decoration-none">Gol Krallığı</a></li>
+                        <li><a href="takimlar.html" class="text-decoration-none">Takımlar</a></li>
+                        <li><a href="iletisim.html" class="text-decoration-none">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>İletişim</h4>
+                    <p><i class="bi bi-geo-alt-fill"></i> Kırşehir, Türkiye</p>
+                    <p><i class="bi bi-envelope-fill"></i> akdag.ahmetcan@ogr.ahievran.edu.tr</p>
+                    <p><i class="bi bi-telephone-fill"></i> +90 505 197 25 69</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 Futbol Dünyası. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
