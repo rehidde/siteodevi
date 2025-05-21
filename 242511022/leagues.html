@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ligler - Futbol Dünyası</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-futbol"></i> Futbol Dünyası
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Ana Sayfa
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="leagues.html">
+                            <i class="fas fa-trophy"></i> Ligler
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope"></i> İletişim
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="leagues-hero">
+        <div class="container">
+            <h1 class="display-4">Dünya Ligleri</h1>
+            <p class="lead">En prestijli futbol liglerinin detaylı analizleri ve istatistikleri</p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <!-- Süper Lig -->
+        <section class="league-section mb-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/leagues/superlig.jpg" alt="Süper Lig" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-8">
+                    <h2><i class="fas fa-star"></i> Süper Lig</h2>
+                    <p class="lead">Türkiye'nin en üst düzey futbol ligi</p>
+                    <div class="league-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>En Çok Şampiyon: Galatasaray (23)</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>Takım Sayısı: 20</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Kuruluş: 1959</span>
+                        </div>
+                    </div>
+                    <p class="mt-3">Süper Lig, Türk futbolunun en üst düzey profesyonel futbol ligidir. Galatasaray, Fenerbahçe, Beşiktaş ve Trabzonspor gibi köklü kulüplerin mücadelelerine ev sahipliği yapmaktadır.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premier League -->
+        <section class="league-section mb-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2><i class="fas fa-crown"></i> Premier League</h2>
+                    <p class="lead">İngiltere'nin en prestijli futbol ligi</p>
+                    <div class="league-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>En Çok Şampiyon: Manchester United (20)</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>Takım Sayısı: 20</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Kuruluş: 1992</span>
+                        </div>
+                    </div>
+                    <p class="mt-3">Premier League, dünyanın en çok izlenen ve en rekabetçi futbol liglerinden biridir. Manchester City, Liverpool, Chelsea ve Arsenal gibi güçlü takımların mücadelelerine sahne olmaktadır.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/leagues/premier.jpg" alt="Premier League" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </section>
+
+        <!-- La Liga -->
+        <section class="league-section mb-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/leagues/laliga.jpg" alt="La Liga" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-md-8">
+                    <h2><i class="fas fa-sun"></i> La Liga</h2>
+                    <p class="lead">İspanya'nın göz kamaştıran ligi</p>
+                    <div class="league-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>En Çok Şampiyon: Real Madrid (35)</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>Takım Sayısı: 20</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Kuruluş: 1929</span>
+                        </div>
+                    </div>
+                    <p class="mt-3">La Liga, teknik futbolun ve yetenek gelişiminin merkezi olarak bilinen İspanya'nın en üst düzey futbol ligidir. Real Madrid ve Barcelona gibi dünya devlerinin rekabetine ev sahipliği yapmaktadır.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bundesliga -->
+        <section class="league-section mb-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2><i class="fas fa-shield-alt"></i> Bundesliga</h2>
+                    <p class="lead">Alman futbolunun kalbi</p>
+                    <div class="league-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <span>En Çok Şampiyon: Bayern Munich (32)</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <span>Takım Sayısı: 18</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>Kuruluş: 1963</span>
+                        </div>
+                    </div>
+                    <p class="mt-3">Bundesliga, yüksek tempolu futbolu ve dolu tribünleriyle tanınan Almanya'nın en üst düzey futbol ligidir. Bayern Munich'in dominasyonu ve Borussia Dortmund gibi güçlü rakipleriyle dikkat çekmektedir.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/leagues/bundesliga.jpg" alt="Bundesliga" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="footer-title">
+                        <i class="fas fa-info-circle"></i> Hakkımızda
+                    </h3>
+                    <p>Futbol Dünyası, dünya futbolunun nabzını tutan bir spor platformudur.</p>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title">
+                        <i class="fas fa-link"></i> Hızlı Bağlantılar
+                    </h3>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="leagues.html">Ligler</a></li>
+                        <li><a href="contact.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title">
+                        <i class="fas fa-envelope"></i> İletişim
+                    </h3>
+                    <p>Email: info@futboldunyas.com</p>
+                    <p>Tel: +90 123 456 7890</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

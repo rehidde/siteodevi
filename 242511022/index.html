@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol Dünyası</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-futbol"></i> Futbol Dünyası
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                                        <li class="nav-item">                        <a class="nav-link active" href="index.html">                            <i class="fas fa-home"></i> Ana Sayfa                        </a>                    </li>                    <li class="nav-item">                        <a class="nav-link" href="leagues.html">                            <i class="fas fa-trophy"></i> Ligler                        </a>                    </li>                    <li class="nav-item">                        <a class="nav-link" href="contact.html">                            <i class="fas fa-envelope"></i> İletişim                        </a>                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center my-4">
+    <h2>Beşiktaş JK</h2>
+    <img src="img/bjk.jpg" alt="Beşiktaş Logosu" class="img-fluid" style="max-width: 200px;">
+</div>
+
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="display-4">Futbol Dünyasına Hoş Geldiniz</h1>
+            <p class="lead">En güncel futbol haberleri, maç sonuçları ve daha fazlası...</p>
+            <div class="hero-buttons">
+                <a href="#news" class="btn btn-light btn-lg me-3">
+                    <i class="fas fa-newspaper"></i> Haberler
+                </a>
+                <a href="#matches" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-trophy"></i> Maçlar
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <section id="news" class="news-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-newspaper"></i> Son Haberler
+                    </h2>
+                    <div class="news-grid">
+                        <div class="news-item">
+                            <img src="images/news1.jpg" alt="Haber 1" class="news-image">
+                            <div class="news-content">
+                                <span class="date"><i class="far fa-calendar"></i> 12 Mart 2024</span>
+                                <h3>Süper Lig'de Heyecan Dorukta</h3>
+                                <p>Şampiyonluk yarışı kızışıyor! Son haftalara girilirken...</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <img src="images/news2.jpg" alt="Haber 2" class="news-image">
+                            <div class="news-content">
+                                <span class="date"><i class="far fa-calendar"></i> 11 Mart 2024</span>
+                                <h3>Milli Takım Kadrosu Açıklandı</h3>
+                                <p>EURO 2024 hazırlıkları kapsamında...</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="matches" class="matches-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-trophy"></i> Son Maçlar
+                    </h2>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Ev Sahibi</th>
+                                    <th>Skor</th>
+                                    <th>Deplasman</th>
+                                    <th>Tarih</th>
+                                    <th>Detaylar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="match-row">
+                                    <td>
+                                        <img src="images/team-logos/gs.png" alt="Galatasaray" class="team-logo">
+                                        Galatasaray
+                                    </td>
+                                    <td class="score">2 - 1</td>
+                                    <td>
+                                        <img src="images/team-logos/fb.png" alt="Fenerbahçe" class="team-logo">
+                                        Fenerbahçe
+                                    </td>
+                                    <td>10.03.2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" onclick="showMatchDetails(1)">
+                                            <i class="fas fa-info-circle"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="match-row">
+                                    <td>
+                                        <img src="images/team-logos/bjk.png" alt="Beşiktaş" class="team-logo">
+                                        Beşiktaş
+                                    </td>
+                                    <td class="score">3 - 0</td>
+                                    <td>
+                                        <img src="images/team-logos/ts.png" alt="Trabzonspor" class="team-logo">
+                                        Trabzonspor
+                                    </td>
+                                    <td>09.03.2024</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary" onclick="showMatchDetails(2)">
+                                            <i class="fas fa-info-circle"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="video-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-play-circle"></i> Maç Özetleri
+                    </h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="video-container">
+                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/MATCH_ID_1" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="video-container">
+                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/MATCH_ID_2" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-md-4">
+                <aside class="sidebar">
+                    <div class="widget standings-widget">
+                        <h3 class="widget-title">
+                            <i class="fas fa-list-ol"></i> Puan Durumu
+                        </h3>
+                        <div class="standings">
+                            <div class="team-item">
+                                <span class="position">1</span>
+                                <img src="images/team-logos/gs.png" alt="Galatasaray" class="team-logo">
+                                <span class="team-name">Galatasaray</span>
+                                <span class="points">70</span>
+                            </div>
+                            <div class="team-item">
+                                <span class="position">2</span>
+                                <img src="images/team-logos/fb.png" alt="Fenerbahçe" class="team-logo">
+                                <span class="team-name">Fenerbahçe</span>
+                                <span class="points">68</span>
+                            </div>
+                            <div class="team-item">
+                                <span class="position">3</span>
+                                <img src="images/team-logos/bjk.png" alt="Beşiktaş" class="team-logo">
+                                <span class="team-name">Beşiktaş</span>
+                                <span class="points">60</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget live-scores-widget">
+                        <h3 class="widget-title">
+                            <i class="fas fa-clock"></i> Canlı Skorlar
+                        </h3>
+                        <div class="live-scores">
+                            <!-- Live scores will be dynamically added here -->
+                        </div>
+                    </div>
+
+                    <div class="widget social-widget">
+                        <h3 class="widget-title">
+                            <i class="fas fa-share-alt"></i> Sosyal Medya
+                        </h3>
+                        <div class="social-links">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="btn btn-info">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="btn btn-danger">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="btn btn-primary">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <section class="featured-players">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">
+                <i class="fas fa-star"></i> Haftanın Oyuncuları
+            </h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="player-card">
+                        <img src="images/players/player1.jpg" alt="Oyuncu 1" class="player-image">
+                        <div class="player-info">
+                            <h3>Mauro Icardi</h3>
+                            <p>Galatasaray</p>
+                            <div class="player-stats">
+                                <span><i class="fas fa-futbol"></i> 15 Gol</span>
+                                <span><i class="fas fa-shoe-prints"></i> 5 Asist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="player-card">
+                        <img src="images/players/player2.jpg" alt="Oyuncu 2" class="player-image">
+                        <div class="player-info">
+                            <h3>Edin Dzeko</h3>
+                            <p>Fenerbahçe</p>
+                            <div class="player-stats">
+                                <span><i class="fas fa-futbol"></i> 13 Gol</span>
+                                <span><i class="fas fa-shoe-prints"></i> 7 Asist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="player-card">
+                        <img src="images/players/player3.jpg" alt="Oyuncu 3" class="player-image">
+                        <div class="player-info">
+                            <h3>Vincent Aboubakar</h3>
+                            <p>Beşiktaş</p>
+                            <div class="player-stats">
+                                <span><i class="fas fa-futbol"></i> 12 Gol</span>
+                                <span><i class="fas fa-shoe-prints"></i> 4 Asist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="footer-title">
+                        <i class="fas fa-info-circle"></i> Hakkımızda
+                    </h3>
+                    <div class="footer-content">
+                        <p>Futbol Dünyası, Türkiye'nin en güncel futbol haber ve istatistik platformudur.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title">
+                        <i class="fas fa-link"></i> Hızlı Bağlantılar
+                    </h3>
+                    <div class="footer-content">
+                        <ul class="quick-links list-unstyled">
+                            <li><a href="#news"><i class="fas fa-angle-right"></i> Haberler</a></li>
+                            <li><a href="#matches"><i class="fas fa-angle-right"></i> Maçlar</a></li>
+                            <li><a href="contact.html"><i class="fas fa-angle-right"></i> İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-title">
+                        <i class="fas fa-envelope"></i> İletişim
+                    </h3>
+                    <div class="footer-content">
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> Email: info@futboldunyas.com</p>
+                            <p><i class="fas fa-phone"></i> Tel: +90 123 456 7890</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Adres: İstanbul, Türkiye</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom py-3">
+            <div class="container text-center">
+                <p class="mb-0">&copy; 2024 Futbol Dünyası. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
