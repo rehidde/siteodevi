@@ -1,0 +1,148 @@
+body {
+  background-color: #95a2b6; 
+  color: #cbd5e1; 
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+  background-color: #334155 !important; 
+}
+
+.navbar-brand, .nav-link {
+  color: #cbd5e1 !important;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover, .nav-link:hover, .nav-link.active {
+  color: #38bdf8 !important; 
+}
+
+.btn-primary {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #60a5fa;
+  border-color: #60a5fa;
+}
+
+input, select, textarea {
+  background-color: #ffffff;
+  color: #e0e7ff;
+  border: 1px solid #64748b;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #38bdf8;
+  outline: none;
+  background-color: #a38e9e;
+  color: #e0e7ff;
+}
+
+label {
+  color: #dfdfda;
+}
+
+span.highlight {
+  color: #db1304b7;
+  font-weight: 600;
+}
+
+.container {
+  background-color: #273449;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+.game-box {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.game-img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+body.koyu-mod {
+  background-color: #1e1e2f;
+  color: #e0e0e0;
+}
+
+body.mor-mod {
+  background-color: #3b0a57;
+  color: #f5eaff;
+}
+
+body.koyu-mod .container,
+body.mor-mod .container {
+  background-color: #2c2c3c;
+}
+
+body.mor-mod .container {
+  background-color: #4c1d95;
+}
+
+body.koyu-mod .navbar,
+body.mor-mod .navbar {
+  background-color: #111827 !important;
+}
+
+body.mor-mod .navbar {
+  background-color: #6d28d9 !important;
+}
+
+body.koyu-mod .btn-primary,
+body.mor-mod .btn-primary {
+  background-color: #4b5563;
+  border-color: #4b5563;
+}
+
+body.mor-mod .btn-primary {
+  background-color: #9333ea;
+  border-color: #9333ea;
+}
+
+body.koyu-mod input,
+body.koyu-mod select,
+body.koyu-mod textarea,
+body.mor-mod input,
+body.mor-mod select,
+body.mor-mod textarea {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  border: 1px solid #4b5563;
+}
+
+body.mor-mod input,
+body.mor-mod select,
+body.mor-mod textarea {
+  background-color: #5b21b6;
+  color: #f3e8ff;
+}
+
