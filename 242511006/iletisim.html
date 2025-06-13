@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Profesyonel LOL Rehberi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="page-container">
+        <header id="site-header">
+            <div class="container header-flex">
+                <div id="logo-container">
+                    <div class="logo-icon"><span>L</span></div>
+                    <div class="logo-text">
+                        <span>LOL</span>
+                        <span>Profesyonel</span>
+                        <span>Rehber</span>
+                    </div>
+                </div>
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="index.html"><span><i class="fa-solid fa-house-chimney"></i></span><span>   Ana sayfa</span></a></li>
+                        <li><a href="index.html#karakter-bolumu"><span><i class="fa-solid fa-mask"></i></span><span>   Karakterler</span></a></li>
+                        <li><a href="iletisim.html"><span><i class="fa-solid fa-comments"></i></span><span>   İletişim</span></a></li>
+                        
+                    </ul>
+                </nav>
+                <div class="header-utils">
+                    <div class="util-item"><span class="util-span">Dil: TR</span></div>
+                    <div class="util-item theme-toggle"><span class="util-span">Tema Değiştir</span></div>
+                </div>
+            </div>
+            <div class="header-bottom-bar"><span class="header-bottom-span">Sorularınız için buradayız!</span></div>
+        </header>
+
+        <main id="main-content">
+            <section id="iletisim-hero">
+                <div class="container">
+                    <h1 class="hero-baslik"><span class="ih-baslik-span">Bize Ulaşın</span></h1>
+                    <p class="hero-aciklama"><span class="ih-aciklama-span">Soru, öneri veya işbirliği için formu doldurun veya diğer iletişim kanallarımızı kullanın.</span></p>
+                    <p class="hero-aciklama"><span class="ih-aciklama-span">League Of Legends hakkında koçluk hizmeti ve daha ilerisi için sizinle birlikteyiz.</span></p>
+                </div>
+            </section>
+
+            <section id="iletisim-icerik">
+                <div class="container iletisim-grid">
+                    <div class="iletisim-formu-alani">
+                        <h2 class="bolum-basligi"><span class="ifa-baslik-span">İletişim Formu</span></h2>
+                        <form id="contactForm">
+                            <div class="form-grup">
+                                <label for="name"><span class="fg-label-span">Adınız </span></label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="fg-input-aciklama-div"><span class="fg-input-aciklama-span">Lütfen tam adınızı giriniz.</span></div>
+                            </div>
+                            <div class="form-grup">
+                                <label for="name"><span class="fg-label-span">Soyadınız</span></label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="fg-input-aciklama-div"><span class="fg-input-aciklama-span">Lütfen tam soyadınızı giriniz.</span></div>
+                            </div>
+                            <div class="form-grup">
+                                <label for="email"><span class="fg-label-span">E-posta Adresiniz</span></label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="fg-input-aciklama-div"><span class="fg-input-aciklama-span">Cevap alabilmek için geçerli bir e-posta girin.</span></div>
+                            </div>
+                            <div class="form-grup">
+                                <label for="name"><span class="fg-label-span">Favori Lol Karakteriniz</span></label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="fg-input-aciklama-div"><span class="fg-input-aciklama-span">Lütfen tam ismi giriniz.</span></div>
+                            </div>
+                            <div class="form-grup">
+                                <label for="name"><span class="fg-label-span">Lol Nickiniz</span></label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="fg-input-aciklama-div"><span class="fg-input-aciklama-span">Lütfen tam nicki giriniz.</span></div>
+                            </div>
+                            
+                            <div class="form-grup">
+                                <label for="yas"><span class="fg-span">Yaşınız</span></label>
+                                <input type="number" id="yas" name="yas" placeholder="Örn: 25" min="10" max="99">
+                            </div>
+                            <div class="form-grup">
+                                <label for="cinsiyet"><span class="fg-span">Cinsiyetiniz</span></label>
+                                <select id="cinsiyet" name="cinsiyet">
+                                    <option value="">Seçiniz</option>
+                                    <option value="erkek">Erkek</option>
+                                    <option value="kadin">Kadın</option>
+                                    <option value="belirtmek-istemiyorum">Belirtmek İstemiyorum</option>
+                                </select>
+                            </div>
+                            <div class="form-grup">
+                                <label for="name"><span class="fg-label-span">İlgi Alanlarınız (Lol Dışı)</span></label>
+                                <input type="text" id="name" name="name" required>
+                                <div class="fg-input-aciklama-div"><span class="fg-input-aciklama-span">Örn: Kitap okumak, Spor yapmak.</span></div>
+                            </div>
+                            <div class="form-grup">
+                                <label for="subject"><span class="fg-label-span">Konu</span></label>
+                                <input type="text" id="subject" name="subject" required>
+                                <div class="fg-input-aciklama-div"><span class="fg-input-aciklama-span">Mesajınızın ana başlığı.</span></div>
+                            </div>
+                            <div class="form-grup">
+                                <label for="message"><span class="fg-label-span">Mesajınız</span></label>
+                                <textarea id="message" name="message" rows="6" required></textarea>
+                                <div class="fg-input-aciklama-div"><span class="fg-input-aciklama-span">Detaylı mesajınızı buraya yazabilirsiniz.</span></div>
+                            </div>
+                            <div class="form-grup-submit">
+                                <button type="submit" class="submit-button"><span class="sb-span">Gönder</span></button>
+                            </div>
+                        </form>
+                        <div class="form-ekstra-div-1"><span class="fed1-span">Mesajınızı göndermeden önce bilgilerinizi kontrol etmeyi unutmayınız.</span></div>
+                        
+                    </div>
+
+                    <aside class="iletisim-bilgileri-alani">
+                        <h2 class="bolum-basligi"><span class="iba-baslik-span">Diğer Kanallar</span></h2>
+                        <div class="bilgi-karti">
+                            <span class="bk-ikon-span">📧</span><h4 class="bk-baslik-span">E-posta</h4>
+                            <p><span class="bk-deger-span">sukru.kuzu1906@gmail.com</span></p>
+                            <div class="bilgi-karti-ekstra-div"><span class="bked-span">7/24 Destek</span></div>
+                        </div>
+                        <div class="bilgi-karti">
+                            <span class="bk-ikon-span">📞</span><h4 class="bk-baslik-span">Telefon</h4>
+                            <p><span class="bk-deger-span">+90 555 555 55 55</span></p>
+                            <div class="bilgi-karti-ekstra-div"><span class="bked-span">Hafta içi 09:00-18:00</span></div>
+                        </div>
+                        <div class="bilgi-karti">
+                            <span class="bk-ikon-span">📍</span><h4 class="bk-baslik-span">Adres</h4>
+                            <p><span class="bk-deger-span">Mühendislik Mimarlık Fakültesi
+                                Bağbaşı, 40100 Kırşehir Merkez/Kırşehir</span></p>
+                            <div class="bilgi-karti-ekstra-div"><span class="bked-span">Ziyaret öncesi randevu alınız.</span></div>
+                        </div>
+                        <div class="harita-alani">
+                           <iframe class="ha-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.412946445204!2d34.117252076769674!3d39.14258837167276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d50d492db57789%3A0x7f131464dc8c810c!2zTcO8aGVuZGlzbGlrIE1pbWFybMSxayBGYWvDvGx0ZXNp!5e0!3m2!1str!2str!4v1747345670038!5m2!1str!2str" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                           <div class="bilgi-karti-ekstra-div"><span class="bked-span">Harita Temsilidir.</span></div>
+                        </div>
+                    </aside>
+                </div>
+           
+                
+            </section>
+            <section id="tablo-bilgileri-alani" style="padding: 40px 0; background-color: var(--ikincil-renk);">
+                <div class="container">
+                    <h2 class="iba-baslik-span" style="text-align: center; margin-bottom: 30px;">
+                        <span class="fbh2-span">Destek Kanallarımız</span>
+                    </h2>
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background-color: var(--ucuncul-renk);">
+                                <th style="padding: 12px; text-align: left; color: var(--parlak-vurgu); border: 1px solid var(--ana-renk);">Kanal</th>
+                                <th style="padding: 12px; text-align: left; color: var(--parlak-vurgu); border: 1px solid var(--ana-renk);">Açıklama</th>
+                                <th style="padding: 12px; text-align: left; color: var(--parlak-vurgu); border: 1px solid var(--ana-renk);">Çalışma Saatleri</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background-color: var(--ana-renk);">
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">E-posta Desteği</td>
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">Genel sorularınız ve detaylı konular için.</td>
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">7/24</td>
+                            </tr>
+                            <tr style="background-color: var(--ikincil-renk);">
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">Canlı Sohbet</td>
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">Anında yardım için çevrimiçi destek.</td>
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">Hafta içi 09:00 - 18:00</td>
+                            </tr>
+                            <tr style="background-color: var(--ana-renk);">
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">Telefon Desteği</td>
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renç);">Acil durumlar ve sesli iletişim için.</td>
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">Hafta içi 09:00 - 18:00</td>
+                            </tr>
+                             <tr style="background-color: var(--ikincil-renk);">
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">Sosyal Medya</td>
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">Genel duyurular ve hızlı yanıtlar için.</td>
+                                <td style="padding: 12px; border: 1px solid var(--ucuncul-renk);">7/24 (Yanıt süresi değişebilir)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+
+        </main>
+
+        <footer id="site-footer">
+            <div class="container footer-grid">
+                <div class="footer-sutun">
+                    <div class="footer-logo-div"><span>LOLRehber</span></div>
+                    <p class="footer-aciklama-p"><span class="f-a-s1">League of Legends hakkında</span><span class="f-a-s2">her şey.</span></p>
+                </div>
+                <div class="footer-sutun">
+                    <h4 class="footer-baslik-h4"><span class="fbh4-span">Hızlı Bağlantılar</span></h4>
+                    <ul class="footer-liste-ul">
+                        <li><a href="index.html#karakter-bolumu"><span class="flul-span">Şampiyonlar</span></a></li>
+                        <li><a href="iletisim.html"><span class="flul-span">İletişim</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-sutun">
+                    <h4 class="footer-baslik-h4"><span class="fbh4-span">Sosyal Medya</span></h4>
+                    <div class="sosyal-ikonlar-div">
+                        <a href="#" class="sosyal-ikon-a"><span class="si-span"><i class="fa-brands fa-facebook"></i></span></a>
+                        <a href="#" class="sosyal-ikon-a"><span class="si-span"><i class="fa-brands fa-x-twitter"></i></span></a>
+                        <a href="https://www.instagram.com/sukruankz/" class="sosyal-ikon-a"><span class="si-span"><i class="fa-brands fa-instagram"></i></i></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-alt-bar">
+                <div class="container alt-bar-flex">
+                    <div class="telif-hakki-div"><span class="thd-span">© 2025 Profesyonel LOL Rehberi. Tüm hakları saklıdır. Şükrü A.</span></div>
+                </div>
+            </div>
+           
+        </footer>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
